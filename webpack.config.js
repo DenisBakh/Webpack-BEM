@@ -38,8 +38,11 @@ const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 //const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
-const filenameCss = ext => isDev ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`
-const filenameJs = ext => isDev ? `${PATHS.assets}js/[name].js` : `${PATHS.assets}js/[name].[hash].js`
+//const filenameCss = ext => isDev ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`
+//const filenameJs = ext => isDev ? `${PATHS.assets}js/[name].js` : `${PATHS.assets}js/[name].[hash].js`
+
+const filenameCss = ext => isDev ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].css`
+const filenameJs = ext => isDev ? `${PATHS.assets}js/[name].js` : `${PATHS.assets}js/[name].js`
 
 const cssLoaders = extra => {
 	const loaders = [
@@ -99,10 +102,10 @@ const plugins = () => {
 				}
 			}),*/
 		new CleanWebpackPlugin(),
-		new CopyWebpackPlugin([
+		new CopyWebpackPlugin([ /*
 			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
 			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-			{ from: `${PATHS.src}/static`, to: '' },
+			{ from: `${PATHS.src}/static`, to: '' },*/
 		]),
 		new MiniCssExtractPlugin({
 			filename: filenameCss() //filename('css') //'[name].[contenthash].css'
@@ -152,7 +155,8 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 4200,
-		hot: isDev
+		//hot: isDev,
+		contentBase: path.resolve(__dirname, 'dist')
 	},
 	devtool: isDev ? 'source-map' : '',
 	plugins: plugins(),
