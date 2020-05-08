@@ -1,18 +1,13 @@
 import * as $ from 'jquery'
 
-
-
 // JS
-import './js/'
-//import './js/require.js'
-
+import './assets/js'
 
 // SCSS
-import './assets/scss/main.scss'
+import './assets/scss/index.scss'
 
-//const moduleA = require('webpack-bundle-analyzer');
 
-require.context('./', true, /\.(png|svg|jpg|mp3)$/);
+require.context('./project', true, /\.(png|svg|jpg|ico|mp3)$/);
 
 // CSS (example)
 // import './assets/css/main.css'

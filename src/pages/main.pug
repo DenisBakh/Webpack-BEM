@@ -1,4 +1,4 @@
-include ../utils/mixins
+include ../project/common.blocks/_common/utils/mixins
 block variables
 
 doctype html
@@ -12,9 +12,9 @@ html(lang='en')
   body(class=pageClass)
     .wrapper
       #app
-        include ../includes/modules/header
+        include ../project/header/header.pug
         .content-wrapper
           block content
-        include ../includes/modules/footer
+        include ../project/footer/footer.pug
 
     block script

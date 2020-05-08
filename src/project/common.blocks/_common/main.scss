@@ -1,8 +1,8 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
-@import "utils/reset";
+@import "libs";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "reset";
 
 html {
 	line-height: $mainLineHeight;
@@ -64,5 +64,4 @@ textarea {
 }
 
 // Modules
-@import "modules/footer";
 // @import "modules/my-module.scss";

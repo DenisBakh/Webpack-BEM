@@ -34,7 +34,7 @@ const PATHS = {
 }
 //Pages const for HTMLWebpackPlugin
 //const PAGES_DIR=PATHS.src
-const PAGES_DIR = `${PATHS.src}/pug/pages`
+const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 //const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
@@ -66,7 +66,7 @@ const babelOptions = preset => {
 		],
 		plugins: [
 			'@babel/plugin-proposal-class-properties'
-		]
+		],
 	}
 
 	if (preset) {
@@ -82,10 +82,10 @@ const jsLoaders = () => {
 		options: babelOptions()
 	}]
 
-	if (isDev) {
-		loaders.push('eslint-loader')
-	}
-
+	/*	if (isDev) {
+			loaders.push('eslint-loader')
+		}
+	*/
 	return loaders
 }
 
@@ -132,7 +132,7 @@ module.exports = {
 		path: PATHS
 	},
 	entry: {
-		main: ['@babel/polyfill', './index.js'],
+		main: ['@babel/polyfill', './entry.js'],
 	},
 	output: {
 		//filename: filename('js'),
@@ -193,19 +193,19 @@ module.exports = {
 				use: cssLoaders('sass-loader')
 			},
 			{
-				test: /\.(png|jpe?g|svg|gif)$/,
+				test: /\.(png|svg|jpe?g|ico|mp3)$/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'img',
+							outputPath: `${PATHS.assets}img`,
 							name: '[name].[ext]'
 						}
 					}
 				]
 			},
 			{
-				test: /\.(ttf|woff"woff2"eot)$/,
+				test: /\.(ttf|woff|woff2|eot)$/,
 				use: ['file-loader']
 			},
 			{

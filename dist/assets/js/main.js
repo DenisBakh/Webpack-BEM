@@ -155,10 +155,24 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/scss/main.scss":
-/*!*******************************!*\
-  !*** ./assets/scss/main.scss ***!
-  \*******************************/
+/***/ "./assets/js/index.js":
+/*!****************************!*\
+  !*** ./assets/js/index.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Main js file
+console.log('hellos world');
+console.log('hello2s world');
+console.log('hello23s world');
+
+/***/ }),
+
+/***/ "./assets/scss/index.scss":
+/*!********************************!*\
+  !*** ./assets/scss/index.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -168,9 +182,9 @@
 
 /***/ }),
 
-/***/ "./index.js":
+/***/ "./entry.js":
 /*!******************!*\
-  !*** ./index.js ***!
+  !*** ./entry.js ***!
   \******************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -179,18 +193,17 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/ */ "./js/index.js");
-/* harmony import */ var _js___WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js___WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _assets_scss_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/scss/main.scss */ "./assets/scss/main.scss");
-/* harmony import */ var _assets_scss_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_scss_main_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/js */ "./assets/js/index.js");
+/* harmony import */ var _assets_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_scss_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/scss/index.scss */ "./assets/scss/index.scss");
+/* harmony import */ var _assets_scss_index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_scss_index_scss__WEBPACK_IMPORTED_MODULE_2__);
  // JS
 
- //import './js/require.js'
-// SCSS
+ // SCSS
 
- //const moduleA = require('webpack-bundle-analyzer');
-//require.context('./', true, /\.(png|svg|jpg|mp3)$/);
-// CSS (example)
+
+
+__webpack_require__("./project sync recursive \\.(png|svg|jpg|ico|mp3)$"); // CSS (example)
 // import './assets/css/main.css'
 
 /*
@@ -208,29 +221,61 @@ const app = new Vue({
 
 /***/ }),
 
-/***/ "./js/index.js":
-/*!*********************!*\
-  !*** ./js/index.js ***!
-  \*********************/
+/***/ "./project sync recursive \\.(png|svg|jpg|ico|mp3)$":
+/*!***********************************************!*\
+  !*** ./project sync \.(png|svg|jpg|ico|mp3)$ ***!
+  \***********************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// Main js file
-console.log('hellos world');
-console.log('hello2s world');
-console.log('hello23s world');
+var map = {
+	"./static/favicon.ico": "./project/static/favicon.ico"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./project sync recursive \\.(png|svg|jpg|ico|mp3)$";
+
+/***/ }),
+
+/***/ "./project/static/favicon.ico":
+/*!************************************!*\
+  !*** ./project/static/favicon.ico ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/img/favicon.ico");
 
 /***/ }),
 
 /***/ 0:
 /*!****************************************!*\
-  !*** multi @babel/polyfill ./index.js ***!
+  !*** multi @babel/polyfill ./entry.js ***!
   \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! @babel/polyfill */"../node_modules/@babel/polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! ./index.js */"./index.js");
+module.exports = __webpack_require__(/*! ./entry.js */"./entry.js");
 
 
 /***/ })
