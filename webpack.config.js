@@ -203,7 +203,8 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							outputPath: `${PATHS.assets}img`,
-							name: '[name].[ext]'
+							name: '[name].[ext]',
+							esModule: false
 						}
 					}
 				]

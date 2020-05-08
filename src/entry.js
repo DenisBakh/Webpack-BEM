@@ -9,6 +9,11 @@ import './assets/scss/index.scss'
 
 require.context('./project', true, /\.(png|svg|jpg|ico|mp3)$/);
 
+
+//import './project/common.blocks/ui kit/logo_UI.png'
+
+
+
 // CSS (example)
 // import './assets/css/main.css'
 
