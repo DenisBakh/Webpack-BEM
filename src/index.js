@@ -12,7 +12,7 @@ import './assets/scss/main.scss'
 
 //const moduleA = require('webpack-bundle-analyzer');
 
-//require.context('./', true, /\.(png|svg|jpg|mp3)$/);
+require.context('./', true, /\.(png|svg|jpg|mp3)$/);
 
 // CSS (example)
 // import './assets/css/main.css'
