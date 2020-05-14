@@ -1,1 +1,16 @@
+@import "../../project/common.blocks/_common/reset.scss";
+@import "../../project/common.blocks/_common/libs.scss";
+@import "../../project/common.blocks/_common/vars.scss";
+@import "../../project/common.blocks/_common/mixins.scss";
+@import "../../project/common.blocks/_common/fonts.scss";
+
 @import "../../project/common.blocks/_common/main.scss";
+
+@import "../../project/common.blocks/ui_kit/color&type/color&type.scss";
+@import "../../project/common.blocks/ui_kit/logo_UI/logo_UI.scss";
+
+/*
+body {
+	background: url("/dist/assets/img/logo_UI.png");
+}
+*/

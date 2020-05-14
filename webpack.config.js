@@ -52,7 +52,8 @@ const cssLoaders = extra => {
 				hmr: isDev,
 				reloadAll: true
 			},
-		}, 'css-loader'
+		},
+		'css-loader'
 	]
 
 	if (extra) {
@@ -131,9 +132,9 @@ console.log('is dev', isDev)
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
-	externals: {
+	/*externals: {
 		path: PATHS
-	},
+	},*/
 	entry: {
 		main: ['@babel/polyfill', './entry.js'],
 	},
@@ -194,7 +195,7 @@ module.exports = {
 			},
 			{
 				test: /\.s[ac]ss$/,
-				use: cssLoaders('sass-loader')
+				use: cssLoaders('sass-loader?sourceMap')
 			},
 			{
 				test: /\.(png|svg|jpe?g|ico|mp3)$/,
@@ -211,7 +212,16 @@ module.exports = {
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
-				use: ['file-loader']
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							outputPath: `${PATHS.assets}fonts`,
+							name: '[name].[ext]',
+							esModule: false
+						}
+					}
+				]
 			},
 			{
 				test: /\.xml$/,

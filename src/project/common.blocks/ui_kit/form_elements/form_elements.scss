@@ -1,0 +1,152 @@
+/*.container_ui {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 30px;
+	&-content {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+}
+*/
+.content {
+	&__row {
+		display: flex;
+		margin: 67px -215px 0 -215px;
+		justify-content: space-between;
+	}
+	&__column {
+		padding: 0 215px;
+
+		&:first-child {
+			flex: 0 0 auto;
+		}
+		&:last-child {
+			padding: 0 245px 0 215px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.item-color {
+	display: flex;
+	align-items: center;
+	margin: 0 0 20px 0;
+	&__figure {
+		display: block;
+		width: 70px;
+		height: 70px;
+		border-radius: 6px;
+		background-color: rgba(31, 32, 65, 1);
+		margin: 0 40px 0 0;
+	}
+	&:nth-child(2) {
+		.item-color__figure {
+			background-color: rgba(31, 32, 65, 0.75);
+		}
+	}
+	&:nth-child(3) {
+		.item-color__figure {
+			background-color: rgba(31, 32, 65, 0.5);
+		}
+	}
+	&:nth-child(4) {
+		.item-color__figure {
+			background-color: rgba(31, 32, 65, 0.25);
+		}
+	}
+	&:nth-child(5) {
+		.item-color__figure {
+			background-color: rgba(31, 32, 65, 0.05);
+		}
+	}
+	&:nth-child(6) {
+		.item-color__figure {
+			background-color: #bc9cff;
+		}
+	}
+	&:nth-child(7) {
+		.item-color__figure {
+			background-color: #6fcf97;
+		}
+	}
+	&__text {
+		font-family: "Quicksand";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 19px;
+		line-height: 29px;
+	}
+	&__title {
+	}
+	&__hex {
+		font-weight: 400;
+	}
+}
+
+.item-text {
+	margin: 0 0 50px 0;
+	display: table;
+	&__cell {
+		display: table-cell;
+		padding: 0 0 50px 0;
+	}
+	&__descr {
+		font-family: "Quicksand";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 30px;
+		word-wrap: break-word;
+		color: #1f2041;
+	}
+	&__mark {
+		padding: 0 30px 0 0;
+		font-family: "Montserrat";
+		font-size: 24px;
+		line-height: 29px;
+		margin: 0 30px 0 0;
+		color: rgba(31, 32, 65, 0.25);
+		text-align: end;
+	}
+	&__row {
+		display: table-row;
+		&:nth-child(2) {
+			.item-text__descr {
+				font-size: 19px;
+				line-height: 24px;
+			}
+			.item-text__mark {
+				font-size: 19px;
+				line-height: 23px;
+			}
+		}
+		&:nth-child(3) {
+			.item-text__descr {
+				font-family: "Montserrat";
+
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 15px;
+
+				text-transform: uppercase;
+			}
+			.item-text__mark {
+				font-size: 12px;
+				line-height: 15px;
+			}
+		}
+		&:nth-child(4) {
+			.item-text__descr {
+				font-family: "Montserrat";
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 24px;
+			}
+			.item-text__mark {
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
+	}
+}
