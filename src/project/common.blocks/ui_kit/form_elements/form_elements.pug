@@ -1,0 +1,38 @@
+mixin inputs(id, type="text", label, value="", placeholder="Email", descr="")
+	div.text-field
+		.label
+			label(for= id)= label
+			label.text-field__descr= descr
+		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value)
+
+
+mixin inputTextfield(id, label, placeholder)
+	div.text-field
+		label(for= id)= label
+		textarea(rows="5", name= id, id= id, placeholder= val,autocomplete="false")
+
+mixin inputToggle(id, label, checked)
+	div.text-field
+		label(for= id)
+			input(type="checkbox", name= id, id= id, checked= checked, autocomplete="off")
+			span= label
+
+mixin inputSelect(id, label, selected, vals)
+	div.text-field
+		label(for= label)= label
+		select(id= id, name= id)
+			each val in vals
+				- var isSelected = (selected==val[1]) ? true : false
+				option(value= val[0], selected= isSelected)= val[1]
+
+mixin inputToggleCollection(id, label, vals, checked)
+	- var active = []
+	- if (checked!=undefined) {
+		- active = checked.split(",")
+	- }
+	fieldset
+		legend= label
+		each val in vals
+			- var isSelected = (active.indexOf(val)>-1) ? true : false
+			+inputToggle(val.replace(/\s/g,''), val, isSelected)
+

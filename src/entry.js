@@ -2,6 +2,7 @@ import * as $ from 'jquery'
 
 // JS
 import './assets/js'
+import './project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn'
 
 // SCSS
 import './assets/scss/index.scss'

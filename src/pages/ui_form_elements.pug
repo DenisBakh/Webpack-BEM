@@ -1,4 +1,5 @@
 <!-- include ../project/common.blocks/ui_kit/form_elements/form_elements.pug -->
+include ../project/common.blocks/ui_kit/form_elements/form_elements.pug
 
 <!DOCTYPE html>
 html(lang="en")
@@ -7,8 +8,20 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Document
 	body
-	main.main
+	main.form-elements
 		include ../project/common.blocks/ui_kit/logo_UI/logo_UI.pug
-			.container_ui-content
+			.container_ui-form-elements
+				.form-elements__row
+					.form-elements__column
+						.form-elements__item
+							+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
+						.form-elements__item
+							+inputs("text-field", "email", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
+						.form-elements__item
+							+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
+						.form-elements__item
+							include ../project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
+				.form-elements__row
+
 			
 				

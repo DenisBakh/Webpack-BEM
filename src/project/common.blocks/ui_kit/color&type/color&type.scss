@@ -1,17 +1,15 @@
-/*.container_ui {
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 30px;
-	&-content {
+//================================= color&type ==============================
+
+.container_ui {
+	&-color-type {
 		max-width: 1140px;
-		margin: 0 auto;
+		margin: 67px auto 0 auto;
 	}
 }
-*/
 .content {
 	&__row {
 		display: flex;
-		margin: 67px -215px 0 -215px;
+		margin: 0 -215px;
 		justify-content: space-between;
 	}
 	&__column {
