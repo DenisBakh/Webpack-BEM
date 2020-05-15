@@ -18,9 +18,8 @@ html(lang="en")
 						.form-elements__item
 							+inputs("text-field", "email", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
 						.form-elements__item
-							+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
-						.form-elements__item
-							include ../project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
+							+inputDropdawn("Dropdown","Сколько гостей","DEFAULT")
+					<!--		include ../project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug -->
 				.form-elements__row
 
 			

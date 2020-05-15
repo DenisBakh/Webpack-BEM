@@ -1,5 +1,5 @@
 //Получаем все "select" по селектору
-
+/*
 window.addEventListener("load", function () {
 
 	const selects = document.querySelectorAll('.select')
@@ -48,7 +48,7 @@ window.addEventListener("load", function () {
 		//присваиваем текстовое первое значение "option" в кастомном "select"
 		const currentTextValue = () => customSelectCurrent.textContent = customSelectList.children[0].textContent
 
-		//получаем и задаем значения text/value 
+		//получаем и задаем значения text/value
 		const currentValue = () => {
 			const items = customSelectList.children
 			for (var el = 0; el < items.length; el++) {
@@ -101,5 +101,35 @@ window.addEventListener("load", function () {
 			}
 		}
 	}
+
+});*/
+
+$(document).ready(function ($) {
+	// FOR QUANTITY
+	$('.counter__minus').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('.counter').find('.counter__cnt');
+		var value = parseInt($input.val());
+		if (value > 1) {
+			value = value - 1;
+		} else {
+			value = 0;
+		}
+		$input.val(value);
+	});
+
+	$('.counter__plus').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('.counter').find('.counter__cnt');
+		var value = parseInt($input.val());
+		if (value < 100) {
+			value = value + 1;
+		} else {
+			value = 100;
+		}
+		$input.val(value);
+	});
 
 });
