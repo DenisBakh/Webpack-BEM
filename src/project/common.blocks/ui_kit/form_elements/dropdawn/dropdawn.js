@@ -1,3 +1,5 @@
+import * as $ from 'jquery/'
+
 //Получаем все "select" по селектору
 /*
 window.addEventListener("load", function () {
@@ -107,15 +109,28 @@ window.addEventListener("load", function () {
 $(document).ready(function ($) {
 	// FOR QUANTITY
 	$('.counter__minus').on('click', function (e) {
+
 		e.preventDefault();
 		var $this = $(this);
 		var $input = $this.closest('.counter').find('.counter__cnt');
+
 		var value = parseInt($input.val());
-		if (value > 1) {
+		console.log(value);
+		if (value > 0) {
 			value = value - 1;
 		} else {
 			value = 0;
 		}
+
+		if ((!$this.closest('.counter').find('.counter__plus').hasClass("counter__btn_active")) && (value < 100)) {
+			$this.closest('.counter').find('.counter__plus').addClass("counter__btn_active")
+		}
+
+		if (($this.hasClass("counter__btn_active")) && (value === 0)) {
+			$this.removeClass("counter__btn_active")
+		}
+
+
 		$input.val(value);
 	});
 
@@ -129,7 +144,123 @@ $(document).ready(function ($) {
 		} else {
 			value = 100;
 		}
+
+		if ((!$this.closest('.counter').find('.counter__minus').hasClass("counter__btn_active")) && (value > 0)) {
+			$this.closest('.counter').find('.counter__minus').addClass("counter__btn_active")
+		}
+
+
+		if (($this.hasClass("counter__btn_active")) && (value === 100)) {
+			$this.removeClass("counter__btn_active")
+		}
+
+
 		$input.val(value);
 	});
 
+
+	//TOGGLE ACTIVE на DROPDAWN
+	$('.text-field__input_dropDawn').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $dd = $this.closest('.text-field__wrapper');
+		$this.toggleClass("active");
+		$dd.find('.dropdawn-field').toggleClass("active");
+		$dd.toggleClass("active");
+	});
+
+
+	$('.dropdawn-field__clear').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('.text-field__wrapper').find('.counter__cnt');
+		var $minus = $this.closest('.text-field__wrapper').find('.counter__minus');
+		var $plus = $this.closest('.text-field__wrapper').find('.counter__plus');
+		var $textfield = $this.closest('.text-field__wrapper').find('.text-field__input');
+		$input.val(0);
+
+		$minus.removeClass('counter__btn_active')
+		$plus.addClass('counter__btn_active')
+
+		$textfield.text('Сколько гостей')
+	});
+	$('.dropdawn-field__accept').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('.text-field__wrapper').find('.counter__cnt');
+		console.log($input)
+		var $textfield = $this.closest('.text-field__wrapper').find('.text-field__input');
+
+		var $cnt = 0;
+		$.each($input, function (index, value) {
+			$cnt = $cnt + parseInt($(this).val());
+			//console.log('Индекс: ' + index + '; Значение: ' + parseInt($(this).val()));
+		});
+
+		if ($cnt > 0) {
+			function declension(num, expressions) {
+				var result;
+				var count = num % 100;
+				if (count >= 5 && count <= 20) {
+					result = expressions['2'];
+				} else {
+					count = count % 10;
+					if (count == 1) {
+						result = expressions['0'];
+					} else if (count >= 2 && count <= 4) {
+						result = expressions['1'];
+					} else {
+						result = expressions['2'];
+					}
+				}
+				return result;
+			};
+			$textfield.text($cnt + ' ' + declension($cnt, ['гость', 'гостя', 'гостей']));
+		} else {
+			$textfield.text('Сколько гостей');
+		}
+
+	});
+
+
+	//Скрытие по клику вне DropDAWM
+	$(document).mouseup(function (e) { // событие клика по веб-документу
+		var div = $(".text-field__wrapper.active"); // тут указываем класс 
+		var input = div.find('.text-field__input_dropDawn')
+		var dd = div.find('.dropdawn-field')
+		console.log(33)
+		if (!div.is(e.target) // если клик был не по нашему блоку
+			&& div.has(e.target).length === 0 // и не по его дочерним элементам
+			&& $('.text-field__input_dropDawn').hasClass('active')) {
+			div.removeClass('active');
+			input.removeClass('active');
+			dd.removeClass('active');
+		}
+	});
 });
+
+
+
+/*
+
+function declension(num, expressions) {
+	var result;
+	var count = num % 100;
+	if (count >= 5 && count <= 20) {
+		result = expressions['2'];
+	} else {
+		count = count % 10;
+		if (count == 1) {
+			result = expressions['0'];
+		} else if (count >= 2 && count <= 4) {
+			result = expressions['1'];
+		} else {
+			result = expressions['2'];
+		}
+	}
+	return result;
+};
+
+//alert(declension(1, ['пользователь', 'пользователя', 'пользователей']));
+*/
+

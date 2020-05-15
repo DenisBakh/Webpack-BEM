@@ -1,6 +1,5 @@
+import * as $ from 'jquery/'
 
-
-var $ = require("jquery");
 
 // JS
 import './assets/js'
