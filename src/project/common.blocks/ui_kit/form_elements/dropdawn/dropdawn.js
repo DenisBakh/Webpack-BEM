@@ -228,7 +228,6 @@ $(document).ready(function ($) {
 		var div = $(".text-field__wrapper.active"); // тут указываем класс 
 		var input = div.find('.text-field__input_dropDawn')
 		var dd = div.find('.dropdawn-field')
-		console.log(33)
 		if (!div.is(e.target) // если клик был не по нашему блоку
 			&& div.has(e.target).length === 0 // и не по его дочерним элементам
 			&& $('.text-field__input_dropDawn').hasClass('active')) {

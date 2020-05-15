@@ -2,7 +2,7 @@
 include ../project/common.blocks/ui_kit/form_elements/form_elements.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -16,12 +16,12 @@ html(lang="en")
 						.form-elements__item
 							+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
 						.form-elements__item
-							+inputs("text-field", "text", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
+							+inputs("text-field2", "text", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
 						.form-elements__item
 							+inputDropdawn("Dropdown","Сколько гостей","DEFAULT")
 						.form-elements__item
-							+inputs("text-field", "text", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
-						
+							+inputDate("date-field", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
+							
 				.form-elements__row
 
 			

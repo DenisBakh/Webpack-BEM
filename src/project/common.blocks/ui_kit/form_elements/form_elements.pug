@@ -5,6 +5,12 @@ mixin inputs(id, type="text", label, value="", placeholder="Email", descr="")
 			label.text-field__descr= descr
 		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value)
 
+mixin inputDate(id, label, value="", placeholder="", descr="")
+	div.text-field
+		.label
+			label(for= id)= label
+			label.text-field__descr= descr
+		input.text-field__input.text-field__input_date( type=type, name=type, placeholder=placeholder, id= id, value= value)
 
 mixin inputDropdawn(label="Dropdown", value="Сколько гостей", descr="")
 	div.text-field

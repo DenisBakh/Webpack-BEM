@@ -1,5 +1,22 @@
 import * as $ from 'jquery/'
 
+import './project/common.blocks/ui_kit/form_elements/text-field/jquery.maskedinput.min'
+import './project/common.blocks/ui_kit/form_elements/text-field/mask-it'
+
+
+
+
+
+/*
+$(document).ready(function () {
+	//Inputmask().mask(document.querySelectorAll(".text-field__input_date"));
+	//$(".text-field__input_date").inputmask("99/99/9999", { "placeholder": "dd/mm/yyyy" });
+	$(".text-field__input_date").inputmask("99.99.9999", {
+		showMaskOnHover: true
+
+	});
+});
+*/
 
 // JS
 import './assets/js'
