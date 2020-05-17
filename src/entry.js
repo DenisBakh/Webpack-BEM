@@ -22,6 +22,64 @@ $(document).ready(function () {
 import './assets/js'
 import './project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn'
 
+import noUiSlider from './project/common.blocks/ui_kit/form_elements/range-slider/nouislider.min.js'
+import './project/common.blocks/ui_kit/form_elements/range-slider/nouislider.min.css'
+//import './project/common.blocks/ui_kit/form_elements/range-slider/range-slider.js'
+
+
+
+
+
+
+
+window.addEventListener("load", function () {
+	const priceSlider = document.getElementById('r-slider');
+
+	noUiSlider.create(priceSlider, {
+		start: [10, 200], //значения по умолчанию
+		tooltips: true, //подсказки на бегунках
+		connect: true, //закраска полоски между бегунками connect: [true,false] - диапазоны ,е сли ползунок 1
+		padding: 6, //отступ от крайних значений слайдера, за которые нельзя хаодить
+		//step:1, //шаг
+		range: {
+			'min': 0,
+			'max': 200
+		},
+		pips: { //линейка
+			mode: 'values',
+			values: [50, 100, 150],
+			density: 4
+		}
+	});
+
+	console.log(12312);
+
+
+
+	priceSlider.noUiSlider.on('change', (value, handle) => {
+		console.log(priceSlider.noUiSlider.get());
+	});
+
+	const resetButton = document.getElementsByClassName('reset');
+
+	resetButton.onclick = (e) => {
+		priceSlider.noUiSlider.reset();
+	};
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // SCSS
 import './assets/scss/index.scss'
 
