@@ -1,5 +1,3 @@
-import * as $ from 'jquery/'
-
 //Получаем все "select" по селектору
 /*
 window.addEventListener("load", function () {

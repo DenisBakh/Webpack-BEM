@@ -1,7 +1,5 @@
 //=========RANGE-SLIDER noUiSlider. Альтернатива Ion RangeSlider - поудачнее реализовано ==================
 //document.addEventListener("DomcontentLoaded", () => {
-import * as $ from 'jquery/'
-
 import noUiSlider from '../range-slider/noUiSlider.min.js'
 import wNumb from '~/project/common.blocks/_common/js/wNumb.min.js'
 

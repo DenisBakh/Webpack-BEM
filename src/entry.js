@@ -1,9 +1,8 @@
-import * as $ from 'jquery/'
+//Плагин загружен через объявление глоб переменной в WEBPACK new webpack.ProvidePlugin
+//import * as $ from 'jquery/'
 
 import './project/common.blocks/ui_kit/form_elements/text-field/jquery.maskedinput.min'
 import './project/common.blocks/ui_kit/form_elements/text-field/mask-it'
-
-
 
 
 
@@ -28,7 +27,9 @@ import './project/common.blocks/ui_kit/form_elements/range-slider/range-slider.j
 
 
 
-
+import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.min.js'
+import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.scss'
+import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
 
 
 
