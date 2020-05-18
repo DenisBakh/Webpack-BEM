@@ -160,12 +160,13 @@ $(document).ready(function ($) {
 
 
 	//TOGGLE ACTIVE на DROPDAWN
-	$('.text-field__input_dropDawn').on('click', function (e) {
+	$('.text-field__input-icon').on('click', function (e) {
 		e.preventDefault();
 		var $this = $(this);
 		var $dd = $this.closest('.text-field__wrapper');
 		$this.toggleClass("active");
 		$dd.find('.dropdawn-field').toggleClass("active");
+		$dd.find('.text-field__input').toggleClass("active");
 		$dd.toggleClass("active");
 	});
 
@@ -226,14 +227,16 @@ $(document).ready(function ($) {
 	//Скрытие по клику вне DropDAWM
 	$(document).mouseup(function (e) { // событие клика по веб-документу
 		var div = $(".text-field__wrapper.active"); // тут указываем класс 
-		var input = div.find('.text-field__input_dropDawn')
+		var input = div.find('.text-field__input')
+		var icon = div.find('.text-field__input-icon')
 		var dd = div.find('.dropdawn-field')
 		if (!div.is(e.target) // если клик был не по нашему блоку
 			&& div.has(e.target).length === 0 // и не по его дочерним элементам
-			&& $('.text-field__input_dropDawn').hasClass('active')) {
+			&& $('.text-field__input').hasClass('active')) {
 			div.removeClass('active');
 			input.removeClass('active');
 			dd.removeClass('active');
+			icon.removeClass('active');
 		}
 	});
 });

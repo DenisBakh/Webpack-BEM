@@ -86,6 +86,8 @@ select {
 				border-bottom-left-radius: 0;
 				border-color: #8f90a0;
 			}
+		}
+		&-icon {
 			&:after {
 				content: "";
 				@include transition;
@@ -109,6 +111,7 @@ select {
 				width: 8px;
 				height: 2px;
 				background-color: rgb(143, 143, 143);
+				z-index: 1;
 			}
 			&.active {
 				&:before {

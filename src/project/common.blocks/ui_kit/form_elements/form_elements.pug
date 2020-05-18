@@ -18,7 +18,8 @@ mixin inputDropdawnDate-mini(id="date1", label="date Dropdown", value="", placeh
 			label.label__title(for= id)= label
 			label.label__descr= descr
 		.text-field__wrapper
-			input.text-field__input.text-field__input_date.text-field__input_dropDawn( type="text", name=id, placeholder=placeholder, id= id, value= value)
+			.text-field__input-icon
+				input.text-field__input.text-field__input_date.text-field__input_dropDawn( type="text", name=id, placeholder=placeholder, id= id, value= value)
 			.dropdawn-field
 
 mixin rangeSlider(label="Range Slider")
@@ -44,7 +45,8 @@ mixin inputDropdawn(label="Dropdown", value="Сколько гостей", descr
 			label.label__title(for= id)= label
 			label.label__descr= descr
 		.text-field__wrapper
-			.text-field__input.text-field__input_dropDawn=value
+			.text-field__input-icon
+				.text-field__input.text-field__input_dropDawn=value
 			.dropdawn-field
 				.dropdawn-field__row
 					.dropdawn-field__subject взрослые
