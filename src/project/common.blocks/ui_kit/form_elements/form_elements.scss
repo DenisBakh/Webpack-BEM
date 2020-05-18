@@ -29,11 +29,11 @@
 	line-height: 15px;
 	text-transform: uppercase;
 	margin: 0 0 5px 0;
-	:first-child {
+	&__title {
 		font-weight: 700;
 		color: #1f2041;
 	}
-	:last-child {
+	&__descr {
 		color: rgba(31, 32, 65, 0.5);
 		font-weight: 400;
 	}

@@ -1,22 +1,36 @@
 mixin inputs(id, type="text", label, value="", placeholder="Email", descr="")
 	div.text-field
 		.label
-			label(for= id)= label
-			label.text-field__descr= descr
+			label.label__title(for= id)= label
+			label.label__descr= descr
 		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value)
 
 mixin inputDate(id, label, value="", placeholder="", descr="")
 	div.text-field
 		.label
-			label(for= id)= label
-			label.text-field__descr= descr
+			label.label__title(for= id)= label
+			label.label__descr= descr
 		input.text-field__input.text-field__input_date( type=type, name=type, placeholder=placeholder, id= id, value= value)
+
+mixin rangeSlider(label="Range Slider")
+	.range-slider
+		.label.range-slider__label
+			label.label__title=label
+			label.range-slider__price
+				span.range-slider__from
+					span.range-slider__from-upd 3333
+					|	₽
+				i - 
+				span.range-slider__to
+					span.range-slider__to-upd 8888
+					|	₽
+		div.r-slider
 
 mixin inputDropdawn(label="Dropdown", value="Сколько гостей", descr="")
 	div.text-field
 		.label
-			label(for= id)= label
-			label.text-field__descr= descr
+			label.label__title(for= id)= label
+			label.label__descr= descr
 		.text-field__wrapper
 			.text-field__input.text-field__input_dropDawn=value
 			.dropdawn-field
