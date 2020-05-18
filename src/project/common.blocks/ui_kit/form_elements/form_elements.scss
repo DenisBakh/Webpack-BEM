@@ -40,6 +40,7 @@
 }
 
 .text-field__input {
+	@include transition;
 	background: #ffffff;
 	border: 1px solid rgba(31, 32, 65, 0.25);
 	border-radius: 4px;
@@ -65,7 +66,7 @@
 		color: rgba(31, 32, 65, 0.25);
 
 		opacity: 1;
-		transition: opacity 0.3s ease;
+		@include transition;
 	}
 	&::-moz-placeholder {
 		font-family: "Montserrat";
@@ -74,7 +75,7 @@
 		color: rgba(31, 32, 65, 0.25);
 
 		opacity: 1;
-		transition: opacity 0.3s ease;
+		@include transition;
 	}
 	&:-moz-placeholder {
 		font-family: "Montserrat";
@@ -83,7 +84,7 @@
 		color: rgba(31, 32, 65, 0.25);
 
 		opacity: 1;
-		transition: opacity 0.3s ease;
+		@include transition;
 	}
 	&:-ms-input-placeholder {
 		font-family: "Montserrat";
@@ -92,7 +93,7 @@
 		color: rgba(31, 32, 65, 0.25);
 
 		opacity: 1;
-		transition: opacity 0.3s ease;
+		@include transition;
 	}
 	&:focus,
 	&:hover {

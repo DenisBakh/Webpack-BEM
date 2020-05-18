@@ -15,14 +15,14 @@ window.addEventListener("load", function () {
 	for (var i = 0, len = priceSlider.length; i < len; i++) {
 
 		noUiSlider.create(priceSlider[i], {
-			start: [6000, 9000], //значения по умолчанию
+			start: [5000, 10000], //значения по умолчанию
 			tooltips: false, //подсказки на бегунках
 			connect: true, //закраска полоски между бегунками connect: [true,false] - диапазоны ,е сли ползунок 1
 			//padding: 6, //отступ от крайних значений слайдера, за которые нельзя хаодить
 			//step:1, //шаг
 			range: {
-				'min': 5000,
-				'max': 10000
+				'min': 0,
+				'max': 15000
 			},
 			/*
 			pips: { //линейка

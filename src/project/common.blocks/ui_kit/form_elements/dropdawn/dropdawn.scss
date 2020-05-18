@@ -88,8 +88,8 @@ select {
 			}
 			&:after {
 				content: "";
+				@include transition;
 				display: block;
-				transition: all 0.25s ease;
 				position: absolute;
 				right: 17.25px;
 				top: 50%;
@@ -100,8 +100,8 @@ select {
 			}
 			&:before {
 				content: "";
+				@include transition;
 				display: block;
-				transition: all 0.25s ease;
 				position: absolute;
 				right: 12.75px;
 				top: 50%;
@@ -125,7 +125,7 @@ select {
 .dropdawn-field {
 	opacity: 0;
 	visibility: hidden;
-	transition: all 0.25s ease;
+	@include transition;
 	border-bottom: 1px solid #8f90a0;
 	border-right: 1px solid #8f90a0;
 	border-left: 1px solid #8f90a0;
@@ -141,6 +141,7 @@ select {
 	line-height: 15px;
 
 	text-transform: uppercase;
+	z-index: 15;
 	&.active {
 		opacity: 1;
 		visibility: visible;

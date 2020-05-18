@@ -63,7 +63,7 @@
 .noUi-state-tap .noUi-connect,
 .noUi-state-tap .noUi-origin {
 	-webkit-transition: transform 0.3s;
-	transition: transform 0.3s;
+	@include transition;
 }
 .noUi-state-drag * {
 	cursor: inherit !important;
