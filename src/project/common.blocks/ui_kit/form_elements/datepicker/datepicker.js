@@ -34,8 +34,9 @@ $(document).ready(function () {
 		range: true,
 		multipleDatesSeparator: " - ",
 		//multipleDates: true,
-		todayButton: true,
-		inline: true,
+		//todayButton: true,
+		acceptButton: true,
+		//inline: true,
 		clearButton: true,
 		//toggleSelected: false,
 		navTitles: {
@@ -59,7 +60,6 @@ $(document).ready(function () {
 		},
 		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
 			if (animationCompleted) {
-
 				var $wrapper = dtPicker_1.closest('.text-field__wrapper');
 				//dtPicker_1.find('.text-field__input-icon').trigger('click');
 				if ($wrapper.hasClass('active')) {
@@ -70,7 +70,52 @@ $(document).ready(function () {
 			} else {
 			}
 		}
+	});
 
+
+
+	var dtPicker_2 = $('#date3')
+
+	dtPicker_2.datepicker({
+		range: true,
+		multipleDatesSeparator: " - ",
+		//multipleDates: true,
+		//todayButton: true,
+		acceptButton: true,
+		//inline: true,
+		clearButton: true,
+		//toggleSelected: false,
+		navTitles: {
+			days: 'MM <i>yyyy</i>',
+			months: 'yyyy',
+			years: 'yyyy1 - yyyy2'
+		},
+		onSelect: function onSelect(selectedDates) {
+			console.log(selectedDates);
+		},
+		onShow: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (!animationCompleted) {
+				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
+				if (!$wrapper.hasClass('active')) {
+					$wrapper.addClass("active");
+					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.text-field__input').addClass("active");
+				}
+			} else {
+			}
+		},
+		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (animationCompleted) {
+				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
+				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				if ($wrapper.hasClass('active')) {
+					$wrapper.removeClass("active");
+					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.text-field__input').removeClass("active");
+				}
+			} else {
+			}
+		}
 	});
 
 

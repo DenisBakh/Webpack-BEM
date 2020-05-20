@@ -74,10 +74,6 @@ select {
 */
 
 .text-field {
-	&__wrapper {
-		position: relative;
-		z-index: 2;
-	}
 	&__input {
 		&_dropDawn {
 			cursor: pointer;
@@ -165,6 +161,11 @@ select {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 15px;
+			text-transform: uppercase;
 		}
 	}
 	&__subject {

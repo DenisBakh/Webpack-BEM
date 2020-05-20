@@ -14,13 +14,24 @@ mixin inputDate(id="date1", label="date Dropdown", value="", placeholder="ДД.�
 
 mixin inputDropdawnDate-mini(id="date2", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="")
 	div.text-field
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		.text-field__wrapper
-			.text-field__input-icon
-			input.text-field__input.datepick( type="text", name=id, placeholder=placeholder, id= id, value= value)
-
+		.text-field__row
+			.text-field__column
+				.label
+					label.label__title(for= id)= label
+					label.label__descr= descr
+				.text-field__wrapper
+					.text-field__wrapper-column
+						.text-field__input-icon
+						input.text-field__input.datepick( type="text", name="date2", placeholder=placeholder, id= "date2", value= value)
+			.text-field__column
+				.label
+					label.label__title(for= id)= label
+					label.label__descr= descr
+				.text-field__wrapper
+					.text-field__wrapper-column
+						.text-field__input-icon
+						input.text-field__input.datepick( type="text", name="date3", placeholder=placeholder, id= "date3", value= value)
+					
 
 mixin rangeSlider(label="Range Slider")
 	.range-slider
