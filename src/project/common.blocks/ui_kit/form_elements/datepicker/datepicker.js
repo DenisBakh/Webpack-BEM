@@ -35,7 +35,7 @@ $(document).ready(function () {
 		multipleDatesSeparator: " - ",
 		//multipleDates: true,
 		todayButton: true,
-		//inline: true,
+		inline: true,
 		clearButton: true,
 		//toggleSelected: false,
 		onSelect: function onSelect(selectedDates) {

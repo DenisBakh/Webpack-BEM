@@ -83,12 +83,37 @@ $DT-picker__fontColor_main: #8f90a0;
 	//color: #4eb5e6;
 	background: $DT-picker__currentColor;
 	border-radius: 50%;
+	color: #fff;
 }
 .datepicker--cell.-current-.-focus- {
+	color: $DT-picker__fontColor_main;
 	color: #fff;
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: $DT-picker__currentColor;
+		border-radius: 50%;
+		z-index: -3;
+	}
 }
 .datepicker--cell.-current-.-in-range- {
 	color: $DT-picker__fontColor_main;
+	color: #fff;
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: $DT-picker__currentColor;
+		border-radius: 50%;
+		z-index: -3;
+	}
 }
 .datepicker--cell.-in-range- {
 	//background: rgba(92, 196, 239, 0.1);
