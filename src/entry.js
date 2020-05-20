@@ -27,14 +27,9 @@ import './project/common.blocks/ui_kit/form_elements/range-slider/range-slider.j
 
 
 
-import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.min.js'
+//import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.min.js'
 import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.scss'
 import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
-
-
-
-
-
 
 
 

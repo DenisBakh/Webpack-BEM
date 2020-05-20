@@ -76,6 +76,7 @@ select {
 .text-field {
 	&__wrapper {
 		position: relative;
+		z-index: 2;
 	}
 	&__input {
 		&_dropDawn {
@@ -88,6 +89,11 @@ select {
 			}
 		}
 		&-icon {
+			position: absolute;
+			cursor: pointer;
+			height: 100%;
+			width: 40px;
+			right: 0;
 			&:after {
 				content: "";
 				@include transition;
@@ -99,6 +105,7 @@ select {
 				width: 8px;
 				height: 2px;
 				background-color: rgb(143, 143, 143);
+				z-index: 1;
 			}
 			&:before {
 				content: "";

@@ -12,14 +12,14 @@ mixin inputDate(id="date1", label="date Dropdown", value="", placeholder="ДД.�
 			label.label__descr= descr
 		input.text-field__input.text-field__input_date( type="text", name="date", placeholder=placeholder, id= id, value= value)
 
-mixin inputDropdawnDate-mini(id="date1", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="")
+mixin inputDropdawnDate-mini(id="date2", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="")
 	div.text-field
 		.label
 			label.label__title(for= id)= label
 			label.label__descr= descr
 		.text-field__wrapper
 			.text-field__input-icon
-				input.text-field__input.text-field__input_date.text-field__input_dropDawn.datepicker-here( type="text", name=id, placeholder=placeholder, id= id, value= value)
+			input.text-field__input.datepick( type="text", name=id, placeholder=placeholder, id= id, value= value)
 
 
 mixin rangeSlider(label="Range Slider")
@@ -46,7 +46,7 @@ mixin inputDropdawn(label="Dropdown", value="Сколько гостей", descr
 			label.label__descr= descr
 		.text-field__wrapper
 			.text-field__input-icon
-				.text-field__input.text-field__input_dropDawn=value
+			.text-field__input.text-field__input_dropDawn=value
 			.dropdawn-field
 				.dropdawn-field__row
 					.dropdawn-field__subject взрослые
