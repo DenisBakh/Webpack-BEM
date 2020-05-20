@@ -38,6 +38,11 @@ $(document).ready(function () {
 		inline: true,
 		clearButton: true,
 		//toggleSelected: false,
+		navTitles: {
+			days: 'MM <i>yyyy</i>',
+			months: 'yyyy',
+			years: 'yyyy1 - yyyy2'
+		},
 		onSelect: function onSelect(selectedDates) {
 			console.log(selectedDates);
 		},

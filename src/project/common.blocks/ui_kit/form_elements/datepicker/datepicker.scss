@@ -7,6 +7,8 @@ $DT-picker__inRangeColor: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%);
 $DT-picker__currentColor: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 $DT-picker__fontColor_main: #8f90a0;
 
+@import "~/project/common.blocks/_common/vars.scss";
+
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
 	color: #dedede;
@@ -287,11 +289,10 @@ $DT-picker__fontColor_main: #8f90a0;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	margin: 8px 0 3px;
+	margin: 0 0 14px 0;
 }
 
 .datepicker--day-name {
-	color: #ff9a19;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -305,8 +306,10 @@ $DT-picker__fontColor_main: #8f90a0;
 	-ms-flex: 1;
 	flex: 1;
 	text-align: center;
-	text-transform: uppercase;
-	font-size: 0.8em;
+
+	font-weight: 700;
+	font-size: 12px;
+	color: $secondaryFontColor;
 }
 
 .datepicker--cell-day {
@@ -388,16 +391,21 @@ $DT-picker__fontColor_main: #8f90a0;
 
 .datepicker {
 	background: #fff;
-	border: 1px solid #dbdbdb;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	border-radius: 4px;
+	//border: 1px solid #dbdbdb;
+	//box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	//border-radius: 4px;
 	box-sizing: content-box;
-	font-family: Tahoma, sans-serif;
-	font-size: 14px;
-	color: #4a4a4a;
+	font-family: $mainFont;
+	font-size: 12px;
+	color: $DT-picker__fontColor_main;
 	//width: 250px;
 	width: $DT-picker__contWidth;
 	position: absolute;
+	border: 1px solid $border-base;
+	box-shadow: 0px 10px 20px $border-shadow;
+	border-radius: 4px;
+	padding: 22px 10px 10px 10px;
+
 	left: -100000px;
 	opacity: 0;
 	transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
@@ -431,14 +439,27 @@ $DT-picker__fontColor_main: #8f90a0;
 }
 
 .datepicker-inline .datepicker {
-	border-color: #d7d7d7;
-	box-shadow: none;
 	position: static;
 	left: auto;
 	right: auto;
 	opacity: 1;
 	-webkit-transform: none;
 	transform: none;
+
+	background: #fff;
+	//border: 1px solid #dbdbdb;
+	//box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	//border-radius: 4px;
+	box-sizing: content-box;
+	font-family: $mainFont;
+	font-size: 12px;
+	color: $DT-picker__fontColor_main;
+	//width: 250px;
+	width: $DT-picker__contWidth;
+	position: absolute;
+	border: 1px solid $border-base;
+	box-shadow: 0px 10px 20px $border-shadow;
+	border-radius: 4px;
 }
 
 .datepicker-inline .datepicker--pointer {
@@ -570,9 +591,10 @@ $DT-picker__fontColor_main: #8f90a0;
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	border-bottom: 1px solid #efefef;
-	min-height: 32px;
-	padding: 4px;
+	//border-bottom: 1px solid #efefef;
+	//min-height: 32px;
+	padding: 0 5px;
+	margin: 0 0 37px 0;
 }
 .-only-timepicker- .datepicker--nav {
 	display: none;
@@ -607,22 +629,31 @@ $DT-picker__fontColor_main: #8f90a0;
 	visibility: hidden;
 }
 .datepicker--nav-action svg {
-	width: 32px;
-	height: 32px;
+	width: 17px;
+	height: 18px;
 }
 .datepicker--nav-action path {
+	/*
 	fill: none;
 	stroke: #9c9c9c;
 	stroke-width: 2px;
+	*/
 }
 
+.datepicker--nav-title,
+.datepicker--nav-title i {
+	font-weight: 700;
+	font-size: 19px;
+	color: #1f2041;
+}
 .datepicker--nav-title {
 	border-radius: 4px;
 	padding: 0 8px;
 }
 .datepicker--nav-title i {
+	font-family: "Quicksand";
 	font-style: normal;
-	color: #9c9c9c;
+	//color: #9c9c9c;
 	margin-left: 5px;
 }
 .datepicker--nav-title:hover {
@@ -638,7 +669,7 @@ $DT-picker__fontColor_main: #8f90a0;
 	display: -ms-flexbox;
 	display: flex;
 	padding: 4px;
-	border-top: 1px solid #efefef;
+	//border-top: 1px solid #efefef;
 }
 
 .datepicker--button {

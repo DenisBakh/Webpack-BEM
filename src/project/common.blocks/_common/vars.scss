@@ -4,7 +4,8 @@ $mainFont: "Montserrat", Helvetica, Arial, sans-serif;
 // Size
 $minwidth: 320px;
 
-$mainFontColor: #101010;
+$mainFontColor: #8f90a0;
+$secondaryFontColor: #bc9cff;
 $mainFontSize: 14px;
 $mainFontWeight: 400;
 $mainLineHeight: 1;
@@ -31,7 +32,7 @@ $neutral-secondary: #909399;
 $neutral-placeholder: #c0c4cc;
 
 // Border Color
-$border-base: #dcdfe6;
-$border-light: #e4e7ed;
-$border-lighter: #ebeef5;
+$border-base: #c7c7cf;
+$border-active: #8f90a0;
+$border-shadow: rgba(31, 32, 65, 0.05);
 $border-lightex: #f2f6fc;

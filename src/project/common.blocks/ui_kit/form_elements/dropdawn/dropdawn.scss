@@ -161,6 +161,11 @@ select {
 		align-items: center;
 		justify-content: space-between;
 		margin: 0 0 15px 0;
+		&_buttons {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
 	}
 	&__subject {
 		color: #1f2041;
