@@ -18,11 +18,17 @@ html(lang="ru")
 						.form-elements__item
 							+inputs("text-field2", "text", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
 						.form-elements__item
-							+inputDropdawn("Dropdown","Сколько гостей","DEFAULT")
+							+inputDropdawnGuests("Dropdown","Сколько гостей","DEFAULT")
 						.form-elements__item
 							+inputDate("date-field", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
 						.form-elements__item
 							+rangeSlider()
 						.form-elements__item
-							+inputDropdawnDate-mini("date2", "date Dropdown", "", "ДД.ММ.ГГГГ", "")
+							+inputDropdawnDate-mini("date2","date3","date Dropdown", "date Dropdown", "ДД.ММ.ГГГГ")
+						.form-elements__item
+							+inputDropdawnDate-maxi("date4","filter date dropdown")
+						.form-elements__item
+							+subscribe("email_sub","Email","subscription text field")
+						.form-elements__item
+							+inputDropdawnEquip("Dropdown","Параметры номера","DEFAULT")
 				.form-elements__row

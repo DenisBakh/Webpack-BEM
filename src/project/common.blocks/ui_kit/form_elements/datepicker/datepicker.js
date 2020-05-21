@@ -31,7 +31,7 @@ $(document).ready(function () {
 	//var dtPicker_2 = $('#date3')
 
 	dtPicker_1.datepicker({
-		range: true,
+		//range: true,
 		multipleDatesSeparator: " - ",
 		//multipleDates: true,
 		//todayButton: true,
@@ -77,7 +77,7 @@ $(document).ready(function () {
 	var dtPicker_2 = $('#date3')
 
 	dtPicker_2.datepicker({
-		range: true,
+		//range: true,
 		multipleDatesSeparator: " - ",
 		//multipleDates: true,
 		//todayButton: true,
@@ -118,7 +118,99 @@ $(document).ready(function () {
 		}
 	});
 
+	dtPicker_2.datepicker({
+		//range: true,
+		multipleDatesSeparator: " - ",
+		//multipleDates: true,
+		//todayButton: true,
+		acceptButton: true,
+		//inline: true,
+		clearButton: true,
+		//toggleSelected: false,
+		navTitles: {
+			days: 'MM <i>yyyy</i>',
+			months: 'yyyy',
+			years: 'yyyy1 - yyyy2'
+		},
+		onSelect: function onSelect(selectedDates) {
+			console.log(selectedDates);
+		},
+		onShow: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (!animationCompleted) {
+				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
+				if (!$wrapper.hasClass('active')) {
+					$wrapper.addClass("active");
+					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.text-field__input').addClass("active");
+				}
+			} else {
+			}
+		},
+		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (animationCompleted) {
+				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
+				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				if ($wrapper.hasClass('active')) {
+					$wrapper.removeClass("active");
+					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.text-field__input').removeClass("active");
+				}
+			} else {
+			}
+		}
+	});
 
+	var dtPicker_3 = $('#date4')
+
+
+	dtPicker_3.datepicker({
+		range: true,
+		multipleDatesSeparator: " - ",
+		dateFormat: "dd M",
+		//multipleDates: true,
+		//todayButton: true,
+		acceptButton: true,
+		//inline: true,
+		clearButton: true,
+		//toggleSelected: false,
+		navTitles: {
+			days: 'MM <i>yyyy</i>',
+			months: 'yyyy',
+			years: 'yyyy1 - yyyy2'
+		},
+		onSelect: function onSelect(selectedDates) {
+			console.log(selectedDates);
+		},
+		onShow: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (!animationCompleted) {
+
+				//	$picker.data('datepicker').selectDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 10))
+
+				var $wrapper = dtPicker_3.closest('.text-field__wrapper');
+				//var selectedDate = $wrapper.find('.text-field__input').val();
+				//dtPicker_3.data('datepicker').selectDate(selectedDate)
+				//console.log(selectedDate)
+				if (!$wrapper.hasClass('active')) {
+					$wrapper.addClass("active");
+					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.text-field__input').addClass("active");
+				}
+			} else {
+			}
+		},
+		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
+			if (animationCompleted) {
+				var $wrapper = dtPicker_3.closest('.text-field__wrapper');
+				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				if ($wrapper.hasClass('active')) {
+					$wrapper.removeClass("active");
+					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.text-field__input').removeClass("active");
+				}
+			} else {
+			}
+		}
+	});
 
 	// Сразу выберем какую-ниудь дату из `eventDates`
 	//	var currentDate = currentDate = new Date();

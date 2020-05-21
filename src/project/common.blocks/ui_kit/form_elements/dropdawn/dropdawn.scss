@@ -156,7 +156,10 @@ select {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin: 0 0 15px 0;
+		margin: 0 0 5px 0;
+		&:last-child {
+			margin: 0 0 20px 0;
+		}
 		&_buttons {
 			display: flex;
 			align-items: center;
@@ -189,7 +192,7 @@ select {
 	display: flex;
 	align-items: center;
 	&__cnt {
-		margin: 0 15px;
+		margin: 0 5px;
 		width: 20px;
 		text-align: center;
 	}
@@ -203,7 +206,9 @@ select {
 		align-items: center;
 		cursor: pointer;
 		opacity: 0.25;
+		pointer-events: none;
 		&_active {
+			pointer-events: auto;
 			opacity: 1;
 		}
 		&:after {

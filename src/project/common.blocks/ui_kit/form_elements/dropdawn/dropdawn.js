@@ -1,140 +1,28 @@
-//Получаем все "select" по селектору
-/*
-window.addEventListener("load", function () {
-
-	const selects = document.querySelectorAll('.select')
-	//переборка по полученным "select"
-	for (let i = 0; i < selects.length; i++) {
-		const select = selects[i]
-		//получаем все "option" внутри "select"
-		const options = select.querySelectorAll('option')
-
-		//создаем кастомный "select"
-		const customSelect = document.createElement('div')
-		const customSelectList = document.createElement('div')
-		const customSelectCurrent = document.createElement('button')
-
-		select.setAttribute('tabindex', '-1')
-		//задем классы и атрибуты кастомному "select"
-		customSelect.className = 'custom-select'
-		customSelectList.className = 'custom-select__list'
-		customSelectCurrent.className = 'custom-select__current'
-
-		//по умолчанию у button будет type="submit", поэтому меням на type="button" чтобы избежать отправку формы при клие на кастомный "select"
-		customSelectCurrent.setAttribute('type', 'button')
-
-		//создаем вложенность созданных элементов
-		customSelect.append(customSelectCurrent, customSelectList)
-
-		//добавляем кастоный "select" сразу после оргинального "select"
-		select.after(customSelect)
-
-		//получаем список и значения "option" из "select", затем создаём кастомный "option" для кастоного "select"
-		const createCustomDom = function (x, y) {
-			let selectItems = ''
-			// for(option of options){
-			// 	selectItems += `<button type="button" class="custom-select__item" data-value="${option.value}">${option.text}</button>`
-			// }
-			for (var i = 0; i < options.length; i++) {
-				selectItems += '<button type="button" class="custom-select__item" data-value="' + options[i].value + '">' + options[i].text + '</button>'
-			}
-			customSelectList.innerHTML = selectItems
-			x(), y();
-		}
-
-		//открываем-закрываем выпадающий список по клику
-		const toggleClass = () => { customSelect.classList.toggle('custom-select--show') }
-
-		//присваиваем текстовое первое значение "option" в кастомном "select"
-		const currentTextValue = () => customSelectCurrent.textContent = customSelectList.children[0].textContent
-
-		//получаем и задаем значения text/value
-		const currentValue = () => {
-			const items = customSelectList.children
-			for (var el = 0; el < items.length; el++) {
-				let selectValue = items[el].getAttribute('data-value')
-				let selectText = items[el].textContent
-				items[el].addEventListener('click', () => {
-					customSelect.classList.remove('custom-select--show')
-					customSelectCurrent.textContent = selectText
-					select.value = selectValue
-				})
-			}
-		}
-
-		const desctopFn = () => {
-			customSelectCurrent.addEventListener('click', toggleClass)
-		}
-
-		const mobileFn = () => {
-			for (let j = 0; j < selects.length; j++) {
-				let mobileSelect = selects[j]
-				mobileSelect.addEventListener('change', () => {
-					mobileSelect.nextElementSibling.querySelector('.custom-select__current').textContent = mobileSelect.value
-				})
-			}
-		}
-
-		createCustomDom(currentTextValue, currentValue)
-
-
-		//закрываем выпадающий список по клику вне области кастомного селекта
-		document.addEventListener('mouseup', (e) => {
-			if (!customSelect.contains(e.target)) customSelect.classList.remove('custom-select--show')
-		})
-
-		detectmob(mobileFn, desctopFn)
-
-		function detectmob(x, y) {
-			if (navigator.userAgent.match(/Android/i)
-				|| navigator.userAgent.match(/webOS/i)
-				|| navigator.userAgent.match(/iPhone/i)
-				|| navigator.userAgent.match(/iPad/i)
-				|| navigator.userAgent.match(/iPod/i)
-				|| navigator.userAgent.match(/BlackBerry/i)
-				|| navigator.userAgent.match(/Windows Phone/i)
-			) {
-				x();
-			}
-			else {
-				y();
-			}
-		}
-	}
-
-});*/
-
 $(document).ready(function ($) {
 	// FOR QUANTITY
 	$('.counter__minus').on('click', function (e) {
-
 		e.preventDefault();
 		var $this = $(this);
+		var $minus = $this
+		var $plus = $this.closest('.counter').find('.counter__plus')
 		var $input = $this.closest('.counter').find('.counter__cnt');
-
 		var value = parseInt($input.val());
-		console.log(value);
 		if (value > 0) {
 			value = value - 1;
 		} else {
 			value = 0;
 		}
-
-		if ((!$this.closest('.counter').find('.counter__plus').hasClass("counter__btn_active")) && (value < 100)) {
-			$this.closest('.counter').find('.counter__plus').addClass("counter__btn_active")
-		}
-
-		if (($this.hasClass("counter__btn_active")) && (value === 0)) {
-			$this.removeClass("counter__btn_active")
-		}
-
-
 		$input.val(value);
+		PlusMinusBtn($input)
+		rules($input)
+		DropDownOnChange($input)
 	});
 
 	$('.counter__plus').on('click', function (e) {
 		e.preventDefault();
 		var $this = $(this);
+		var $plus = $this
+		var $minus = $this.closest('.counter').find('.counter__minus')
 		var $input = $this.closest('.counter').find('.counter__cnt');
 		var value = parseInt($input.val());
 		if (value < 100) {
@@ -142,19 +30,115 @@ $(document).ready(function ($) {
 		} else {
 			value = 100;
 		}
-
-		if ((!$this.closest('.counter').find('.counter__minus').hasClass("counter__btn_active")) && (value > 0)) {
-			$this.closest('.counter').find('.counter__minus').addClass("counter__btn_active")
-		}
-
-
-		if (($this.hasClass("counter__btn_active")) && (value === 100)) {
-			$this.removeClass("counter__btn_active")
-		}
-
-
 		$input.val(value);
+		PlusMinusBtn($input)
+		rules($input)
+		DropDownOnChange($input)
 	});
+
+	function rules($input) {
+		if ($input.is('#bedrooms') || $input.is('#beds')) {
+			var $wrapper = $input.closest('.text-field__wrapper')
+			var $bedrooms = $wrapper.find('#bedrooms')
+			var $beds = $wrapper.find('#beds')
+
+			var $counter = $beds.closest('.counter')
+			var $minus = $counter.find('.counter__minus')
+
+			if (parseInt($beds.val()) <= parseInt($bedrooms.val())) {
+				$beds.val($bedrooms.val())
+				$minus.removeClass("counter__btn_active")
+			} else {
+				$minus.addClass("counter__btn_active")
+			}
+			//PlusMinusBtn($beds)
+		}
+		if ($input.is('#children') || $input.is('#babies') || $input.is('#adults')) {
+			var $wrapper = $input.closest('.text-field__wrapper')
+			var $adults = $wrapper.find('#adults')
+			var $children = $wrapper.find('#children')
+			var $babies = $wrapper.find('#babies')
+
+			var $counter = $adults.closest('.counter')
+			var $minus = $counter.find('.counter__minus')
+
+			if (((parseInt($children.val()) > 0) || (parseInt($babies.val()) > 0)) && (parseInt($adults.val()) <= 1)) {
+				$adults.val('1')
+				$minus.removeClass("counter__btn_active")
+			}
+			if (((parseInt($children.val()) === 0) && (parseInt($babies.val()) === 0)) && (parseInt($adults.val()) === 1)) {
+				$minus.addClass("counter__btn_active")
+			}
+			//PlusMinusBtn($beds)
+		}
+	};
+
+	function PlusMinusBtn($input) {
+		var $counter = $input.closest('.counter')
+		var $cntVal = parseInt($counter.find('.counter__cnt').val())
+
+		var $minus = $counter.find('.counter__minus')
+		var $plus = $counter.find('.counter__plus')
+
+		if ((!$minus.hasClass("counter__btn_active")) && ($cntVal > 0)) {
+			$minus.addClass("counter__btn_active")
+		}
+		if (($minus.hasClass("counter__btn_active")) && ($cntVal === 0)) {
+			$minus.removeClass("counter__btn_active")
+		}
+
+		if ((!$plus.hasClass("counter__btn_active")) && ($cntVal < 100)) {
+			$plus.addClass("counter__btn_active")
+		}
+		if (($plus.hasClass("counter__btn_active")) && ($cntVal === 100)) {
+			$plus.removeClass("counter__btn_active")
+		}
+	};
+
+	function DropDownOnChange($input) {
+		var $this = $input;
+		var $wrapper = $this.closest('.text-field__wrapper');
+		var $textfield = $wrapper.find('.text-field__input');
+
+		//console.log($this.closest('.dropdawn-field'))
+
+		if ($this.closest('.dropdawn-field').hasClass('dropdawn-field_count-apart')) {
+			var $counters = $wrapper.find('.counter__cnt')
+			var $result = ''
+			var $phrase = []
+
+			$.each($counters, function (i) {
+				var $equipmentCnt = $counters[i].value;
+				if (!($equipmentCnt === '0')) {
+					var declensions = $counters[i].getAttribute('data-declensions').split(',')
+					var $equipmentPhrase = $equipmentCnt + ' ' + declension($equipmentCnt, declensions)
+					$phrase.push($equipmentPhrase)
+				}
+			});
+
+			$.each($phrase, function (i) {
+				$result = $result + $phrase[i] + ', '
+			});
+			$result = $result.substring(0, $result.length - 2)
+			$textfield.text($result);
+
+		} else {
+			var $counters = $wrapper.find('.counter__cnt')
+			var $cnt = 0;
+			$.each($counters, function (i, value) {
+				$cnt = $cnt + parseInt($counters[i].value);
+				//console.log('Индекс: ' + index + '; Значение: ' + parseInt($(this).val()));
+			});
+			if ($cnt > 0) {
+				var declensions = $counters[0].getAttribute('data-declensions').split(',')
+				$textfield.text($cnt + ' ' + declension($cnt, declensions));
+			} else {
+				$textfield.text('Сколько гостей');
+			}
+		}
+	};
+
+
 
 
 	$('.dropdawn-field__clear').on('click', function (e) {
@@ -171,49 +155,77 @@ $(document).ready(function ($) {
 
 		$textfield.text('Сколько гостей')
 	});
+
+
+
+
 	$('.dropdawn-field__accept').on('click', function (e) {
 		e.preventDefault();
 		var $this = $(this);
-		var $input = $this.closest('.text-field__wrapper').find('.counter__cnt');
-		console.log($input)
-		var $textfield = $this.closest('.text-field__wrapper').find('.text-field__input');
+		var $wrapper = $this.closest('.text-field__wrapper');
+		var $textfield = $wrapper.find('.text-field__input');
 
-		var $cnt = 0;
-		$.each($input, function (index, value) {
-			$cnt = $cnt + parseInt($(this).val());
-			//console.log('Индекс: ' + index + '; Значение: ' + parseInt($(this).val()));
-		});
+		DropDawnClose($wrapper)
+		/*
+		if ($this.closest('.dropdawn-field').hasClass('dropdawn-field_count-apart')) {
+			var $counters = $wrapper.find('.counter__cnt')
+			var $result = ''
+			var $phrase = []
 
-		if ($cnt > 0) {
-			function declension(num, expressions) {
-				var result;
-				var count = num % 100;
-				if (count >= 5 && count <= 20) {
-					result = expressions['2'];
-				} else {
-					count = count % 10;
-					if (count == 1) {
-						result = expressions['0'];
-					} else if (count >= 2 && count <= 4) {
-						result = expressions['1'];
-					} else {
-						result = expressions['2'];
-					}
+			$.each($counters, function (i) {
+				var $equipmentCnt = $counters[i].value;
+				if (!($equipmentCnt === '0')) {
+					var declensions = $counters[i].getAttribute('data-declensions').split(',')
+					var $equipmentPhrase = $equipmentCnt + ' ' + declension($equipmentCnt, declensions)
+					$phrase.push($equipmentPhrase)
 				}
-				return result;
-			};
-			$textfield.text($cnt + ' ' + declension($cnt, ['гость', 'гостя', 'гостей']));
-		} else {
-			$textfield.text('Сколько гостей');
-		}
+			});
 
+			$.each($phrase, function (i) {
+				$result = $result + $phrase[i] + ', '
+			});
+			$result = $result.substring(0, $result.length - 2)
+			$textfield.text($result);
+
+		} else {
+			var $input = $this.closest('.text-field__wrapper').find('.counter__cnt')
+			var $cnt = 0;
+			$.each($input, function (index, value) {
+				$cnt = $cnt + parseInt($(this).val());
+				//console.log('Индекс: ' + index + '; Значение: ' + parseInt($(this).val()));
+			});
+			if ($cnt > 0) {
+				$textfield.text($cnt + ' ' + declension($cnt, ['гость', 'гостя', 'гостей']));
+			} else {
+				$textfield.text('Сколько гостей');
+			}
+		}
+		*/
 	});
 
+	function declension(num, expressions) {
+		var result;
+		var count = parseInt(num) % 100;
+		if (count >= 5 && count <= 20) {
+			result = expressions['2'];
+		} else {
+			count = count % 10;
+			if (count == 1) {
+				result = expressions['0'];
+			} else if (count >= 2 && count <= 4) {
+				result = expressions['1'];
+			} else {
+				result = expressions['2'];
+			}
+		}
+		return result;
+	};
+
 	/* .text-field__input-icon отвечает за стрелку. Функционал стрелки пришлось разделить 
-в зависимости от типа элемента ввода (простой дропдаун или дата пикер).
-Опредеделяюшим классом для различного поведения стрелок является .datepick
-При наличии его стрелки работают совместно с календарем, завязываются на его появлении и наоборот
-*/
+	в зависимости от типа элемента ввода (простой дропдаун или дата пикер).
+	Опредеделяюшим классом для различного поведения стрелок является .datepick
+	При наличии его стрелки работают совместно с календарем, завязываются на его появлении и наоборот
+	*/
 	//TOGGLE ACTIVE на DROPDAWN
 	$('.text-field__wrapper').on('click', function (e) {
 		var isDatePick = $(this).children(".datepick").length > 0
@@ -234,24 +246,28 @@ $(document).ready(function ($) {
 
 	//Скрытие по клику вне DropDAWM
 	$(document).mouseup(function (e) { // событие клика по веб-документу
-
-		var div = $(".text-field__wrapper.active"); // тут указываем класс 
-		var isDatePick = div.children(".datepick").length > 0
+		var $wrapper = $(".text-field__wrapper.active"); // тут указываем класс 
+		var isDatePick = $wrapper.children(".datepick").length > 0
 		if (!isDatePick) {
-			var input = div.find('.text-field__input')
-			var icon = div.find('.text-field__input-icon')
-			var dd = div.find('.dropdawn-field')
-			if (!div.is(e.target) // если клик был не по нашему блоку
-				&& div.has(e.target).length === 0 // и не по его дочерним элементам
-				&& $('.text-field__input').hasClass('active')) {
-				div.removeClass('active');
-				input.removeClass('active');
-				dd.removeClass('active');
-				icon.removeClass('active');
+			if (!$wrapper.is(e.target) // если клик был не по нашему блоку
+				&& $wrapper.has(e.target).length === 0) { // и не по его дочерним элементам
+				DropDawnClose($wrapper)
 			}
 		}
 	});
+
+	function DropDawnClose($wrapper) {
+		var $input = $wrapper.find('.text-field__input')
+		var $icon = $wrapper.find('.text-field__input-icon')
+		var $dd = $wrapper.find('.dropdawn-field')
+
+		$wrapper.removeClass('active');
+		$input.removeClass('active');
+		$dd.removeClass('active');
+		$icon.removeClass('active');
+	}
 });
+
 
 
 
