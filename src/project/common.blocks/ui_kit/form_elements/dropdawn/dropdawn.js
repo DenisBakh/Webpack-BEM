@@ -221,7 +221,7 @@ $(document).ready(function ($) {
 		return result;
 	};
 
-	/* .text-field__input-icon отвечает за стрелку. Функционал стрелки пришлось разделить 
+	/* .dropdawn-icon отвечает за стрелку. Функционал стрелки пришлось разделить 
 	в зависимости от типа элемента ввода (простой дропдаун или дата пикер).
 	Опредеделяюшим классом для различного поведения стрелок является .datepick
 	При наличии его стрелки работают совместно с календарем, завязываются на его появлении и наоборот
@@ -238,7 +238,7 @@ $(document).ready(function ($) {
 				//var $dd = $this.closest('.text-field__wrapper');
 				$wrapper.toggleClass("active");
 				$wrapper.find('.dropdawn-field').toggleClass("active");
-				$wrapper.find('.text-field__input-icon').toggleClass("active");
+				$wrapper.find('.dropdawn-icon').toggleClass("active");
 				$wrapper.find('.text-field__input').toggleClass("active");
 			}
 		}
@@ -258,7 +258,7 @@ $(document).ready(function ($) {
 
 	function DropDawnClose($wrapper) {
 		var $input = $wrapper.find('.text-field__input')
-		var $icon = $wrapper.find('.text-field__input-icon')
+		var $icon = $wrapper.find('.dropdawn-icon')
 		var $dd = $wrapper.find('.dropdawn-field')
 
 		$wrapper.removeClass('active');

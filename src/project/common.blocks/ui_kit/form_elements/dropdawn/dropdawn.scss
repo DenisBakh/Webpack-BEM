@@ -84,47 +84,6 @@ select {
 				border-color: #8f90a0;
 			}
 		}
-		&-icon {
-			position: absolute;
-			cursor: pointer;
-			height: 100%;
-			width: 40px;
-			right: 0;
-			&:after {
-				content: "";
-				@include transition;
-				display: block;
-				position: absolute;
-				right: 17.25px;
-				top: 50%;
-				transform: translateY(-50%) rotate(45deg);
-				width: 8px;
-				height: 2px;
-				background-color: rgb(143, 143, 143);
-				z-index: 1;
-			}
-			&:before {
-				content: "";
-				@include transition;
-				display: block;
-				position: absolute;
-				right: 12.75px;
-				top: 50%;
-				transform: translateY(-50%) rotate(-45deg);
-				width: 8px;
-				height: 2px;
-				background-color: rgb(143, 143, 143);
-				z-index: 1;
-			}
-			&.active {
-				&:before {
-					transform: translate(-4.5px, -50%) rotate(-45deg);
-				}
-				&:after {
-					transform: translate(4.5px, -50%) rotate(45deg);
-				}
-			}
-		}
 	}
 }
 
@@ -185,6 +144,48 @@ select {
 	&__accept {
 		color: #bc9cff;
 		cursor: pointer;
+	}
+}
+
+.dropdawn-icon {
+	position: absolute;
+	cursor: pointer;
+	height: 100%;
+	width: 40px;
+	right: 0;
+	&:after {
+		content: "";
+		@include transition;
+		display: block;
+		position: absolute;
+		right: 17.25px;
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		width: 8px;
+		height: 2px;
+		background-color: rgb(143, 143, 143);
+		z-index: 1;
+	}
+	&:before {
+		content: "";
+		@include transition;
+		display: block;
+		position: absolute;
+		right: 12.75px;
+		top: 50%;
+		transform: translateY(-50%) rotate(-45deg);
+		width: 8px;
+		height: 2px;
+		background-color: rgb(143, 143, 143);
+		z-index: 1;
+	}
+	&.active {
+		&:before {
+			transform: translate(-4.5px, -50%) rotate(-45deg);
+		}
+		&:after {
+			transform: translate(4.5px, -50%) rotate(45deg);
+		}
 	}
 }
 

@@ -10,8 +10,8 @@ mixin subscribe(id="email_sub", placeholder="Email", label="subscription text fi
 		.label
 			label.label__title(for= id)= label
 			label.label__descr= descr
-		.text-field__wrapper
-			.text-field__input-icon_subscribe
+		.text-field__wrapper.text-field__input-icon
+			.text-field__icon-subscribe
 				<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/></svg>
 			input.text-field__input(type="email", name=type, placeholder=placeholder, id= id, value= value)
 
@@ -30,14 +30,14 @@ mixin inputDropdawnDate-mini(id1="date2",id2="date3", label1="date Dropdown",lab
 					label.label__title(for= id1)= label1
 					label.label__descr= descr1
 				.text-field__wrapper
-						.text-field__input-icon
+						.dropdawn-icon
 						input.text-field__input.datepick( type="text", name=id1, placeholder=placeholder, id= id1, value= value1)
 			.text-field__column
 				.label
 					label.label__title(for= id2)= label2
 					label.label__descr= descr2
 				.text-field__wrapper
-						.text-field__input-icon
+						.dropdawn-icon
 						input.text-field__input.datepick( type="text", name=id2, placeholder=placeholder, id= id2, value= value2)
 
 mixin inputDropdawnDate-maxi(id="date4", label="filter date dropdown", placeholder="ДД.ММ.ГГГГ",value="", descr="")
@@ -46,7 +46,7 @@ mixin inputDropdawnDate-maxi(id="date4", label="filter date dropdown", placehold
 			label.label__title(for= id)= label
 			label.label__descr= descr
 		.text-field__wrapper
-				.text-field__input-icon
+				.dropdawn-icon
 				input.text-field__input.datepick( type="text", name=id, placeholder=placeholder, id= id, value= value)
 
 
@@ -73,7 +73,7 @@ mixin inputDropdawnGuests(label="Dropdown", value="Сколько гостей",
 			.label__title= label
 			.label__descr= descr
 		.text-field__wrapper
-			.text-field__input-icon
+			.dropdawn-icon
 			.text-field__input.text-field__input_dropDawn=value
 			.dropdawn-field
 				.dropdawn-field__container
@@ -108,7 +108,7 @@ mixin inputDropdawnEquip(label="Dropdown", value="Параметры номер�
 			.label__title= label
 			.label__descr= descr
 		.text-field__wrapper
-			.text-field__input-icon
+			.dropdawn-icon
 			.text-field__input.text-field__input_dropDawn=value
 			.dropdawn-field.dropdawn-field_count-apart
 				.dropdawn-field__container

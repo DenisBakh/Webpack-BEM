@@ -1,14 +1,14 @@
 import '../datepicker/datepicker.min.js'
 $(document).ready(function () {
 
-	/* .text-field__input-icon отвечает за стрелку. Функционал стрелки пришлось разделить 
+	/* .dropdawn-icon отвечает за стрелку. Функционал стрелки пришлось разделить 
 	в зависимости от типа элемента ввода (простой дропдаун или дата пикер).
 	Опредеделяюшим классом для различного поведения стрелок является .datepick
 	При наличии его стрелки работают совместно с календарем, завязываются на его появлении и наоборот
 	*/
 
 
-	$('.text-field__input-icon').on('click', function (e) {
+	$('.dropdawn-icon').on('click', function (e) {
 		var $this = $(this);
 		//console.log($this);
 		var $wrapper = $this.closest('.text-field__wrapper');
@@ -21,7 +21,7 @@ $(document).ready(function () {
 				$input.focus()
 			} else {
 				$wrapper.removeClass("active");
-				$wrapper.find('.text-field__input-icon').removeClass("active");
+				$wrapper.find('.dropdawn-icon').removeClass("active");
 				$wrapper.find('.text-field__input').removeClass("active");
 			}
 		};
@@ -52,7 +52,7 @@ $(document).ready(function () {
 				var $wrapper = dtPicker_1.closest('.text-field__wrapper');
 				if (!$wrapper.hasClass('active')) {
 					$wrapper.addClass("active");
-					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.dropdawn-icon').addClass("active");
 					$wrapper.find('.text-field__input').addClass("active");
 				}
 			} else {
@@ -61,10 +61,10 @@ $(document).ready(function () {
 		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
 			if (animationCompleted) {
 				var $wrapper = dtPicker_1.closest('.text-field__wrapper');
-				//dtPicker_1.find('.text-field__input-icon').trigger('click');
+				//dtPicker_1.find('.dropdawn-icon').trigger('click');
 				if ($wrapper.hasClass('active')) {
 					$wrapper.removeClass("active");
-					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.dropdawn-icon').removeClass("active");
 					$wrapper.find('.text-field__input').removeClass("active");
 				}
 			} else {
@@ -98,7 +98,7 @@ $(document).ready(function () {
 				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
 				if (!$wrapper.hasClass('active')) {
 					$wrapper.addClass("active");
-					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.dropdawn-icon').addClass("active");
 					$wrapper.find('.text-field__input').addClass("active");
 				}
 			} else {
@@ -107,10 +107,10 @@ $(document).ready(function () {
 		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
 			if (animationCompleted) {
 				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
-				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				//dtPicker_2.find('.dropdawn-icon').trigger('click');
 				if ($wrapper.hasClass('active')) {
 					$wrapper.removeClass("active");
-					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.dropdawn-icon').removeClass("active");
 					$wrapper.find('.text-field__input').removeClass("active");
 				}
 			} else {
@@ -140,7 +140,7 @@ $(document).ready(function () {
 				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
 				if (!$wrapper.hasClass('active')) {
 					$wrapper.addClass("active");
-					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.dropdawn-icon').addClass("active");
 					$wrapper.find('.text-field__input').addClass("active");
 				}
 			} else {
@@ -149,10 +149,10 @@ $(document).ready(function () {
 		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
 			if (animationCompleted) {
 				var $wrapper = dtPicker_2.closest('.text-field__wrapper');
-				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				//dtPicker_2.find('.dropdawn-icon').trigger('click');
 				if ($wrapper.hasClass('active')) {
 					$wrapper.removeClass("active");
-					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.dropdawn-icon').removeClass("active");
 					$wrapper.find('.text-field__input').removeClass("active");
 				}
 			} else {
@@ -192,7 +192,7 @@ $(document).ready(function () {
 				//console.log(selectedDate)
 				if (!$wrapper.hasClass('active')) {
 					$wrapper.addClass("active");
-					$wrapper.find('.text-field__input-icon').addClass("active");
+					$wrapper.find('.dropdawn-icon').addClass("active");
 					$wrapper.find('.text-field__input').addClass("active");
 				}
 			} else {
@@ -201,10 +201,10 @@ $(document).ready(function () {
 		onHide: function (dp, animationCompleted) { //TOGGLE ACTIVE на DROPDAWN
 			if (animationCompleted) {
 				var $wrapper = dtPicker_3.closest('.text-field__wrapper');
-				//dtPicker_2.find('.text-field__input-icon').trigger('click');
+				//dtPicker_2.find('.dropdawn-icon').trigger('click');
 				if ($wrapper.hasClass('active')) {
 					$wrapper.removeClass("active");
-					$wrapper.find('.text-field__input-icon').removeClass("active");
+					$wrapper.find('.dropdawn-icon').removeClass("active");
 					$wrapper.find('.text-field__input').removeClass("active");
 				}
 			} else {

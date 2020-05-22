@@ -55,6 +55,24 @@
 		position: relative;
 		z-index: 2;
 	}
+	&__icon-subscribe {
+		position: absolute;
+		cursor: pointer;
+		height: 100%;
+		width: 40px;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&.active {
+			&:before {
+				transform: translate(-4.5px, -50%) rotate(-45deg);
+			}
+			&:after {
+				transform: translate(4.5px, -50%) rotate(45deg);
+			}
+		}
+	}
 	&__input {
 		white-space: nowrap; /* Отменяем перенос текста */
 		overflow: hidden; /* Обрезаем содержимое */
@@ -72,25 +90,6 @@
 		font-size: 14px;
 		line-height: 16px;
 		color: rgba(31, 32, 65, 0.75);
-
-		&-icon_subscribe {
-			position: absolute;
-			cursor: pointer;
-			height: 100%;
-			width: 40px;
-			right: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			&.active {
-				&:before {
-					transform: translate(-4.5px, -50%) rotate(-45deg);
-				}
-				&:after {
-					transform: translate(4.5px, -50%) rotate(45deg);
-				}
-			}
-		}
 
 		/*
 		&[placeholder] {
