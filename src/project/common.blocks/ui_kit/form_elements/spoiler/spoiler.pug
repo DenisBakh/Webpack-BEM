@@ -1,11 +1,14 @@
-.checkbox-square
-	.label
-		.label__title label
-		.label__descr
-	.checkbox-square__container
-		input.checkbox-square__input(type="checkbox" id="breakfast" name="breakfast" value="yes")
-		label(for="breakfast") 
-			.checkbox-square__square
-			| Завтрак
+include ../checkbox-square/checkbox-square.pug
 
+.spoiler.text-field_less
+	.spoiler__title.label
+		.label__title expandable checkbox list
+		.dropdawn-icon
+	.spoiler__content
+		+checkbox-square("breakfast", "Завтрак")
+		+checkbox-square("work-table", "Письменный стол")
+		+checkbox-square("chair-to-feed", "Стул для кормления")
+		+checkbox-square("bed-mini", "Кроватка")
+		+checkbox-square("TV", "Телевизор")
+		+checkbox-square("shampoo", "Шампунь")
 

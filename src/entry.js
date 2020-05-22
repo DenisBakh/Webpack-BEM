@@ -33,7 +33,7 @@ import './project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
 
 
 
-
+import './project/common.blocks/ui_kit/form_elements/spoiler/spoiler.js'
 
 
 
