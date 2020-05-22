@@ -2,7 +2,7 @@ $DT-picker__cellWidth: 40px;
 $DT-picker__cellHeight: 40px;
 $DT-picker__contPadding: 10px;
 $DT-picker__contWidth: ($DT-picker__contPadding * 2) + ($DT-picker__cellWidth * 7);
-$DT-picker__selectedColor: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
 $DT-picker__inRangeColor: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%);
 $DT-picker__currentColor: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 $DT-picker__fontColor_main: #8f90a0;
@@ -259,7 +259,7 @@ $DT-picker__fontColor_main: #8f90a0;
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background: $DT-picker__selectedColor;
+		background: $mainGradient;
 		border-radius: 50%;
 		z-index: -4;
 	}

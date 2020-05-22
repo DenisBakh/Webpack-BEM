@@ -1,14 +1,14 @@
-include ../checkbox-square/checkbox-square.pug
+include ../checkbox/checkbox.pug
 
 .spoiler.text-field_less
 	.spoiler__title.label
 		.label__title expandable checkbox list
 		.dropdawn-icon
-	.spoiler__content
-		+checkbox-square("breakfast", "Завтрак")
-		+checkbox-square("work-table", "Письменный стол")
-		+checkbox-square("chair-to-feed", "Стул для кормления")
-		+checkbox-square("bed-mini", "Кроватка")
-		+checkbox-square("TV", "Телевизор")
-		+checkbox-square("shampoo", "Шампунь")
+	.spoiler__content.checkbox-list
+		+checkbox-shape("breakfast", "Завтрак")
+		+checkbox-shape("work-table", "Письменный стол")
+		+checkbox-shape("chair-to-feed", "Стул для кормления")
+		+checkbox-shape("bed-mini", "Кроватка")
+		+checkbox-shape("TV", "Телевизор")
+		+checkbox-shape("shampoo", "Шампунь")
 
