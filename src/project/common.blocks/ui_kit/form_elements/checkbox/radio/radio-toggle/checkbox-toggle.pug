@@ -1,0 +1,9 @@
+mixin checkbox-toggle(id, labelName)
+	.checkbox-shape
+		input.checkbox-shape__input(type="checkbox" id=id name=id value="yes")
+		label(for=id) 
+			.checkbox-shape__shape.checkbox-shape__shape_toggle
+				.checkbox-shape__inside.checkbox-shape__inside_toggle
+			span=labelName
+
+

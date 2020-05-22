@@ -1,0 +1,107 @@
+//=========================CHECKBOX-toggle ====================================
+@import "~/project/common.blocks/_common/vars.scss";
+
+.checkbox-list {
+	padding: 1em 0 0 0;
+}
+
+.checkbox-shape {
+	font-size: 14px;
+	line-height: 18px;
+	color: $mainFontColor;
+	margin: 0 0 10px 0;
+	&__shape_toggle {
+		width: 40px;
+
+		border-radius: 10px;
+	}
+	&__inside_toggle {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		&:before {
+			top: auto;
+			left: auto;
+			height: 100%;
+			width: 12px;
+			border-radius: 12px;
+			background: $mainGradient;
+			transform: scale(1);
+			transition: 0.15s transform linear;
+		}
+	}
+	&__input {
+		&:checked + label .checkbox-shape__shape {
+			border-color: $secondaryFontColor;
+		}
+		&:checked + label .checkbox-shape__inside_toggle {
+			&::before {
+				transition-delay: 0.15s;
+				//transform: translateX(200%) scale(1);
+				animation-name: slide-to-right;
+				animation-duration: 300ms;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+				transform: translateX(22px);
+			}
+		}
+		/* стили при наведении курсора на checkbox */
+		&:not(:disabled):not(:checked) + label .checkbox-shape__inside:hover::before {
+			//border-color: #b3d7ff;
+		}
+		/* стили для активного состояния чекбокса (при нажатии на него) */
+		&:not(:disabled):active + label .checkbox-shape__inside_toggle::before {
+			//border-color: #b3d7ff;
+		}
+		/* стили для чекбокса, находящегося в фокусе */
+		&:focus + label .checkbox-shape__inside_toggle::before {
+			//box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+		}
+		/* стили для чекбокса, находящегося в фокусе и находящегося в состоянии checked */
+		&:checked:focus + label .checkbox-shape__inside_toggle::before {
+			//	border-color: #80bdff;
+		}
+		/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+		&:focus:not(:checked) + label .checkbox-shape__inside_toggle::before {
+			transition-delay: 0;
+			animation-name: slide-to-left;
+			animation-duration: 300ms;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		/* анимация рамки при нажатии */
+		&:focus + label .checkbox-shape__shape {
+			animation-name: bounce_1;
+			animation-duration: 300ms;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		/* стили для чекбокса, находящегося в состоянии disabled */
+		&:disabled + label .checkbox-shape__inside_toggle::before {
+		}
+	}
+}
+
+@keyframes slide-to-right {
+	0% {
+		width: 12px;
+	}
+	50% {
+		width: 100%;
+	}
+	100% {
+		width: 12px;
+	}
+}
+
+@keyframes slide-to-left {
+	0% {
+		width: 12px;
+	}
+	50% {
+		width: 100%;
+	}
+	100% {
+		width: 12px;
+	}
+}
