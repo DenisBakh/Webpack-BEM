@@ -6,13 +6,8 @@
 }
 
 .checkbox-shape {
-	font-size: 14px;
-	line-height: 18px;
-	color: $mainFontColor;
-	margin: 0 0 10px 0;
 	&__shape_toggle {
 		width: 40px;
-
 		border-radius: 10px;
 	}
 	&__inside_toggle {
@@ -25,7 +20,7 @@
 			height: 100%;
 			width: 12px;
 			border-radius: 12px;
-			background: $mainGradient;
+			background: $border-base;
 			transform: scale(1);
 			transition: 0.15s transform linear;
 		}
@@ -36,13 +31,14 @@
 		}
 		&:checked + label .checkbox-shape__inside_toggle {
 			&::before {
+				background: $mainGradient;
 				transition-delay: 0.15s;
 				//transform: translateX(200%) scale(1);
 				animation-name: slide-to-right;
 				animation-duration: 300ms;
 				animation-iteration-count: 1;
 				animation-timing-function: linear;
-				transform: translateX(22px);
+				transform: translateX(20px);
 			}
 		}
 		/* стили при наведении курсора на checkbox */
