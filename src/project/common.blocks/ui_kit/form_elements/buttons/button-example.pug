@@ -1,0 +1,27 @@
+include button.pug
+include /button_border/button_border.pug
+include /button_simple/button_simple.pug
+include /button_wide/button_wide.pug
+
+.text-field_less
+	.label
+		.label__title buttons
+	.button-list
+		.button-row
+			.button-column
+				+button('CLICK ME')
+			.button-column
+				+button('CLICK ME')
+		.button-row
+			.button-column
+				+button_border('CLICK ME')
+			.button-column
+				+button_border('CLICK ME')
+		.button-row
+			.button-column
+				+button_simple('CLICK ME')
+			.button-column
+				+button_simple('CLICK ME')
+		.button-row
+			.button-column.button-column_b
+				+button_wide('CLICK ME')

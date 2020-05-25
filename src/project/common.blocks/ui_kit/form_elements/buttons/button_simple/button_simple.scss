@@ -1,0 +1,15 @@
+//=========================CHECKBOX-toggle ====================================
+@import "~/project/common.blocks/_common/vars.scss";
+
+$border: 2px;
+
+.button_simple {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $mainFontColor;
+	font-size: 12px;
+	@include transition;
+	&:hover {
+		color: $secondaryFontColor;
+	}
+}

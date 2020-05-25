@@ -1,0 +1,12 @@
+mixin stars(id)
+	.stars
+		input(type='radio',id=`star_${id}-4`,name=`rating_${id}`)
+		label(title='super' for=`star_${id}-4`)
+		input(type='radio',id=`star_${id}-3`,name=`rating_${id}`)
+		label(title='good' for=`star_${id}-3`)
+		input(type='radio',id=`star_${id}-2`,name=`rating_${id}`)
+		label(title='norm' for=`star_${id}-2`)
+		input(type='radio',id=`star_${id}-1`,name=`rating_${id}`)
+		label(title='bad' for=`star_${id}-1`)
+		input(type='radio',id=`star_${id}-0`,name=`rating_${id}`)
+		label(title='awful' for=`star_${id}-0`)

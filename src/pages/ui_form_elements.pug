@@ -22,8 +22,6 @@ html(lang="ru")
 						.form-elements__item
 							+inputDate("date-field", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
 						.form-elements__item
-							+rangeSlider()
-						.form-elements__item
 							+inputDropdawnDate-mini("date2","date3","date Dropdown", "date Dropdown", "ДД.ММ.ГГГГ")
 						.form-elements__item
 							+inputDropdawnDate-maxi("date4","filter date dropdown")
@@ -42,3 +40,12 @@ html(lang="ru")
 							include ../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-toggle/checkbox-toggle-example.pug
 						.form-elements__item
 							include ../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-like/checkbox-like-example.pug
+						.form-elements__item
+							include ../project/common.blocks/ui_kit/form_elements/stars/stars-example.pug
+					.form-elements__column
+						.form-elements__item
+							+rangeSlider()
+						.form-elements__item
+							include ../project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
+						.form-elements__item
+							include ../project/common.blocks/ui_kit/form_elements/pagination/pagination.pug

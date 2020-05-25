@@ -7,7 +7,6 @@ $(document).ready(function () {
 	При наличии его стрелки работают совместно с календарем, завязываются на его появлении и наоборот
 	*/
 
-
 	$('.dropdawn-icon').on('click', function (e) {
 		var $this = $(this);
 		//console.log($this);

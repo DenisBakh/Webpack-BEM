@@ -113,8 +113,10 @@ const plugins = () => {
 			filename: filenameCss() //filename('css') //'[name].[contenthash].css'
 		}),
 		new webpack.ProvidePlugin({
-			$: 'jquery',
-			jQuery: 'jquery'
+			$: "jquery",
+			jQuery: "jquery",
+			"window.jQuery": "jquery'",
+			"window.$": "jquery",
 		}),
 		...PAGES.map(page => new HTMLWebpackPlugin({
 			template: `${PAGES_DIR}/${page}`,

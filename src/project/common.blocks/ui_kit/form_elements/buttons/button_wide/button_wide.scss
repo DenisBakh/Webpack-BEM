@@ -1,0 +1,18 @@
+//=========================CHECKBOX-toggle ====================================
+@import "~/project/common.blocks/_common/vars.scss";
+
+.button_wide {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.button__icon {
+	position: absolute;
+	cursor: pointer;
+	right: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
