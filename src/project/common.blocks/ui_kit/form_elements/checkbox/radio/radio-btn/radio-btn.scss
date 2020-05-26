@@ -3,10 +3,12 @@
 
 .radio-list {
 	display: flex;
+	&__item {
+		margin: 0 20px 0 0;
+	}
 }
 
 .radio-btn {
-	margin: 0 30px 0 0;
 	&__shape {
 		border-radius: 50%;
 	}

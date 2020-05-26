@@ -1,0 +1,19 @@
+//=========================CHECKBOX-shape ====================================
+@import "~/project/common.blocks/_common/vars.scss";
+
+.checkbox-shape {
+	font-size: 14px;
+	line-height: 18px;
+	color: $mainFontColor;
+
+	&__richText {
+		color: $thirdFontColor;
+		font-weight: 700;
+		font-size: 1em;
+		margin: 0 0 4px 0;
+	}
+	&__smallText {
+		font-size: 0.86em;
+		line-height: 1.3em;
+	}
+}

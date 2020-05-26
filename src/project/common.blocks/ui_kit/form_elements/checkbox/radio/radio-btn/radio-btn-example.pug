@@ -4,6 +4,8 @@ include radio-btn.pug
 	.label
 		.label__title Radio Buttons
 	.checkbox-list.radio-list
-		+radio-btn("gender1","gender", "Мужчина","Мужчина")
-		+radio-btn("gender2","gender", "Женщина","Женщина")
+		.radio-list__item
+			+radio-btn("gender1","gender", "Мужчина","Мужчина")
+		.radio-list__item
+			+radio-btn("gender2","gender", "Женщина","Женщина")
 

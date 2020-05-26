@@ -1,0 +1,25 @@
+@import "~/project/common.blocks/_common/vars.scss";
+
+.bullet-list {
+	&__list {
+		font-size: 14px;
+		color: $thirdFontColor;
+	}
+	&__item {
+		line-height: 1.714em;
+		position: relative;
+		padding: 0 0 0 21px;
+		margin: 0 0 10px 0;
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: $FontColorLight;
+			position: absolute;
+			top: 6px;
+			left: 1px;
+		}
+	}
+}

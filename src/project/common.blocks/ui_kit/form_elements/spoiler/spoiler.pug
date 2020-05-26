@@ -1,14 +1,25 @@
-include ../checkbox/checkbox.pug
+mixin spoiler(label)
+	.spoiler
+		.spoiler__title.label
+			.label__title=label
+			.dropdawn-icon
+		.spoiler__content
+			+checkbox-shape("breakfast", "Завтрак")
+			+checkbox-shape("work-table", "Письменный стол")
+			+checkbox-shape("chair-to-feed", "Стул для кормления")
+			+checkbox-shape("bed-mini", "Кроватка")
+			+checkbox-shape("TV", "Телевизор")
+			+checkbox-shape("shampoo", "Шампунь")
 
-.spoiler.text-field_less
-	.spoiler__title.label
-		.label__title expandable checkbox list
-		.dropdawn-icon
-	.spoiler__content.checkbox-list
-		+checkbox-shape("breakfast", "Завтрак")
-		+checkbox-shape("work-table", "Письменный стол")
-		+checkbox-shape("chair-to-feed", "Стул для кормления")
-		+checkbox-shape("bed-mini", "Кроватка")
-		+checkbox-shape("TV", "Телевизор")
-		+checkbox-shape("shampoo", "Шампунь")
-
+mixin spoiler2(label)
+	.spoiler.active
+		.spoiler__title.label.active
+			.label__title=label
+			.dropdawn-icon.active
+		.spoiler__content.active
+			+checkbox-shape("breakfast1", "Завтрак")
+			+checkbox-shape("work-table1", "Письменный стол")
+			+checkbox-shape("chair-to-feed1", "Стул для кормления")
+			+checkbox-shape("bed-mini1", "Кроватка")
+			+checkbox-shape("TV1", "Телевизор")
+			+checkbox-shape("shampoo1", "Шампунь")

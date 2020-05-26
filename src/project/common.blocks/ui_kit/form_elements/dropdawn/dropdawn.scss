@@ -96,7 +96,7 @@ select {
 	border-left: 1px solid #8f90a0;
 	border-bottom-right-radius: 4px;
 	border-bottom-left-radius: 4px;
-	padding: 7px 7px 13px 15px;
+	padding: 5px 7px 13px 15px;
 	position: absolute;
 	width: 100%;
 	background-color: white;
@@ -106,16 +106,17 @@ select {
 	line-height: 15px;
 
 	text-transform: uppercase;
-	z-index: 15;
+
 	&.active {
 		opacity: 1;
 		visibility: visible;
+		z-index: 35;
 	}
 	&__row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin: 0 0 5px 0;
+		margin: 0 0 7px 0;
 		&:last-child {
 			margin: 0 0 20px 0;
 		}

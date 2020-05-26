@@ -1,14 +1,14 @@
 //=========================CHECKBOX-like ====================================
 @import "~/project/common.blocks/_common/vars.scss";
 
-.like-list {
+.checkbox-list_like {
 	display: flex;
+	&__item {
+		margin: 0 10px 0 0;
+	}
 }
 
 .checkbox-shape {
-	&_like {
-		margin: 0 10px 0 0;
-	}
 	&__shape_like {
 		padding: 3px 9px 3px 3px;
 		margin: 0;

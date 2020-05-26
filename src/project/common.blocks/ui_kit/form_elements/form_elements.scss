@@ -10,14 +10,68 @@
 .form-elements {
 	&__row {
 		display: flex;
-		margin: 0 -63px;
+		margin: 0 -60px;
+		&_2 {
+			display: flex;
+			margin: 80px -35px 154px -35px;
+			&-a {
+				margin: 80px -35px 0 -35px;
+			}
+		}
+		&_3 {
+			display: flex;
+			margin: 60px -40px 0 -40px;
+		}
 	}
 	&__column {
-		padding: 0 63px;
-		flex: 0 1 33.333%;
+		padding: 0 60px;
+		flex: 0 1 32.5%;
+		&_a {
+			flex: 0 1 35%;
+		}
+		&_b {
+			flex: 0 1 67.5%;
+		}
+		&_2 {
+			flex: 0 1 31.85%;
+			padding: 0 35px;
+			&-a {
+				flex: 0 1 36.3%;
+			}
+			&-b {
+				flex: 0 1 64.7%;
+			}
+		}
+		&_3 {
+			padding: 0 40px;
+		}
 	}
 	&__item {
 		margin: 0 0 20px 0;
+		&_DropdawnGuests {
+			margin: 0 0 23px 0;
+		}
+		&_Date {
+			margin: 0 0 40px 0;
+		}
+		&_checkbox {
+			margin: 0 0 42px 0;
+		}
+		&_radioBtn {
+			margin: 0 0 30px 0;
+		}
+		&_checkboxToggle {
+			margin: 0 0 43px 0;
+		}
+		&_checkboxLike {
+			margin: 0 0 30px 0;
+		}
+		&_bulletList {
+			width: 264px;
+		}
+		&_advantages {
+			max-width: 270px;
+		}
 	}
 }
 
@@ -43,6 +97,12 @@
 	&_less {
 		max-width: 266px;
 	}
+	&_checkbox-buttons {
+		max-width: 230px;
+	}
+	&_stars {
+		max-width: 260px;
+	}
 	&__row {
 		display: flex;
 		margin: 0 -10px;
@@ -53,7 +113,9 @@
 	}
 	&__wrapper {
 		position: relative;
-		z-index: 2;
+		&.active {
+			z-index: 5;
+		}
 	}
 	&__icon-subscribe {
 		position: absolute;

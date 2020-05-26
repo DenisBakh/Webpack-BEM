@@ -1,9 +1,11 @@
 include stars.pug
 
-.text-field_less
+.text-field_stars
 	.label
 		.label__title rate button
 	.checkbox-list.star-list
-		+stars(1)
-		+stars(2)
+		.star-list__item
+			+stars(1)
+		.star-list__item
+			+stars(2)
 

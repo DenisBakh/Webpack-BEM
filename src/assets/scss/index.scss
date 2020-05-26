@@ -17,11 +17,11 @@
 
 @import "../../project/common.blocks/ui_kit/form_elements/spoiler/spoiler.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-rich/checkbox-rich.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/checkbox/radio/radio-btn/radio-btn.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-toggle/checkbox-toggle.scss";
-
 @import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-like/checkbox-like.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/stars/stars.scss";
@@ -32,6 +32,11 @@
 @import "../../project/common.blocks/ui_kit/form_elements/buttons/button_wide/button_wide.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/pagination/pagination.scss";
+
+@import "../../project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.scss";
+
+@import "../../project/common.blocks/ui_kit/form_elements/advantages/advantages.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/review/review.scss";
 /*
 body {
 	background: url("/dist/assets/img/logo_UI.png");

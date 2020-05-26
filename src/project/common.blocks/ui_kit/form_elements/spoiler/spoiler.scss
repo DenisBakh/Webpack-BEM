@@ -1,5 +1,7 @@
 //=========================CHECKBOX with SPOILER ====================================
-
+.spoiler-item {
+	margin: 0 0 47px 0;
+}
 .spoiler {
 	&__title {
 		position: relative;
@@ -7,5 +9,9 @@
 	}
 	&__content {
 		display: none;
+		padding: 0.9em 0 0 0;
+		&.active {
+			display: block;
+		}
 	}
 }

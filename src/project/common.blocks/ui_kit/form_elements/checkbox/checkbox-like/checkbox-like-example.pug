@@ -3,7 +3,9 @@ include checkbox-like.pug
 .text-field_less
 	.label
 		.label__title like button
-	.checkbox-list.like-list
-		+checkbox-like("like_1")
-		+checkbox-like("like_2")
+	.checkbox-list.checkbox-list_like
+		.checkbox-list_like__item
+			+checkbox-like("like_1")
+		.checkbox-list_like__item
+			+checkbox-like("like_2")
 

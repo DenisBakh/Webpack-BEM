@@ -1,0 +1,42 @@
+@import "~/project/common.blocks/_common/vars.scss";
+
+.review {
+	color: $thirdFontColor;
+	display: table;
+	&__row {
+		display: table-row;
+	}
+	&__column {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 5px 10px 12px 0;
+		&_b {
+			vertical-align: top;
+			padding: 0;
+		}
+	}
+	&__cell {
+	}
+	&__info {
+	}
+	&__photo {
+	}
+	&__img {
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+		min-width: 48px;
+	}
+	&__name {
+		font-weight: 700;
+		margin: 0 0 10px 0;
+	}
+	&__text {
+		line-height: 1.714em;
+	}
+	&__like {
+		padding-left: 5px;
+	}
+	&__item {
+	}
+}

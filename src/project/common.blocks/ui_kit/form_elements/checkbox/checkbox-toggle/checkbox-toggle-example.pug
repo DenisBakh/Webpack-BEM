@@ -4,6 +4,8 @@ include checkbox-toggle.pug
 	.label
 		.label__title Toggle
 	.checkbox-list
-		+checkbox-toggle("recieve_smth", "Получать спецпредложения")
-		+checkbox-toggle("recieve_smth_1", "Получать спецпредложения")
+		.checkbox-list__item_toggle
+			+checkbox-toggle("recieve_smth", "Получать спецпредложения")
+		.checkbox-list__item_toggle
+			+checkbox-toggle("recieve_smth_1", "Получать спецпредложения")
 

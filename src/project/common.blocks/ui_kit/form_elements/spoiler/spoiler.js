@@ -4,8 +4,10 @@ $(document).ready(function () {
 		$this.toggleClass('active').next().slideToggle(300);
 		$this.find('.dropdawn-icon').toggleClass("active");
 		$this.closest('.spoiler').toggleClass("active");
+		$this.closest('.spoiler').find('.spoiler__content').toggleClass("active");
 	});
 
+	/*
 	//Скрытие по клику вне DropDAWM
 	$(document).mouseup(function (e) { // событие клика по веб-документу
 		var $wrapper = $('.spoiler.active'); // тут указываем класс 
@@ -15,13 +17,17 @@ $(document).ready(function () {
 		}
 	});
 
+	
+
 	function DropDawnClose($wrapper) {
 		var $input = $wrapper.find('.spoiler__title')
 		var $icon = $wrapper.find('.dropdawn-icon')
+		var $content = $wrapper.find('.spoiler__content')
 		$wrapper.removeClass('active');
-		$input.removeClass('active');
-		$input.toggleClass('active').next().slideToggle(300);
+		$content.removeClass('active');
+		$input.removeClass('active').next().slideToggle(300);
 		$icon.removeClass('active');
 	}
+*/
 
 });
