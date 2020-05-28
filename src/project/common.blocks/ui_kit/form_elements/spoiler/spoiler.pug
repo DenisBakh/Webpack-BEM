@@ -4,11 +4,17 @@ mixin spoiler(label)
 			.label__title=label
 			.dropdawn-icon
 		.spoiler__content
+			.option-item
 			+checkbox-shape("breakfast", "Завтрак")
+			.option-item
 			+checkbox-shape("work-table", "Письменный стол")
+			.option-item
 			+checkbox-shape("chair-to-feed", "Стул для кормления")
+			.option-item
 			+checkbox-shape("bed-mini", "Кроватка")
+			.option-item
 			+checkbox-shape("TV", "Телевизор")
+			.option-item
 			+checkbox-shape("shampoo", "Шампунь")
 
 mixin spoiler2(label)
@@ -17,9 +23,15 @@ mixin spoiler2(label)
 			.label__title=label
 			.dropdawn-icon.active
 		.spoiler__content.active
-			+checkbox-shape("breakfast1", "Завтрак")
-			+checkbox-shape("work-table1", "Письменный стол")
-			+checkbox-shape("chair-to-feed1", "Стул для кормления")
-			+checkbox-shape("bed-mini1", "Кроватка")
-			+checkbox-shape("TV1", "Телевизор")
-			+checkbox-shape("shampoo1", "Шампунь")
+			.option-item
+				+checkbox-shape("breakfast1", "Завтрак")
+			.option-item
+				+checkbox-shape("work-table1", "Письменный стол")
+			.option-item
+				+checkbox-shape("chair-to-feed1", "Стул для кормления")
+			.option-item
+				+checkbox-shape("bed-mini1", "Кроватка")
+			.option-item
+				+checkbox-shape("TV1", "Телевизор")
+			.option-item
+				+checkbox-shape("shampoo1", "Шампунь")

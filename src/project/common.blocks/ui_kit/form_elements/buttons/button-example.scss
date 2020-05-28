@@ -1,0 +1,19 @@
+//=========================BUTTON-EXAMPLE====================================
+
+.button-list {
+	padding: 10px 0;
+}
+.button-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px 32px -10px;
+	&:last-child {
+		margin: 0 -10px 0 -10px;
+	}
+}
+.button-column {
+	padding: 0 10px;
+	&_b {
+		width: 100%;
+	}
+}

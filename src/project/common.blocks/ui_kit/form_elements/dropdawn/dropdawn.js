@@ -99,11 +99,12 @@ $(document).ready(function ($) {
 		var $this = $input;
 		var $wrapper = $this.closest('.text-field__wrapper');
 		var $textfield = $wrapper.find('.text-field__input');
+		var $counters = $wrapper.find('.counter__cnt');
+		var $clear = $wrapper.find('.dropdawn-field__clear');
+		$clearButton = false
 
-		//console.log($this.closest('.dropdawn-field'))
-
+		//
 		if ($this.closest('.dropdawn-field').hasClass('dropdawn-field_count-apart')) {
-			var $counters = $wrapper.find('.counter__cnt')
 			var $result = ''
 			var $phrase = []
 
@@ -113,17 +114,25 @@ $(document).ready(function ($) {
 					var declensions = $counters[i].getAttribute('data-declensions').split(',')
 					var $equipmentPhrase = $equipmentCnt + ' ' + declension($equipmentCnt, declensions)
 					$phrase.push($equipmentPhrase)
+
+					if (!$clearButton) {
+						$clearButton = true
+					}
 				}
 			});
 
 			$.each($phrase, function (i) {
 				$result = $result + $phrase[i] + ', '
 			});
-			$result = $result.substring(0, $result.length - 2)
-			$textfield.text($result);
+
+			if (!($result === '')) {
+				$result = $result.substring(0, $result.length - 2)
+				$textfield.text($result);
+			} else {
+				$textfield.text($textfield[0].getAttribute('data-valueDefault'));
+			}
 
 		} else {
-			var $counters = $wrapper.find('.counter__cnt')
 			var $cnt = 0;
 			$.each($counters, function (i, value) {
 				$cnt = $cnt + parseInt($counters[i].value);
@@ -132,9 +141,22 @@ $(document).ready(function ($) {
 			if ($cnt > 0) {
 				var declensions = $counters[0].getAttribute('data-declensions').split(',')
 				$textfield.text($cnt + ' ' + declension($cnt, declensions));
+
+				if (!$clearButton) {
+					$clearButton = true
+				}
 			} else {
-				$textfield.text('Сколько гостей');
+				$textfield.text($textfield[0].getAttribute('data-valueDefault'));
 			}
+		}
+
+		//Кнопка очистить
+		if ($clearButton && !($clear.hasClass('active'))) {
+			$clear.addClass('active')
+		}
+
+		if (!$clearButton) {
+			$clear.removeClass('active')
 		}
 	};
 
@@ -144,6 +166,7 @@ $(document).ready(function ($) {
 	$('.dropdawn-field__clear').on('click', function (e) {
 		e.preventDefault();
 		var $this = $(this);
+		$this.removeClass('active')
 		var $input = $this.closest('.text-field__wrapper').find('.counter__cnt');
 		var $minus = $this.closest('.text-field__wrapper').find('.counter__minus');
 		var $plus = $this.closest('.text-field__wrapper').find('.counter__plus');
@@ -153,7 +176,7 @@ $(document).ready(function ($) {
 		$minus.removeClass('counter__btn_active')
 		$plus.addClass('counter__btn_active')
 
-		$textfield.text('Сколько гостей')
+		$textfield.text($textfield[0].getAttribute('data-valueDefault'))
 	});
 
 
@@ -171,7 +194,7 @@ $(document).ready(function ($) {
 			var $counters = $wrapper.find('.counter__cnt')
 			var $result = ''
 			var $phrase = []
-
+	
 			$.each($counters, function (i) {
 				var $equipmentCnt = $counters[i].value;
 				if (!($equipmentCnt === '0')) {
@@ -180,13 +203,13 @@ $(document).ready(function ($) {
 					$phrase.push($equipmentPhrase)
 				}
 			});
-
+	
 			$.each($phrase, function (i) {
 				$result = $result + $phrase[i] + ', '
 			});
 			$result = $result.substring(0, $result.length - 2)
 			$textfield.text($result);
-
+	
 		} else {
 			var $input = $this.closest('.text-field__wrapper').find('.counter__cnt')
 			var $cnt = 0;

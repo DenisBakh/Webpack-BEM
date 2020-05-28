@@ -1,20 +1,6 @@
-//=========================CHECKBOX-toggle ====================================
+//=========================BUTTON====================================
 @import "~/project/common.blocks/_common/vars.scss";
 
-.button-list {
-	padding: 10px 0;
-}
-.button-row {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 -10px 15px -10px;
-}
-.button-column {
-	padding: 0 10px;
-	&_b {
-		width: 100%;
-	}
-}
 .button {
 	position: relative;
 	display: inline-block;
@@ -22,10 +8,10 @@
 	font-weight: 700;
 	font-size: 12px;
 	line-height: 1em;
-	padding: 1em 1.5em;
+	padding: 1.3em 1.6em;
 	background: $mainGradient;
 	color: #fff;
-	border-radius: 1.6em;
+	border-radius: 2em;
 	text-transform: uppercase;
 	@include transition;
 	&:hover {

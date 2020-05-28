@@ -11,9 +11,8 @@
 @import "../../project/common.blocks/ui_kit/form_elements/form_elements.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.scss";
 
-@import "../../project/common.blocks/ui_kit/form_elements/range-slider/range-slider.scss";
-
 @import "../../project/common.blocks/ui_kit/logo_UI/logo_UI.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/text-field/text-field.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/spoiler/spoiler.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox.scss";
@@ -27,6 +26,7 @@
 @import "../../project/common.blocks/ui_kit/form_elements/stars/stars.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/buttons/button.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/buttons/button-example.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/buttons/button_border/button_border.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/buttons/button_simple/button_simple.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/buttons/button_wide/button_wide.scss";
@@ -38,7 +38,7 @@
 @import "../../project/common.blocks/ui_kit/form_elements/advantages/advantages.scss";
 @import "../../project/common.blocks/ui_kit/form_elements/review/review.scss";
 
-@import "../../project/common.blocks/ui_kit/form_elements/text-field/text-field.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/range-slider/range-slider.scss";
 /*
 body {
 	background: url("/dist/assets/img/logo_UI.png");

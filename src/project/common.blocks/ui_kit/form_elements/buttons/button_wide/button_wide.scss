@@ -6,12 +6,14 @@
 	width: 100%;
 	align-items: center;
 	justify-content: center;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .button__icon {
 	position: absolute;
 	cursor: pointer;
-	right: 5px;
+	right: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

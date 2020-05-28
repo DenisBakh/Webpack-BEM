@@ -1,6 +1,13 @@
-.range-slider
-	.label-slider price
-	div(id='rs-slider')
-	.bar.flex 
-		.reset.button Reset
-	
+mixin rangeSlider(label="Range Slider")
+	.range-slider
+		.label.range-slider__label
+			label.label__title=label
+			label.range-slider__price
+				span.range-slider__from
+					span.range-slider__from-upd 5000
+					|₽
+				i - 
+				span.range-slider__to
+					span.range-slider__to-upd 15000
+					|₽
+		div.r-slider
