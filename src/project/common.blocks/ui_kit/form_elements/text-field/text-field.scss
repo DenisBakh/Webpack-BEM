@@ -1,0 +1,140 @@
+//================================= TEXT-FIELD ==============================
+
+.label {
+	display: flex;
+	justify-content: space-between;
+	font-family: "Montserrat";
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	margin: 0 0 5px 0;
+	&__title {
+		font-weight: 700;
+		color: #1f2041;
+	}
+	&__descr {
+		color: rgba(31, 32, 65, 0.5);
+		font-weight: 400;
+	}
+}
+
+.text-field {
+	max-width: 320px;
+	&_less {
+		max-width: 266px;
+	}
+	&__row {
+		display: flex;
+		margin: 0 -10px;
+	}
+	&__column {
+		padding: 0 10px;
+		flex: 0 1 50%;
+	}
+	&__wrapper {
+		position: relative;
+		&.active {
+			z-index: 5;
+		}
+	}
+	&__icon-subscribe {
+		position: absolute;
+		cursor: pointer;
+		height: 100%;
+		width: 40px;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/*
+		&.active {
+			&:before {
+				transform: translate(-4.5px, -50%) rotate(-45deg);
+			}
+			&:after {
+				transform: translate(4.5px, -50%) rotate(45deg);
+			}
+		}
+		*/
+	}
+	&__input {
+		white-space: nowrap; /* Отменяем перенос текста */
+		overflow: hidden; /* Обрезаем содержимое */
+		text-overflow: ellipsis; /* Многоточие */
+		@include transition;
+		background: #ffffff;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		border-radius: 4px;
+
+		width: 100%;
+		height: 44px;
+		padding: 12px 20% 12px 15px;
+
+		font-family: "Montserrat";
+		font-size: 14px;
+		line-height: 16px;
+		color: rgba(31, 32, 65, 0.75);
+
+		/*
+		&[placeholder] {
+			font-family: "Montserrat";
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.25);
+		}
+*/
+		&::-webkit-input-placeholder {
+			font-family: "Montserrat";
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.25);
+
+			opacity: 1;
+			@include transition;
+		}
+		&::-moz-placeholder {
+			font-family: "Montserrat";
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.25);
+
+			opacity: 1;
+			@include transition;
+		}
+		&:-moz-placeholder {
+			font-family: "Montserrat";
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.25);
+
+			opacity: 1;
+			@include transition;
+		}
+		&:-ms-input-placeholder {
+			font-family: "Montserrat";
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.25);
+
+			opacity: 1;
+			@include transition;
+		}
+		&:focus,
+		&:hover {
+			white-space: normal; /* Обычный перенос текста */
+			border: 1px solid rgba(31, 32, 65, 0.5);
+			&::-webkit-input-placeholder {
+				opacity: 0;
+			}
+			&::-moz-placeholder {
+				opacity: 0;
+			}
+			&:-moz-placeholder {
+				opacity: 0;
+			}
+			&:-ms-input-placeholder {
+				opacity: 0;
+			}
+		}
+	}
+}

@@ -10,7 +10,7 @@ $border: 2px;
 	background-clip: padding-box; /* !importanté */
 	border: solid $border transparent; /* !importanté */
 	position: relative;
-	&:before {
+	&:after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -18,8 +18,8 @@ $border: 2px;
 		bottom: 0;
 		left: 0;
 		z-index: -1;
-		margin: -$border; /* !importanté */
-		border-radius: inherit; /* !importanté */
+		margin: -$border;
+		border-radius: inherit;
 		background: $mainGradient;
 		@include transition;
 	}
@@ -27,7 +27,7 @@ $border: 2px;
 	&:hover {
 		opacity: 1;
 	}
-	&:hover:before {
+	&:hover:after {
 		opacity: 0.5;
 	}
 }

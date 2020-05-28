@@ -88,6 +88,7 @@ select {
 }
 
 .dropdawn-field {
+	user-select: none;
 	opacity: 0;
 	visibility: hidden;
 	@include transition;
