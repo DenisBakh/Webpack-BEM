@@ -2,7 +2,6 @@ html {
 	line-height: $mainLineHeight;
 	font-size: $mainFontSize;
 	color: $mainFontColor;
-	height: 100%;
 	@media screen and (max-width: $desktopWidth) {
 		font-size: 16px;
 	}

@@ -1,0 +1,13 @@
+include ../../form_elements/dropdawn/dropdawn.pug
+include ../../form_elements/buttons/button_wide/button_wide.pug
+
+
+.card
+	.card__container
+		h2.card__title Найдём номера под ваши пожелания
+		.card__in-out
+			+inputDropdawnDate-mini("date2","date3", "прибытие","выезд", "ДД.ММ.ГГГГ","", "","", "")
+		.card__guests
+			+inputDropdawnGuests("гости", "Сколько гостей", "")
+		.card__button
+			+button_wide("подобрать номер", "")

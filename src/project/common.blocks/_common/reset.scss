@@ -103,9 +103,12 @@ video {
 	outline: none;
 }
 
+html {
+	min-height: 100%;
+}
+
 html,
 body {
-	height: 100%;
 	width: 100%;
 	font-size: 100%;
 	line-height: 1;

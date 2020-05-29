@@ -1,0 +1,23 @@
+include ../form_elements/text-field/text-field.pug
+include ../form_elements/range-slider/range-slider.pug
+include ../form_elements/pagination/pagination.pug
+include ../form_elements/dropdawn/dropdawn.pug
+
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Document
+	body
+	main.ui-cards
+		.container_ui
+			include ../logo_UI/logo_UI.pug
+				.container_ui__cards
+					.ui-cards__row
+						.ui-cards__column
+							.ui-cards__item
+								include find-room/find-room.pug
+							.ui-cards__item
+								include registry-form/registry-form.pug

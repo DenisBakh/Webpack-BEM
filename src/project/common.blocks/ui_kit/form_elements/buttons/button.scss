@@ -2,7 +2,7 @@
 @import "~/project/common.blocks/_common/vars.scss";
 
 .button {
-	position: relative;
+	text-align: center;
 	display: inline-block;
 	font-family: $mainFont;
 	font-weight: 700;
@@ -13,8 +13,16 @@
 	color: #fff;
 	border-radius: 2em;
 	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.button-wrapper {
+	position: relative;
+	cursor: pointer;
 	@include transition;
 	&:hover {
-		opacity: 0.5;
+		.button_full {
+			opacity: 0.5;
+		}
 	}
 }

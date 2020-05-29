@@ -1,5 +1,6 @@
-mixin button(text)
-	a.button(href='')=text
-
-
-
+mixin button(text,href='',type='')
+	.button-wrapper
+		if type==='submit'
+			input.button.button_full(type='submit' value=text)
+		else
+			a.button.button_full(href=href)=text

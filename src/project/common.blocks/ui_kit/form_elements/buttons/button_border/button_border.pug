@@ -1,4 +1,6 @@
-mixin button_border(text)
-	a.button.button_border(href='')=text
-
-
+mixin button_border(text,href='',type='')
+	.button-wrapper
+		if type==='submit'
+			input.button.button_border(type='submit' value=text)
+		else
+			a.button.button_border(href=href)=text

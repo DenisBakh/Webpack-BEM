@@ -1,58 +1,79 @@
-mixin inputs(id, type="text", label, value="", placeholder="Email", descr="")
-	div.text-field
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value)
+include text-field/text-field.pug
+include range-slider/range-slider.pug
+include pagination/pagination.pug
+include dropdawn/dropdawn.pug
 
-mixin subscribe(id="email_sub", placeholder="Email", label="subscription text field",value="", descr="")
-	div.text-field.text-field_less
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		.text-field__wrapper.text-field__input-icon
-			.text-field__icon-subscribe
-				<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/></svg>
-			input.text-field__input(type="email", name=type, placeholder=placeholder, id= id, value= value)
-
-mixin inputDate(id="date1", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="")
-	div.text-field
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		input.text-field__input.text-field__input_date( type="text", name="date", placeholder=placeholder, id= id, value= value)
-
-
-
-
-
-mixin inputTextfield(id, label, placeholder)
-	div.text-field
-		label(for= id)= label
-		textarea(rows="5", name= id, id= id, placeholder= val,autocomplete="false")
-
-mixin inputToggle(id, label, checked)
-	div.text-field
-		label(for= id)
-			input(type="checkbox", name= id, id= id, checked= checked, autocomplete="off")
-			span= label
-
-mixin inputSelect(id, label, selected, vals)
-	div.text-field
-		label(for= label)= label
-		select(id= id, name= id)
-			each val in vals
-				- var isSelected = (selected==val[1]) ? true : false
-				option(value= val[0], selected= isSelected)= val[1]
-
-mixin inputToggleCollection(id, label, vals, checked)
-	- var active = []
-	- if (checked!=undefined) {
-		- active = checked.split(",")
-	- }
-	fieldset
-		legend= label
-		each val in vals
-			- var isSelected = (active.indexOf(val)>-1) ? true : false
-			+inputToggle(val.replace(/\s/g,''), val, isSelected)
-
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Document
+	body
+	main.form-elements
+		.container_ui
+			include ../logo_UI/logo_UI.pug
+				.container_ui__form-elements
+					.form-elements__row
+						.form-elements__column.form-elements__column_a
+							.form-elements__item
+								+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
+							.form-elements__item
+								+inputs("text-field2", "text", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
+							.form-elements__item.form-elements__item_DropdawnGuests
+								+inputDropdawnGuests("Dropdown","Сколько гостей","DEFAULT")
+							.form-elements__item.form-elements__item_Date
+								+inputDate("date-field", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
+							.form-elements__item.form-elements__item_Date
+								+inputDropdawnDate-mini("date2","date3","date Dropdown", "date Dropdown", "ДД.ММ.ГГГГ")
+							.form-elements__item.form-elements__item_Date
+								+inputDropdawnDate-maxi("date4","filter date dropdown")
+							.form-elements__item
+								+subscribe("email_sub","Email","subscription text field")
+						.form-elements__column.form-elements__column_b
+							.form-elements__item.form-elements__item_checkbox
+								include option-buttons/checkbox/checkbox-simple/checkbox-example.pug
+							.form-elements__item.form-elements__item_radioBtn
+								include option-buttons/radio/radio-btn-example.pug
+							.form-elements__item.form-elements__item_checkboxToggle
+								include option-buttons/checkbox/checkbox-toggle/checkbox-toggle-example.pug
+							.form-elements__item.form-elements__item_checkboxLike
+								include option-buttons/checkbox/checkbox-like/checkbox-like-example.pug
+							.form-elements__item.form-elements__item_stars
+								include stars/stars-example.pug
+						.form-elements__column.form-elements__column_c
+							.form-elements__item.form-elements__item_RangeSlider
+								+rangeSlider()
+							.form-elements__item.form-elements__item_buttons
+								include buttons/button-example.pug
+							.form-elements__item
+								+pagination()
+					.form-elements__row_2
+						.form-elements__column_2.form-elements__column_2-a
+							.form-elements__item
+								+inputDropdawnEquip("Dropdown","Параметры номера","DEFAULT")
+							.form-elements__item
+								+inputDropdawnEquipActive("Dropdown","Параметры номера","EXPANDED")
+						.form-elements__column_2
+							.form-elements__item
+								+inputDropdawnGuestsActive("Dropdown","Сколько гостей","")
+						.form-elements__column_2
+							.form-elements__item
+								+inputDropdawnGuestsActive("Dropdown","Сколько гостей","",2,1,0)
+					.form-elements__row_2.form-elements__row_2-a
+						.form-elements__column_2.form-elements__column_2-a
+							.form-elements__item.form-elements__item_spoiler
+									include spoiler/spoiler-example.pug
+						.form-elements__column_2
+							.form-elements__item
+									include option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
+						.form-elements__column_2
+							.form-elements__item.form-elements__item_bulletList
+									include bullet-list/bullet-list.pug
+					.form-elements__row_3
+						.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
+							.form-elements__item.form-elements__item_advantages
+									include advantages/advantages.pug
+						.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
+							.form-elements__item.form-elements__item_review
+									include review/review.pug

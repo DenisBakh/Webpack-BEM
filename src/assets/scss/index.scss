@@ -12,16 +12,17 @@
 @import "../../project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.scss";
 
 @import "../../project/common.blocks/ui_kit/logo_UI/logo_UI.scss";
+
 @import "../../project/common.blocks/ui_kit/form_elements/text-field/text-field.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/spoiler/spoiler.scss";
-@import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox.scss";
-@import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-rich/checkbox-rich.scss";
-
-@import "../../project/common.blocks/ui_kit/form_elements/checkbox/radio/radio-btn/radio-btn.scss";
-
-@import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-toggle/checkbox-toggle.scss";
-@import "../../project/common.blocks/ui_kit/form_elements/checkbox/checkbox-like/checkbox-like.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/option-buttons-common.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-example.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-rich/checkbox-rich.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-like/checkbox-like.scss";
+@import "../../project/common.blocks/ui_kit/form_elements/option-buttons/radio/radio-btn.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/stars/stars.scss";
 
@@ -39,6 +40,11 @@
 @import "../../project/common.blocks/ui_kit/form_elements/review/review.scss";
 
 @import "../../project/common.blocks/ui_kit/form_elements/range-slider/range-slider.scss";
+
+@import "../../project/common.blocks/ui_kit/cards/cards.scss";
+
+@import "../../project/common.blocks/ui_kit/cards/find-room/find-room.scss";
+@import "../../project/common.blocks/ui_kit/cards/registry-form/registry-form.scss";
 /*
 body {
 	background: url("/dist/assets/img/logo_UI.png");
