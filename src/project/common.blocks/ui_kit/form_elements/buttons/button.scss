@@ -26,3 +26,91 @@
 		}
 	}
 }
+
+//=========================BUTTON_WIDE====================================
+.button_wide {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.button__icon {
+	position: absolute;
+	right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+//=========================BUTTON_SIMPLE====================================
+
+.button_simple {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $mainFontColor;
+	font-size: 12px;
+	@include transition;
+	&:hover {
+		color: $secondaryFontColor;
+	}
+}
+
+//=========================BUTTON_BORDER====================================
+$border: 2px;
+
+.button_border {
+	font-size: 12px;
+	padding: calc(1.3em - 2px) calc(1.6em - 2px);
+	min-width: 99px;
+	color: $secondaryFontColor;
+	background: #fff;
+	border: double $border transparent;
+	background-image: linear-gradient(white, white),
+		linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	@include transition;
+	&:hover {
+		opacity: 1;
+		background-image: linear-gradient(white, white),
+			linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+	}
+}
+/*
+$border: 2px;
+
+.button_border {
+	padding: calc(1.3em - 2px) calc(1.6em - 2px);
+	color: $secondaryFontColor;
+	background: #fff;
+	background-clip: padding-box; 
+	border: solid $border transparent; 
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		margin: -$border;
+		border-radius: inherit;
+		background: $mainGradient;
+		@include transition;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+	&:hover:after {
+		opacity: 0.5;
+	}
+}
+*/

@@ -1,26 +1,23 @@
 include button.pug
-include /button_border/button_border.pug
-include /button_simple/button_simple.pug
-include /button_wide/button_wide.pug
 
 .label
 	.label__title buttons
 .button-list
 	.button-row
 		.button-column
-			+button('CLICK ME')
+			+button('CLICK ME','#','','button')
 		.button-column
-			+button('CLICK ME')
+			+button('CLICK ME','#','','button')
 	.button-row
 		.button-column
-			+button_border('CLICK ME','','submit')
+			+button('CLICK ME','#','','button_border')
 		.button-column
-			+button_border('CLICK ME')
+			+button('CLICK ME','#','','button_border')
 	.button-row
 		.button-column
-			+button_simple('CLICK ME')
+			+button('CLICK ME','#','','button_simple')
 		.button-column
-			+button_simple('CLICK ME')
+			+button('CLICK ME','#','','button_simple')
 	.button-row
 		.button-column.button-column_b
-			+button_wide('перейти к оплате','','submit')
+			+button('перейти к оплате','#','submit','button_wide')

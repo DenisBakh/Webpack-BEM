@@ -1,6 +1,4 @@
-include ../../form_elements/buttons/button_wide/button_wide.pug
-include ../../form_elements/buttons/button_border/button_border.pug
-include ../../form_elements/buttons/button_simple/button_simple.pug
+include ../../form_elements/buttons/button.pug
 include ../../form_elements/option-buttons/radio/radio-btn.pug
 include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
 include ../../form_elements/text-field/text-field.pug
@@ -28,8 +26,8 @@ include ../../form_elements/text-field/text-field.pug
 			.registry-form__user.registry-form__user-adv
 				+checkbox-toggle('adv', 'Получать спецпредложения')
 			.registry-form__user.registry-form__button_create
-				+button_wide("создать", "",'submit')
+				+button('создать','#','submit','button_wide')
 			.registry-form__button-row
 				.registry-form__exist Уже есть аккаунт на Toxin
 				.registry-form__button_enter
-					+button_border("войти",'')
+					+button('войти','#','submit','button_border')
