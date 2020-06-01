@@ -1,0 +1,70 @@
+//================================= Registry-form ==============================
+
+.book-form {
+	&__info {
+		margin: 0 0 22px 0;
+	}
+}
+
+.bill {
+	margin: 0 0 21px 0;
+	&__list {
+		font-size: 14px;
+		line-height: 18px;
+		color: $fontColor_third;
+		margin: 0 0 35px 0;
+	}
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__row:not(:last-child) {
+		margin: 0 0 14px 0;
+	}
+	&__subject {
+		max-width: 75%;
+		width: 75%;
+		flex-shrink: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	&__value {
+		flex-shrink: 0;
+	}
+	&__info {
+		display: inline-block;
+		position: relative;
+		&:before {
+			content: "i";
+			display: flex;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			border: 1px solid $border-base;
+			color: $border-base;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+		}
+	}
+	&__total {
+		font-family: "OpenSans";
+		font-weight: 700;
+		font-size: 19px;
+		display: flex;
+		color: #1f2041;
+		&-dots {
+			flex: 1 1 auto;
+			border-bottom: 1px dotted $border-base;
+			height: 0.77em;
+			align-self: flex-start;
+		}
+		&-subject {
+			padding: 0 3px 0 0;
+		}
+		&-bill {
+			padding: 0 0 0 3px;
+		}
+	}
+}

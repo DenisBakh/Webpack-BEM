@@ -5,9 +5,11 @@ include ../../form_elements/buttons/button.pug
 .card
 	.card__container
 		h2.card__title Найдём номера под ваши пожелания
-		.card__in-out
-			+inputDropdawnDate-mini("date2","date3", "прибытие","выезд", "ДД.ММ.ГГГГ","", "","", "")
-		.card__guests
-			+inputDropdawnGuests("гости", "Сколько гостей", "")
+		.card__info
+			.info
+				.info__in-out
+					+inputDropdawnDate-mini("date2","date3", "прибытие","выезд", "ДД.ММ.ГГГГ","", "","", "")
+				.info__guests
+					+inputDropdawnGuests("гости", "Сколько гостей", "")
 		.card__button
 			+button('подобрать номер','#','','button_wide')
