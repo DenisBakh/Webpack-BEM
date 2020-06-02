@@ -37,10 +37,11 @@ $(document).ready(function ($) {
 	});
 
 	function rules($input) {
-		if ($input.is('#bedrooms') || $input.is('#beds')) {
+		//if ($input.is('#bedrooms') || $input.is('#beds')) {
+		if ($input.hasClass('bedrooms') || $input.hasClass('beds')) {
 			var $wrapper = $input.closest('.text-field__wrapper')
-			var $bedrooms = $wrapper.find('#bedrooms')
-			var $beds = $wrapper.find('#beds')
+			var $bedrooms = $wrapper.find('.bedrooms')
+			var $beds = $wrapper.find('.beds')
 
 			var $counter = $beds.closest('.counter')
 			var $minus = $counter.find('.counter__minus')
@@ -53,11 +54,12 @@ $(document).ready(function ($) {
 			}
 			//PlusMinusBtn($beds)
 		}
-		if ($input.is('#children') || $input.is('#babies') || $input.is('#adults')) {
+		//if ($input.is('#children') || $input.is('#babies') || $input.is('#adults')) {
+		if ($input.hasClass('children') || $input.hasClass('babies') || $input.hasClass('adults')) {
 			var $wrapper = $input.closest('.text-field__wrapper')
-			var $adults = $wrapper.find('#adults')
-			var $children = $wrapper.find('#children')
-			var $babies = $wrapper.find('#babies')
+			var $adults = $wrapper.find('.adults')
+			var $children = $wrapper.find('.children')
+			var $babies = $wrapper.find('.babies')
 
 			var $counter = $adults.closest('.counter')
 			var $minus = $counter.find('.counter__minus')

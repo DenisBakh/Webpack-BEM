@@ -1,4 +1,5 @@
 include ../../form_elements/dropdawn/dropdawn.pug
+include ../../form_elements/datepicker/datepicker.pug
 include ../../form_elements/buttons/button.pug
 
 
@@ -8,8 +9,13 @@ include ../../form_elements/buttons/button.pug
 		.card__info
 			.info
 				.info__in-out
-					+inputDropdawnDate-mini("date2","date3", "прибытие","выезд", "ДД.ММ.ГГГГ","", "","", "")
+					.in-out
+						.in-out__row
+							.in-out__column
+								+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+							.in-out__column
+								+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
 				.info__guests
-					+inputDropdawnGuests("гости", "Сколько гостей", "")
+					+inputDropdawnGuests('1','гости', 'Сколько гостей', '')
 		.card__button
 			+button('подобрать номер','#','','button_wide')

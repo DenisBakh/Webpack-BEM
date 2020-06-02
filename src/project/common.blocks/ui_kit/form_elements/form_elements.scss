@@ -54,11 +54,15 @@
 	}
 	&__item {
 		margin: 0 0 20px 0;
+		max-width: 320px;
 		&_DropdawnGuests {
 			margin: 0 0 23px 0;
 		}
 		&_Date {
 			margin: 0 0 41px 0;
+		}
+		&_small {
+			max-width: 266px;
 		}
 		&_checkbox {
 			margin: 0 0 44px 0;
@@ -91,5 +95,17 @@
 		&_buttons {
 			margin: 0 0 28px 0;
 		}
+	}
+}
+
+.item-formElement {
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		margin: 0 -10px;
+	}
+	&__column {
+		padding: 0 10px;
+		flex: 0 1 50%;
 	}
 }

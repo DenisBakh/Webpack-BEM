@@ -2,12 +2,13 @@ include text-field/text-field.pug
 include range-slider/range-slider.pug
 include pagination/pagination.pug
 include dropdawn/dropdawn.pug
+include datepicker/datepicker.pug
 
 <!DOCTYPE html>
-html(lang="ru")
+html(lang='ru')
 	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title Document
 	body
 	main.form-elements
@@ -17,19 +18,24 @@ html(lang="ru")
 					.form-elements__row
 						.form-elements__column.form-elements__column_a
 							.form-elements__item
-								+inputs("text-field", "email", "Text Field", "", "Email", "DEFAULT")
+								+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
 							.form-elements__item
-								+inputs("text-field2", "text", "Text Field", "This is pretty awesome", "Email", "Hover / Focus")
+								+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
 							.form-elements__item.form-elements__item_DropdawnGuests
-								+inputDropdawnGuests("Dropdown","Сколько гостей","DEFAULT")
+								+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
 							.form-elements__item.form-elements__item_Date
-								+inputDate("date-field", "masked text field", "", "ДД.ММ.ГГГГ", "DEFAULT")
+								+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
 							.form-elements__item.form-elements__item_Date
-								+inputDropdawnDate-mini("date2","date3","date Dropdown", "date Dropdown", "ДД.ММ.ГГГГ")
-							.form-elements__item.form-elements__item_Date
-								+inputDropdawnDate-maxi("date4","filter date dropdown")
-							.form-elements__item
-								+subscribe("email_sub","Email","subscription text field")
+								.item-formElement
+									.item-formElement__row
+										.item-formElement__column
+											+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+										.item-formElement__column
+											+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+							.form-elements__item.form-elements__item_Date.form-elements__item_small
+								+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
+							.form-elements__item.form-elements__item_small
+								+subscribe('email_sub','Email','subscription text field')
 						.form-elements__column.form-elements__column_b
 							.form-elements__item.form-elements__item_checkbox
 								include option-buttons/checkbox/checkbox-simple/checkbox-example.pug
@@ -50,16 +56,16 @@ html(lang="ru")
 								+pagination()
 					.form-elements__row_2
 						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item
-								+inputDropdawnEquip("Dropdown","Параметры номера","DEFAULT")
-							.form-elements__item
-								+inputDropdawnEquipActive("Dropdown","Параметры номера","EXPANDED")
+							.form-elements__item.form-elements__item_small
+								+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
+							.form-elements__item.form-elements__item_small
+								+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
 						.form-elements__column_2
 							.form-elements__item
-								+inputDropdawnGuestsActive("Dropdown","Сколько гостей","")
+								+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
 						.form-elements__column_2
 							.form-elements__item
-								+inputDropdawnGuestsActive("Dropdown","Сколько гостей","",2,1,0)
+								+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
 					.form-elements__row_2.form-elements__row_2-a
 						.form-elements__column_2.form-elements__column_2-a
 							.form-elements__item.form-elements__item_spoiler

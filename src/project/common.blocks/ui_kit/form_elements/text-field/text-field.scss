@@ -19,18 +19,6 @@
 }
 
 .text-field {
-	max-width: 320px;
-	&_less {
-		max-width: 266px;
-	}
-	&__row {
-		display: flex;
-		margin: 0 -10px;
-	}
-	&__column {
-		padding: 0 10px;
-		flex: 0 1 50%;
-	}
 	&__wrapper {
 		position: relative;
 		&.active {

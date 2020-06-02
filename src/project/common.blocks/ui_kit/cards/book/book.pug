@@ -2,18 +2,24 @@ include ../../form_elements/buttons/button.pug
 include ../../form_elements/option-buttons/radio/radio-btn.pug
 include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
 include ../../form_elements/text-field/text-field.pug
+include ../../form_elements/datepicker/datepicker.pug
 
 
 .card
 	.card__container
 		h2.card__title Регистрация аккаунта
-		form(action="#" method="post").book-form
+		form(action='#' method='post').book-form
 			.book-form__info
 				.info
 					.info__in-out
-						+inputDropdawnDate-mini("date4","date6", "прибытие","выезд", "ДД.ММ.ГГГГ","", "","", "")
+						.in-out
+							.in-out__row
+								.in-out__column
+									+inputDatePicker('datepicker3', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+								.in-out__column
+									+inputDatePicker('datepicker4', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
 					.info__guests
-						+inputDropdawnGuests("гости", "Сколько гостей", "")
+						+inputDropdawnGuests('2','гости', 'Сколько гостей', '')
 			.book-form__bill.bill
 				.bill__list
 					li.bill__row

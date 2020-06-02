@@ -1,34 +1,5 @@
 
-mixin inputDropdawnDate-mini(id1="date2",id2="date3", label1="date Dropdown",label2="date Dropdown", placeholder="ДД.ММ.ГГГГ",value1="", descr1="",value2="", descr2="")
-	div.text-field
-		.text-field__row
-			.text-field__column
-				.label
-					label.label__title(for= id1)= label1
-					label.label__descr= descr1
-				.text-field__wrapper
-						.dropdawn-icon
-						input.text-field__input.datepick( type="text", name=id1, placeholder=placeholder, id= id1, value= value1)
-			.text-field__column
-				.label
-					label.label__title(for= id2)= label2
-					label.label__descr= descr2
-				.text-field__wrapper
-						.dropdawn-icon
-						input.text-field__input.datepick( type="text", name=id2, placeholder=placeholder, id= id2, value= value2)
-
-mixin inputDropdawnDate-maxi(id="date4", label="filter date dropdown", placeholder="ДД.ММ.ГГГГ",value="", descr="")
-	div.text-field.text-field_less
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		.text-field__wrapper
-				.dropdawn-icon
-				input.text-field__input.datepick( type="text", name=id, placeholder=placeholder, id= id, value= value)
-
-
-
-mixin inputDropdawnGuests(label="Dropdown", value="Сколько гостей", descr="")
+mixin inputDropdawnGuests(id='', label='Dropdown', value='Сколько гостей', descr='')
 	div.text-field
 		.label
 			.label__title= label
@@ -39,31 +10,31 @@ mixin inputDropdawnGuests(label="Dropdown", value="Сколько гостей",
 			.dropdawn-field
 				.dropdawn-field__container
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "adults") взрослые
+						label.dropdawn-field__subject(for= 'adults') взрослые
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="гость, гостя, гостей",id="adults", type="text", name="взрослые", value=0)
+								input.counter__cnt.dropdawn-field__subject.adults(data-declensions='гость, гостя, гостей',data-id=id,id=`adults${id}`, type='text', name='взрослые', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "children") дети
+						label.dropdawn-field__subject(for= 'children') дети
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(id="children",type="text", name="дети", value=0)
+								input.counter__cnt.dropdawn-field__subject.children(id=`children${id}`,type='text', name='дети', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "babies") младенцы
+						label.dropdawn-field__subject(for= 'babies') младенцы
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(id="babies",type="text", name="младенцы", value=0)
+								input.counter__cnt.dropdawn-field__subject.babies(id=`babies${id}`,type='text', name='младенцы', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 				.dropdawn-field__row_buttons
-					a.dropdawn-field__clear(href="") очистить
-					a.dropdawn-field__accept(href="") применить
+					a.dropdawn-field__clear(href='') очистить
+					a.dropdawn-field__accept(href='') применить
 
-mixin inputDropdawnGuestsActive(label="Dropdown", value="Сколько гостей", descr="",adults=0,children=0,babies=0)
+mixin inputDropdawnGuestsActive(id='',label='Dropdown', value='Сколько гостей', descr='',adults=0,children=0,babies=0)
 	div.text-field
 		.label
 			.label__title= label
@@ -74,32 +45,32 @@ mixin inputDropdawnGuestsActive(label="Dropdown", value="Сколько гост
 			.dropdawn-field.active
 				.dropdawn-field__container
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "adults") взрослые
+						label.dropdawn-field__subject(for= 'adults') взрослые
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="гость, гостя, гостей",id="adults", type="text", name="взрослые", value=adults)
+								input.counter__cnt.dropdawn-field__subject.adults(data-declensions='гость, гостя, гостей',id=`adults${id}`, type='text', name='взрослые', value=adults)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "children") дети
+						label.dropdawn-field__subject(for= 'children') дети
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(id="children",type="text", name="дети", value=children)
+								input.counter__cnt.dropdawn-field__subject.children(id=`children${id}`,type='text', name='дети', value=children)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "babies") младенцы
+						label.dropdawn-field__subject(for= 'babies') младенцы
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(id="babies",type="text", name="младенцы", value=babies)
+								input.counter__cnt.dropdawn-field__subject.babies(id=`babies${id}`,type='text', name='младенцы', value=babies)
 								a.counter__plus.counter__btn.counter__btn_active
 				.dropdawn-field__row_buttons
-					a.dropdawn-field__clear(href="") очистить
-					a.dropdawn-field__accept(href="") применить
+					a.dropdawn-field__clear(href='') очистить
+					a.dropdawn-field__accept(href='') применить
 
-mixin inputDropdawnEquip(label="Dropdown", value="Параметры номера", descr="Default")
-	div.text-field.text-field_less
+mixin inputDropdawnEquip(id='',label='Dropdown', value='Параметры номера', descr='Default')
+	div.text-field
 		.label
 			.label__title= label
 			.label__descr= descr
@@ -109,32 +80,32 @@ mixin inputDropdawnEquip(label="Dropdown", value="Параметры номер�
 			.dropdawn-field.dropdawn-field_count-apart
 				.dropdawn-field__container
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "bedrooms") спальни
+						label.dropdawn-field__subject(for= 'bedrooms') спальни
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="спальня, спальни, спален", id="bedrooms", type="text", name="спальные", value=0)
+								input.counter__cnt.dropdawn-field__subject.bedrooms(data-declensions='спальня, спальни, спален', id=`bedrooms${id}`, type='text', name='спальные', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "beds") кровати
+						label.dropdawn-field__subject(for= 'beds') кровати
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="кровать,кровати,кроватей", id="beds",type="text", name="кровати", value=0)
+								input.counter__cnt.dropdawn-field__subject.beds(data-declensions='кровать,кровати,кроватей', id=`beds${id}`,type='text', name='кровати', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "bathrooms") ванные комнаты
+						label.dropdawn-field__subject(for= 'bathrooms') ванные комнаты
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="ванная комната,ванные комнаты,ванных комнат", id="bathrooms",type="text", name="ванные", value=0)
+								input.counter__cnt.dropdawn-field__subject.bathrooms(data-declensions='ванная комната,ванные комнаты,ванных комнат', id=`bathrooms${id}`,type='text', name='ванные', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 				.dropdawn-field__row_buttons
-					a.dropdawn-field__clear(href="") очистить
-					a.dropdawn-field__accept(href="") применить
+					a.dropdawn-field__clear(href='') очистить
+					a.dropdawn-field__accept(href='') применить
 
-mixin inputDropdawnEquipActive(label="Dropdown", value="Параметры номера", descr="Default")
-	div.text-field.text-field_less
+mixin inputDropdawnEquipActive(id='',label='Dropdown', value='Параметры номера', descr='Default')
+	div.text-field
 		.label
 			.label__title= label
 			.label__descr= descr
@@ -144,26 +115,26 @@ mixin inputDropdawnEquipActive(label="Dropdown", value="Параметры но�
 			.dropdawn-field.dropdawn-field_count-apart.active
 				.dropdawn-field__container
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "bedrooms") спальни
+						label.dropdawn-field__subject(for= 'bedrooms') спальни
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="спальня, спальни, спален", id="bedrooms", type="text", name="спальные", value=0)
+								input.counter__cnt.dropdawn-field__subject.bedrooms(data-declensions='спальня, спальни, спален', id=`bedrooms${id}`, type='text', name='спальные', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "beds") кровати
+						label.dropdawn-field__subject(for= 'beds') кровати
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="кровать,кровати,кроватей", id="beds",type="text", name="кровати", value=0)
+								input.counter__cnt.dropdawn-field__subject.beds(data-declensions='кровать,кровати,кроватей', id=`beds${id}`,type='text', name='кровати', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 					.dropdawn-field__row
-						label.dropdawn-field__subject(for= "bathrooms") ванные комнаты
+						label.dropdawn-field__subject(for= 'bathrooms') ванные комнаты
 						.dropdawn-field__counter
 							.counter
 								a.counter__minus.counter__btn
-								input.counter__cnt.dropdawn-field__subject(data-declensions="ванная комната,ванные комнаты,ванных комнат", id="bathrooms",type="text", name="ванные", value=0)
+								input.counter__cnt.dropdawn-field__subject.bathrooms(data-declensions='ванная комната,ванные комнаты,ванных комнат', id=`bathrooms${id}`,type='text', name='ванные', value=0)
 								a.counter__plus.counter__btn.counter__btn_active
 				.dropdawn-field__row_buttons
-					a.dropdawn-field__clear(href="") очистить
-					a.dropdawn-field__accept(href="") применить
+					a.dropdawn-field__clear(href='') очистить
+					a.dropdawn-field__accept(href='') применить
