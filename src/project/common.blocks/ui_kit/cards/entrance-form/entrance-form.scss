@@ -1,0 +1,37 @@
+//================================= Registry-form ==============================
+
+.registry-form {
+	&__user {
+		margin: 0 0 10px 0;
+	}
+	&__user-gender {
+		display: flex;
+		margin: 0 0 23px 0;
+	}
+	&__user-male {
+		margin: 0 20px 0 0;
+	}
+	&__user-birthday {
+		margin: 0 0 20px 0;
+	}
+	&__user-adv {
+		margin: 0 0 23px 0;
+	}
+	&__button_create {
+		margin: 0 0 32px 0;
+	}
+	&__button-row {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__exist {
+		display: flex;
+		align-items: center;
+		color: #000;
+	}
+	&__submit {
+		font-size: 0;
+		height: 0;
+		width: 0;
+	}
+}

@@ -10,11 +10,11 @@
 	&__container {
 	}
 	&__title {
-		font-family: "OpenSans";
+		font-family: $fontFamily_2;
 		font-weight: 700;
 		font-size: 24px;
 		line-height: 1.25em;
-		color: #1f2041;
+		color: $fontColor_1-3;
 		margin: 0 0 20px 0;
 	}
 	&__info {
@@ -25,17 +25,5 @@
 .info {
 	&__in-out {
 		margin: 0 0 20px 0;
-	}
-}
-
-.in-out {
-	&__row {
-		display: flex;
-		align-items: flex-end;
-		margin: 0 -10px;
-	}
-	&__column {
-		padding: 0 10px;
-		flex: 0 1 50%;
 	}
 }

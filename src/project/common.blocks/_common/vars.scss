@@ -8,7 +8,8 @@ $minwidth: 320px;
 
 $fontColor_1-0: #8f90a0; //0.50
 $fontColor_1-1: #c7c7cf; //0.25
-$fontColor_1-2: #575871; //0.75
+$fontColor_1-2: #575871; //0.75 rgba(31, 32, 65, 0.75);
+$fontColor_1-3: #1f2041;
 
 $fontColor_2-0: #bc9cff;
 
@@ -54,6 +55,8 @@ $neutral-secondary: #909399;
 $neutral-placeholder: #c0c4cc;
 
 // Border Color
+$borderColor_1-1: $fontColor_1-1; //0.25
+$borderColor_1-0: $fontColor_1-0; //0.50
 $border-base: #c7c7cf;
 $border-active: #8f90a0;
 $border-shadow: rgba(31, 32, 65, 0.05);

@@ -1,0 +1,13 @@
+//================================= card-info ==============================
+
+.in-out {
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		margin: 0 -10px;
+	}
+	&__column {
+		padding: 0 10px;
+		flex: 0 1 50%;
+	}
+}

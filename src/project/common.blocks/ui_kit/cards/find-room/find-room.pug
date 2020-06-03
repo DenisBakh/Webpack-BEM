@@ -1,21 +1,13 @@
 include ../../form_elements/dropdawn/dropdawn.pug
 include ../../form_elements/datepicker/datepicker.pug
 include ../../form_elements/buttons/button.pug
+include ../common-blocks/card-info/card-info.pug
 
 
 .card
 	.card__container
 		h2.card__title Найдём номера под ваши пожелания
 		.card__info
-			.info
-				.info__in-out
-					.in-out
-						.in-out__row
-							.in-out__column
-								+inputDatePicker('datepicker1', 'прибытие', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-							.in-out__column
-								+inputDatePicker('datepicker2', 'выезд', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-				.info__guests
-					+inputDropdawnGuests('1','гости', 'Сколько гостей', '')
+			+card-info('datepicker1','datepicker2','1','прибытие','выезд','гости','ДД.ММ.ГГГГ','ДД.ММ.ГГГГ','Сколько гостей','','','false','false', 'dd.mm.yyyy', 'dd.mm.yyyy','','','')
 		.card__button
 			+button('подобрать номер','#','','button_wide')

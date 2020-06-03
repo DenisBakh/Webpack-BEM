@@ -3,7 +3,7 @@
 .bullet-list {
 	&__list {
 		font-size: 14px;
-		color: $thirdFontColor;
+		color: $fontColor_1-2;
 	}
 	&__item {
 		line-height: 1.714em;
@@ -16,7 +16,7 @@
 			width: 10px;
 			height: 10px;
 			border-radius: 50%;
-			background: $FontColorLight;
+			background: $fontColor_1-1;
 			position: absolute;
 			top: 6px;
 			left: 1px;

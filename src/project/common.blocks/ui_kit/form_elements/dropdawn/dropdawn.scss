@@ -63,7 +63,7 @@ $padding: 10px;
 		}
 	}
 	&__subject {
-		color: #1f2041;
+		color: $fontColor_1-3;
 		font-family: "Montserrat";
 		font-weight: 700;
 		font-size: 12px;
@@ -87,7 +87,7 @@ $padding: 10px;
 		}
 	}
 	&__accept {
-		color: #bc9cff;
+		color: $fontColor_2-0;
 		cursor: pointer;
 		&:hover {
 			animation-name: bounce_2;

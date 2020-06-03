@@ -4,6 +4,7 @@ include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-tog
 include ../../form_elements/text-field/text-field.pug
 include ../../form_elements/datepicker/datepicker.pug
 include ../common-blocks/room-header/room-header.pug
+include ../common-blocks/card-info/card-info.pug
 
 
 .card
@@ -14,16 +15,7 @@ include ../common-blocks/room-header/room-header.pug
 			.book__form
 				form(action='#' method='post').book-form
 					.book-form__info
-						.info
-							.info__in-out
-								.in-out
-									.in-out__row
-										.in-out__column
-											+inputDatePicker('datepicker3', 'прибытие', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-										.in-out__column
-											+inputDatePicker('datepicker4', 'выезд', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-							.info__guests
-								+inputDropdawnGuests('2','гости', 'Сколько гостей', '')
+						+card-info('datepicker3','datepicker4','2','прибытие','выезд','гости','ДД.ММ.ГГГГ','ДД.ММ.ГГГГ','Сколько гостей','','','false','false', 'dd.mm.yyyy', 'dd.mm.yyyy','','','')
 					.book-form__bill.bill
 						.bill__list
 							li.bill__row
