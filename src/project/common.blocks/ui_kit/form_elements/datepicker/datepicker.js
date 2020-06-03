@@ -74,6 +74,24 @@ $(document).ready(function () {
 		});
 	});
 
+	var dtExample = $('#datePick-example')
+
+	dtExample.datepicker({
+		range: true,
+		multipleDatesSeparator: " - ",
+		//multipleDates: true,
+		//todayButton: true,
+		acceptButton: true,
+		inline: true,
+		clearButton: true,
+		//toggleSelected: false,
+		navTitles: {
+			days: 'MM <i>yyyy</i>',
+			months: 'yyyy',
+			years: 'yyyy1 - yyyy2'
+		}
+	});
+
 	// Сразу выберем какую-ниудь дату из `eventDates`
 	//	var currentDate = currentDate = new Date();
 	//	$picker.data('datepicker').selectDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 10))

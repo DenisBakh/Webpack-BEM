@@ -20,7 +20,10 @@
 	}
 	&__column {
 		padding: 0 20px;
-		flex: 0 1 33.333%;
+		flex: 0 1 420px;
+		&_s {
+			flex: 0 1 360px;
+		}
 	}
 	&__item {
 		margin: 0 0 40px 0;
