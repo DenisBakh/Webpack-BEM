@@ -1,0 +1,22 @@
+
+include ../common-blocks/room-header/room-header.pug
+include ../../form_elements/stars/stars.pug
+
+mixin room-card(sliderItems,room='888',lux=' люкс', price='9 990₽ ',incard='true')
+	.room-card
+		.room-card__slider
+			.slider
+				each item in sliderItems
+					.slider__item
+						.room-card__img
+							img(src=`assets/img/${item}`, alt=item)
+							.room-card__shadow
+		.room-card__container
+			.room-card__header
+				+room-header(room,lux,price,incard)
+			.room-card__rating
+				.room-card__stars
+					+stars(room)
+				.room-card__reviews
+					span.room-card__reviews-cnt 145
+					span  Отзывов

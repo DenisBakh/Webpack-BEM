@@ -2,13 +2,14 @@ include ../form_elements/text-field/text-field.pug
 include ../form_elements/range-slider/range-slider.pug
 include ../form_elements/pagination/pagination.pug
 include ../form_elements/dropdawn/dropdawn.pug
+include room-card/room-card.pug
 
 
 <!DOCTYPE html>
 html(lang='ru')
 	head
 		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
 		title Document
 	body
 	main.ui-cards
@@ -30,4 +31,6 @@ html(lang='ru')
 							.ui-cards__item
 								.datePick-example(id='datePick-example')
 							.ui-cards__item
-								include entrance-form/entrance-form.pug
+								+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','true')
+							.ui-cards__item
+								+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840',' ', '9 990₽ ','true')

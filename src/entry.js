@@ -1,7 +1,7 @@
 //Плагин загружен через объявление глоб переменной в WEBPACK new webpack.ProvidePlugin
 //import * as $ from 'jquery/'
 
-require('jquery');
+import './project/common.blocks/ui_kit/cards/slider/slider'
 
 import './project/common.blocks/ui_kit/form_elements/text-field/jquery.maskedinput.min'
 import './project/common.blocks/ui_kit/form_elements/text-field/mask-it'

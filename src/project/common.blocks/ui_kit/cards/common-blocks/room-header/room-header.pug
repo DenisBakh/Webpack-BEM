@@ -1,8 +1,11 @@
-mixin room-header(number='111',spec='люкс',cost='9 990₽ ')
+mixin room-header(number='111',spec='люкс',cost='9 990₽ ',incard='false')
 	.room-header
 		.room-header__room
 			span.room-header__n № 
-			span.room-header__number=number 
+			if incard==='true'
+				span.room-header__number.room-header__number_incard=number
+			else
+				span.room-header__number=number
 			span.room-header__spec=spec
 		.room-header__price
 			span.room-header__cost=cost

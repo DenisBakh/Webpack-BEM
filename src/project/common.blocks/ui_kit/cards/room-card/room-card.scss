@@ -1,0 +1,75 @@
+//================================= room-card ==============================
+
+.room-card {
+	width: 270px;
+	background: #ffffff;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 4px;
+	overflow: hidden;
+	&__container {
+		padding: 22px 20px 20px 20px;
+	}
+	&__header {
+		padding: 0 0 12px 0;
+		margin: 0 0 10px 0;
+		border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+	}
+	&__rating {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__img {
+		position: relative;
+		max-height: 151.5px;
+		overflow: hidden;
+	}
+
+	&__reviews {
+		color: $fontColor_1-0;
+		&-cnt {
+			font-weight: 700;
+		}
+	}
+	.room-card__shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 42px;
+			display: block;
+			top: 0;
+			@include transition;
+			background: linear-gradient(
+				90deg,
+				rgba(0, 0, 0, 0.5) 0%,
+				rgba(0, 0, 0, 0) 99.99%,
+				rgba(255, 255, 255, 0) 100%
+			);
+		}
+		&:before {
+			left: 0;
+			transform: translateX(-45px);
+		}
+		&:after {
+			right: 0;
+			transform: matrix(-1, 0, 0, 1, 0, 0) translateX(-45px);
+		}
+	}
+	&:hover {
+		.room-card__shadow {
+			&:before {
+				transform: translateX(0);
+			}
+			&:after {
+				transform: matrix(-1, 0, 0, 1, 0, 0) translateX(0);
+			}
+		}
+	}
+}

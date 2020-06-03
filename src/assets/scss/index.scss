@@ -1,6 +1,7 @@
+@import "../../project/common.blocks/_common/vars.scss";
 @import "../../project/common.blocks/_common/reset.scss";
 @import "../../project/common.blocks/_common/libs.scss";
-@import "../../project/common.blocks/_common/vars.scss";
+
 @import "../../project/common.blocks/_common/mixins.scss";
 @import "../../project/common.blocks/_common/fonts.scss";
 
@@ -46,6 +47,8 @@
 @import "../../project/common.blocks/ui_kit/cards/registry-form/registry-form.scss";
 @import "../../project/common.blocks/ui_kit/cards/book/book.scss";
 @import "../../project/common.blocks/ui_kit/cards/entrance-form/entrance-form.scss";
+@import "../../project/common.blocks/ui_kit/cards/room-card/room-card.scss";
+@import "../../project/common.blocks/ui_kit/cards/slider/slider.scss";
 /*
 body {
 	background: url("/dist/assets/img/logo_UI.png");

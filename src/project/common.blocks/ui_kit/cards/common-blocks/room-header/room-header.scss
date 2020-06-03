@@ -17,6 +17,9 @@
 	&__number {
 		font-family: $fontFamily_2;
 		font-size: 24px;
+		&_incard {
+			font-size: 20px;
+		}
 	}
 	&__spec {
 		font-family: $fontFamily_1;
