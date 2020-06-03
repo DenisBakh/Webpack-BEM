@@ -1,0 +1,36 @@
+//================================= room-header ==============================
+
+.room-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-size: 14px;
+	line-height: 1.25em;
+	&__room {
+		color: #1f2041;
+		font-weight: 700;
+	}
+	&__n {
+		font-family: $fontFamily_2;
+		font-size: 14px;
+	}
+	&__number {
+		font-family: $fontFamily_2;
+		font-size: 24px;
+	}
+	&__spec {
+		font-family: $fontFamily_1;
+		font-weight: 700;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $fontColor_2-0;
+	}
+	&__price {
+		font-weight: 700;
+		color: $fontColor_1-0;
+	}
+	&__per {
+		font-size: 12px;
+		font-weight: 400;
+	}
+}

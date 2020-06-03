@@ -1,14 +1,23 @@
 // Font
 $mainFont: "Montserrat", Helvetica, Arial, sans-serif;
+$fontFamily_1: "Montserrat", Helvetica, Arial, sans-serif;
+$fontFamily_2: "Quicksand", "OpenSans", sans-serif;
 //Переменные>==========================================================================================================================================
 // Size
 $minwidth: 320px;
+
+$fontColor_1-0: #8f90a0; //0.50
+$fontColor_1-1: #c7c7cf; //0.25
+$fontColor_1-2: #575871; //0.75
+
+$fontColor_2-0: #bc9cff;
 
 $FontColorLight: #c7c7cf;
 $fontColor_light: #c7c7cf;
 
 $mainFontColor: #8f90a0;
 $secondaryFontColor: #bc9cff;
+$FontColor_2: #bc9cff;
 
 $thirdFontColor: #575871;
 $fontColor_third: #575871;

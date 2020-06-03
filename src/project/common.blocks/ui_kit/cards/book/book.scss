@@ -1,5 +1,11 @@
 //================================= Registry-form ==============================
 
+.book {
+	&__header {
+		margin: 6px 0 22px 0;
+	}
+}
+
 .book-form {
 	&__info {
 		margin: 0 0 22px 0;
@@ -11,7 +17,7 @@
 	&__list {
 		font-size: 14px;
 		line-height: 18px;
-		color: $fontColor_third;
+		color: $fontColor_1-2;
 		margin: 0 0 35px 0;
 	}
 	&__row {
@@ -49,7 +55,7 @@
 		}
 	}
 	&__total {
-		font-family: "OpenSans";
+		font-family: $fontFamily_2;
 		font-weight: 700;
 		font-size: 19px;
 		display: flex;

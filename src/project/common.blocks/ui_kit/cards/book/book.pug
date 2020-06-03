@@ -3,59 +3,63 @@ include ../../form_elements/option-buttons/radio/radio-btn.pug
 include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
 include ../../form_elements/text-field/text-field.pug
 include ../../form_elements/datepicker/datepicker.pug
+include ../common-blocks/room-header/room-header.pug
 
 
 .card
 	.card__container
-		h2.card__title Регистрация аккаунта
-		form(action='#' method='post').book-form
-			.book-form__info
-				.info
-					.info__in-out
-						.in-out
-							.in-out__row
-								.in-out__column
-									+inputDatePicker('datepicker3', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-								.in-out__column
-									+inputDatePicker('datepicker4', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-					.info__guests
-						+inputDropdawnGuests('2','гости', 'Сколько гостей', '')
-			.book-form__bill.bill
-				.bill__list
-					li.bill__row
-						.bill__subject
-							.bill__option
-								span.bill__room-price 9 990
-								|₽ х 
-								span.bill__room-long 4 
-								|суток
-						.bill__value 
-							span.bill__room-total 39 960
-							|₽
-					li.bill__row
-						.bill__subject
-							.bill__option
-								span.bill__services Сбор за услуги: 
-								span.bill__discount скидка 2 179₽
-							.bill__info
-						.bill__value 
-							span.bill__services-total 0
-							|₽
-					li.bill__row
-						.bill__subject
-							.bill__option
-								span.bill__services2 Сбор за дополнительные услуги
-							.bill__info
-						.bill__value 
-							span.bill__services2-total 300
-							|₽
-				.bill__total
-					h3.bill__total-subject
-						.bill__option
-							span.bill__total Итого
-					.bill__total-dots
-					.bill__total-value
-						span.bill__total-bill 38 081
-						|₽
-			.book-form__user.book-form__button_create
-				+button('забронировать','#','submit','button_wide')
+		.book
+			.book__header
+				+room-header('888 ','люкс','9 990₽ ')
+			.book__form
+				form(action='#' method='post').book-form
+					.book-form__info
+						.info
+							.info__in-out
+								.in-out
+									.in-out__row
+										.in-out__column
+											+inputDatePicker('datepicker3', 'прибытие', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+										.in-out__column
+											+inputDatePicker('datepicker4', 'выезд', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+							.info__guests
+								+inputDropdawnGuests('2','гости', 'Сколько гостей', '')
+					.book-form__bill.bill
+						.bill__list
+							li.bill__row
+								.bill__subject
+									.bill__option
+										span.bill__room-price 9 990
+										|₽ х 
+										span.bill__room-long 4 
+										|суток
+								.bill__value 
+									span.bill__room-total 39 960
+									|₽
+							li.bill__row
+								.bill__subject
+									.bill__option
+										span.bill__services Сбор за услуги: 
+										span.bill__discount скидка 2 179₽
+									.bill__info
+								.bill__value 
+									span.bill__services-total 0
+									|₽
+							li.bill__row
+								.bill__subject
+									.bill__option
+										span.bill__services2 Сбор за дополнительные услуги
+									.bill__info
+								.bill__value 
+									span.bill__services2-total 300
+									|₽
+						.bill__total
+							h3.bill__total-subject
+								.bill__option
+									span.bill__total Итого
+							.bill__total-dots
+							.bill__total-value
+								span.bill__total-bill 38 081
+								|₽
+					.book-form__user.book-form__button_create
+						+button('забронировать','#','submit','button_wide')
