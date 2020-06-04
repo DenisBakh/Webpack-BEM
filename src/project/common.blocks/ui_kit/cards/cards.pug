@@ -4,6 +4,8 @@ include ../form_elements/pagination/pagination.pug
 include ../form_elements/dropdawn/dropdawn.pug
 include room-card/room-card.pug
 
+include ../logo_UI/logo_UI.pug
+
 
 <!DOCTYPE html>
 html(lang='ru')
@@ -14,7 +16,7 @@ html(lang='ru')
 	body
 	main.ui-cards
 		.container_ui
-			include ../logo_UI/logo_UI.pug
+				+logo('ui')
 				.container_ui__cards
 					.ui-cards__row
 						.ui-cards__column

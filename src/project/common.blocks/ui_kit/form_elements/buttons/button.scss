@@ -1,6 +1,6 @@
 //=========================BUTTON====================================
 @import "~/project/common.blocks/_common/vars.scss";
-
+/*
 .button {
 	text-align: center;
 	display: inline-block;
@@ -68,6 +68,96 @@ $border: 2px;
 	font-size: 12px;
 	padding: calc(1.3em - 2px) calc(1.6em - 2px);
 	min-width: 99px;
+	color: $secondaryFontColor;
+	background: #fff;
+	border: double $border transparent;
+	background-image: linear-gradient(white, white),
+		linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	@include transition;
+	&:hover {
+		opacity: 1;
+		background-image: linear-gradient(white, white),
+			linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+	}
+}
+*/
+
+.button {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $mainFont;
+	font-weight: 700;
+	font-size: 12px;
+	//line-height: 1em;
+	//padding: 1.3em 1.6em;
+	//padding: 9px 19px;
+	padding: 0.75em 1.58333em;
+	background: $mainGradient;
+	color: #fff;
+	border-radius: 1000px;
+	text-transform: uppercase;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+}
+
+.button-wrapper {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+	@include transition;
+	&:hover {
+		.button_full {
+			opacity: 0.5;
+		}
+	}
+}
+
+//=========================BUTTON_WIDE====================================
+.button_wide {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.button__icon {
+	position: absolute;
+	right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+//=========================BUTTON_SIMPLE====================================
+
+.button_simple {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $mainFontColor;
+	font-size: 12px;
+	@include transition;
+	&:hover {
+		color: $secondaryFontColor;
+	}
+}
+
+//=========================BUTTON_BORDER====================================
+$border: 2px;
+
+.button_border {
+	font-size: 12px;
+	//padding: calc(1.3em - 2px) calc(1.6em - 2px);
+	//min-width: 99px;
+	//padding: 9px 17px;
+	//padding: 0.75em 1.41666em;
+	padding: calc(0.75em - 2px) calc(1.58333em - 2px);
 	color: $secondaryFontColor;
 	background: #fff;
 	border: double $border transparent;

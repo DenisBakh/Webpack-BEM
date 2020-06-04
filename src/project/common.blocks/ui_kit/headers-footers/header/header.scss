@@ -1,0 +1,107 @@
+//=========================HEADER====================================
+.container {
+	max-width: 1160px;
+	margin: 0 auto;
+}
+
+.header {
+	background: #fff;
+	padding: 15px 0;
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+	}
+	&__img {
+		margin: 0 11px 0 0;
+	}
+	&__navigation {
+		display: flex;
+		align-items: center;
+		font-family: $mainFont;
+		font-size: 14px;
+		line-height: 1.2em;
+		color: $fontColor_1-0;
+	}
+}
+
+.header-nav {
+	margin: 0 26px 0 0;
+	&__list {
+		display: flex;
+	}
+	&__item:not(:last-child) {
+		margin: 0 26px 0 0;
+	}
+	&__link {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		color: inherit;
+		position: relative;
+		&:before {
+			display: block;
+			content: attr(title);
+			font-weight: bold;
+			height: 0px;
+			color: transparent;
+			overflow: hidden;
+			visibility: hidden;
+		}
+		&:hover {
+			color: $fontColor_1-2;
+			font-weight: 700;
+			//text-shadow: 0.25px 0.1px 0px $fontColor_1-2, -0.25px -0.1px 0px $fontColor_1-2;
+			.dropdawn-icon_header-menu {
+				&:before,
+				&:after {
+					background-color: $fontColor_1-2;
+				}
+				&:before {
+					transform: translate(-4.5px, -50%) rotate(-45deg);
+				}
+				&:after {
+					transform: translate(4.5px, -50%) rotate(45deg);
+				}
+			}
+		}
+		&_menu {
+			padding: 0 17px 0 0;
+			&:before {
+				padding: 0 17px 0 0;
+			}
+		}
+	}
+}
+
+.header-login {
+	display: flex;
+	align-items: center;
+	&__item:first-child {
+		margin: 0 20px 0 0;
+	}
+	&__item {
+	}
+	&__item_logged {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		color: inherit;
+		display: none;
+		padding: 0 0 0 30px;
+		border-left: 1px solid rgba(31, 32, 65, 0.1);
+		cursor: pointer;
+	}
+	&_logged {
+		.header-login__item {
+			display: none;
+		}
+		.header-login__item_logged {
+			display: block;
+		}
+	}
+}

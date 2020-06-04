@@ -26,8 +26,10 @@ include ../../form_elements/text-field/text-field.pug
 			.registry-form__user.registry-form__user-adv
 				+checkbox-toggle('adv', 'Получать спецпредложения')
 			.registry-form__user.registry-form__button_create
-				+button('создать','#','submit','button_wide')
+				.card-button
+					+button('создать','#','submit','button_wide')
 			.registry-form__button-row
 				.registry-form__exist Уже есть аккаунт на Toxin
 				.registry-form__button_enter
-					+button('войти','#','','button_border')
+					.card-button
+						+button('войти','#','','button_border')

@@ -11,8 +11,10 @@ include ../../form_elements/buttons/button.pug
 					.registry-form__user.registry-form__user-password
 						+inputs('user-password', 'password', '', '', 'Пароль', '')
 					.registry-form__user.registry-form__button_create
-						+button('войти','#','submit','button_wide')
+						.card-button
+							+button('войти','#','submit','button_wide')
 					.registry-form__button-row
 						.registry-form__exist Нет аккаунтана Toxin?
 						.registry-form__button_enter
-							+button('создать','#','','button_border')
+							.card-button
+								+button('создать','#','','button_border')

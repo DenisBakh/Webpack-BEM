@@ -1,0 +1,46 @@
+
+include ../../form_elements/buttons/button.pug
+include ../../logo_UI/logo_UI.pug
+
+mixin header(logged='unlogged')
+	.header
+		.container
+			.header__row
+				.header__logo
+					.header__img
+						+logo('header')
+					h1.header__title
+						+toxin()
+				.header__navigation
+					nav.header-nav
+						ul.header-nav__list
+							li.header-nav__item
+								a.header-nav__link(href='#' title='Home') Home
+							li.header-nav__item 
+								a.header-nav__link(href='#' title='About Us') About Us
+							li.header-nav__item
+								a.header-nav__link.header-nav__link_menu(href='#' title='Services') Services
+									.dropdawn-icon.dropdawn-icon_header-menu
+							li.header-nav__item
+								a.header-nav__link(href='#' title='Careers') Careers
+							li.header-nav__item
+								a.header-nav__link(href='#' title='News') News
+							li.header-nav__item 
+								a.header-nav__link(href='#' title='Documentation') Documentation
+					if logged==='logged'
+						.header-login.header-login_logged
+							.header-login__item
+								+button('Login',href='',type='',mode='button_border')
+							.header-login__item
+								+button('REGISTER',href='',type='',mode='button')
+							a(href='#').header-login__item_logged Cosmin Negoita
+					else 
+						.header-login
+							.header-login__item
+								+button('Login',href='',type='',mode='button_border')
+							.header-login__item
+								+button('REGISTER',href='',type='',mode='button')
+							a(href='#').header-login__item_logged Cosmin Negoita
+
+
+

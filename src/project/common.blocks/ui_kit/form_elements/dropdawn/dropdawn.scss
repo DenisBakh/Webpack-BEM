@@ -1,3 +1,4 @@
+//=========================DROPDAWN====================================
 $light: #fff;
 $border-radius: 3px;
 $border-color: #ccc;
@@ -97,7 +98,7 @@ $padding: 10px;
 		}
 	}
 }
-
+/*
 .dropdawn-icon {
 	position: absolute;
 	cursor: pointer;
@@ -114,7 +115,7 @@ $padding: 10px;
 		transform: translateY(-50%) rotate(45deg);
 		width: 8px;
 		height: 2px;
-		background-color: rgb(143, 143, 143);
+		background-color: $fontColor_1-0;
 		z-index: 1;
 	}
 	&:before {
@@ -127,7 +128,47 @@ $padding: 10px;
 		transform: translateY(-50%) rotate(-45deg);
 		width: 8px;
 		height: 2px;
-		background-color: rgb(143, 143, 143);
+		background-color: $fontColor_1-0;
+		z-index: 1;
+	}
+	&.active {
+		&:before {
+			transform: translate(-4.5px, -50%) rotate(-45deg);
+		}
+		&:after {
+			transform: translate(4.5px, -50%) rotate(45deg);
+		}
+	}
+}
+*/
+
+.dropdawn-icon {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 50%;
+	&:after {
+		content: "";
+		@include transition;
+		display: block;
+		position: absolute;
+		right: 4.5px;
+		transform: rotate(45deg);
+		width: 8px;
+		height: 2px;
+		background-color: $fontColor_1-0;
+		z-index: 1;
+	}
+	&:before {
+		content: "";
+		@include transition;
+		display: block;
+		position: absolute;
+		right: 0px;
+		transform: rotate(-45deg);
+		width: 8px;
+		height: 2px;
+		background-color: $fontColor_1-0;
 		z-index: 1;
 	}
 	&.active {

@@ -4,6 +4,8 @@ include pagination/pagination.pug
 include dropdawn/dropdawn.pug
 include datepicker/datepicker.pug
 
+include ../logo_UI/logo_UI.pug
+
 <!DOCTYPE html>
 html(lang='ru')
 	head
@@ -13,73 +15,73 @@ html(lang='ru')
 	body
 	main.form-elements
 		.container_ui
-			include ../logo_UI/logo_UI.pug
-				.container_ui__form-elements
-					.form-elements__row
-						.form-elements__column.form-elements__column_a
-							.form-elements__item
-								+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
-							.form-elements__item
-								+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
-							.form-elements__item.form-elements__item_DropdawnGuests
-								+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
-							.form-elements__item.form-elements__item_Date
-								+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
-							.form-elements__item.form-elements__item_Date
-								.item-formElement
-									.item-formElement__row
-										.item-formElement__column
-											+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-										.item-formElement__column
-											+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-							.form-elements__item.form-elements__item_Date.form-elements__item_small
-								+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
-							.form-elements__item.form-elements__item_small
-								+subscribe('email_sub','Email','subscription text field')
-						.form-elements__column.form-elements__column_b
-							.form-elements__item.form-elements__item_checkbox
-								include option-buttons/checkbox/checkbox-simple/checkbox-example.pug
-							.form-elements__item.form-elements__item_radioBtn
-								include option-buttons/radio/radio-btn-example.pug
-							.form-elements__item.form-elements__item_checkboxToggle
-								include option-buttons/checkbox/checkbox-toggle/checkbox-toggle-example.pug
-							.form-elements__item.form-elements__item_checkboxLike
-								include option-buttons/checkbox/checkbox-like/checkbox-like-example.pug
-							.form-elements__item.form-elements__item_stars
-								include stars/stars-example.pug
-						.form-elements__column.form-elements__column_c
-							.form-elements__item.form-elements__item_RangeSlider
-								+rangeSlider()
-							.form-elements__item.form-elements__item_buttons
-								include buttons/button-example.pug
-							.form-elements__item
-								+pagination()
-					.form-elements__row_2
-						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item.form-elements__item_small
-								+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
-							.form-elements__item.form-elements__item_small
-								+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
-						.form-elements__column_2
-							.form-elements__item
-								+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
-						.form-elements__column_2
-							.form-elements__item
-								+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
-					.form-elements__row_2.form-elements__row_2-a
-						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item.form-elements__item_spoiler
-									include spoiler/spoiler-example.pug
-						.form-elements__column_2
-							.form-elements__item
-									include option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
-						.form-elements__column_2
-							.form-elements__item.form-elements__item_bulletList
-									include bullet-list/bullet-list.pug
-					.form-elements__row_3
-						.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
-							.form-elements__item.form-elements__item_advantages
-									include advantages/advantages.pug
-						.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
-							.form-elements__item.form-elements__item_review
-									include review/review.pug
+			+logo('ui')
+			.container_ui__form-elements
+				.form-elements__row
+					.form-elements__column.form-elements__column_a
+						.form-elements__item
+							+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
+						.form-elements__item
+							+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
+						.form-elements__item.form-elements__item_DropdawnGuests
+							+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
+						.form-elements__item.form-elements__item_Date
+							+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
+						.form-elements__item.form-elements__item_Date
+							.item-formElement
+								.item-formElement__row
+									.item-formElement__column
+										+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+									.item-formElement__column
+										+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+						.form-elements__item.form-elements__item_Date.form-elements__item_small
+							+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
+						.form-elements__item.form-elements__item_small
+							+subscribe('email_sub','Email','subscription text field')
+					.form-elements__column.form-elements__column_b
+						.form-elements__item.form-elements__item_checkbox
+							include option-buttons/checkbox/checkbox-simple/checkbox-example.pug
+						.form-elements__item.form-elements__item_radioBtn
+							include option-buttons/radio/radio-btn-example.pug
+						.form-elements__item.form-elements__item_checkboxToggle
+							include option-buttons/checkbox/checkbox-toggle/checkbox-toggle-example.pug
+						.form-elements__item.form-elements__item_checkboxLike
+							include option-buttons/checkbox/checkbox-like/checkbox-like-example.pug
+						.form-elements__item.form-elements__item_stars
+							include stars/stars-example.pug
+					.form-elements__column.form-elements__column_c
+						.form-elements__item.form-elements__item_RangeSlider
+							+rangeSlider()
+						.form-elements__item.form-elements__item_buttons
+							include buttons/button-example.pug
+						.form-elements__item
+							+pagination()
+				.form-elements__row_2
+					.form-elements__column_2.form-elements__column_2-a
+						.form-elements__item.form-elements__item_small
+							+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
+						.form-elements__item.form-elements__item_small
+							+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
+					.form-elements__column_2
+						.form-elements__item
+							+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
+					.form-elements__column_2
+						.form-elements__item
+							+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
+				.form-elements__row_2.form-elements__row_2-a
+					.form-elements__column_2.form-elements__column_2-a
+						.form-elements__item.form-elements__item_spoiler
+								include spoiler/spoiler-example.pug
+					.form-elements__column_2
+						.form-elements__item
+								include option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
+					.form-elements__column_2
+						.form-elements__item.form-elements__item_bulletList
+								include bullet-list/bullet-list.pug
+				.form-elements__row_3
+					.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
+						.form-elements__item.form-elements__item_advantages
+								include advantages/advantages.pug
+					.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
+						.form-elements__item.form-elements__item_review
+								include review/review.pug

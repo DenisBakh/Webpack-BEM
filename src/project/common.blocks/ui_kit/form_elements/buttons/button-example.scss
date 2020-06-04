@@ -1,5 +1,5 @@
 //=========================BUTTON-EXAMPLE====================================
-
+/*
 .button-list {
 	padding: 10px 0;
 }
@@ -15,5 +15,37 @@
 	padding: 0 10px;
 	&_b {
 		width: 100%;
+	}
+}
+*/
+
+.button-list {
+	padding: 10px 0;
+}
+.button-row {
+	max-width: 240px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -10px 30px -10px;
+	&:last-child {
+		margin: 0;
+	}
+	&_s {
+		max-width: 165px;
+	}
+	&_b {
+		max-width: 100%;
+	}
+}
+.button-column {
+	padding: 0 10px;
+	flex: 0 1 50%;
+	height: 44px;
+	&_b {
+		padding: 0;
+		flex: 0 1 100%;
+	}
+	&_s {
+		height: auto;
 	}
 }
