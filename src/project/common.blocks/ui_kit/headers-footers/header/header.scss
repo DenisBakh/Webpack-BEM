@@ -62,20 +62,24 @@
 					background-color: $fontColor_1-2;
 				}
 				&:before {
-					transform: translate(-4.5px, -50%) rotate(-45deg);
+					transform: translate(6.25px, -50%) rotate(45deg);
 				}
 				&:after {
-					transform: translate(4.5px, -50%) rotate(45deg);
+					transform: translate(-6.25px, -50%) rotate(-45deg);
 				}
 			}
 		}
 		&_menu {
-			padding: 0 17px 0 0;
+			padding: 0 20px 0 0;
 			&:before {
-				padding: 0 17px 0 0;
+				padding: 0 20px 0 0;
 			}
 		}
 	}
+}
+
+.dropdawn-icon_header-menu {
+	width: auto;
 }
 
 .header-login {
