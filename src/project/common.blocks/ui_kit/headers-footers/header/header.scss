@@ -12,13 +12,6 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-	&__logo {
-		display: flex;
-		align-items: center;
-	}
-	&__img {
-		margin: 0 11px 0 0;
-	}
 	&__navigation {
 		display: flex;
 		align-items: center;
@@ -36,6 +29,31 @@
 	}
 	&__item:not(:last-child) {
 		margin: 0 26px 0 0;
+	}
+	&__item {
+		position: relative;
+		&:hover {
+			.header-nav__submenu {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&__submenu {
+		opacity: 0;
+		visibility: hidden;
+		@include transition;
+		position: absolute;
+		top: 100%;
+		left: -5px;
+		padding: 20px 0 0 0;
+		z-index: 10;
+		@media (max-width: 1024px) {
+			left: auto;
+			top: 120px;
+			right: 100%;
+			padding: 0 0 0 0;
+		}
 	}
 	&__link {
 		font-family: inherit;
@@ -56,6 +74,7 @@
 			color: $fontColor_1-2;
 			font-weight: 700;
 			//text-shadow: 0.25px 0.1px 0px $fontColor_1-2, -0.25px -0.1px 0px $fontColor_1-2;
+
 			.dropdawn-icon_header-menu {
 				&:before,
 				&:after {
@@ -88,8 +107,6 @@
 	&__item:first-child {
 		margin: 0 20px 0 0;
 	}
-	&__item {
-	}
 	&__item_logged {
 		font-family: inherit;
 		font-size: inherit;
@@ -99,6 +116,9 @@
 		padding: 0 0 0 30px;
 		border-left: 1px solid rgba(31, 32, 65, 0.1);
 		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	&_logged {
 		.header-login__item {

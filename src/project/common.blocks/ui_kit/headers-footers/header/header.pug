@@ -1,16 +1,14 @@
 
 include ../../form_elements/buttons/button.pug
-include ../../logo_UI/logo_UI.pug
+include ../../logo_UI/logotype.pug
+include submenu/submenu.pug
 
 mixin header(logged='unlogged')
 	.header
 		.container
 			.header__row
 				.header__logo
-					.header__img
-						+logo('header')
-					h1.header__title
-						+toxin()
+					+logotype()
 				.header__navigation
 					nav.header-nav
 						ul.header-nav__list
@@ -21,6 +19,8 @@ mixin header(logged='unlogged')
 							li.header-nav__item
 								a.header-nav__link.header-nav__link_menu(href='#' title='Services') Services
 									.dropdawn-icon.dropdawn-icon_header-menu
+								.header-nav__submenu
+									+submenu()
 							li.header-nav__item
 								a.header-nav__link(href='#' title='Careers') Careers
 							li.header-nav__item

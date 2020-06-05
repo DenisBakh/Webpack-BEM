@@ -1,7 +1,12 @@
-.bullet-list
-	.label
-		.label__title bullet list
-	ul.bullet-list__list.checkbox-list
-		li.bullet-list__item Нельзя с питомцами
-		li.bullet-list__item Без вечеринок и мероприятий
-		li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+mixin bullet-list(title='bullet list',list,links='false')
+	.bullet-list
+		.label
+			.label__title=title
+		ul.bullet-list__list.checkbox-list
+			if links==='false'
+				each item in list
+					li.bullet-list__item=item
+			else
+				each item in list
+					li.bullet-list__item
+						a(href='#').bullet-list__link=item

@@ -1,0 +1,7 @@
+/*===================FOOTER============================================*/
+.social {
+	display: inline-flex;
+	&__item:not(:last-child) {
+		margin: 0 1.6rem 0 0;
+	}
+}

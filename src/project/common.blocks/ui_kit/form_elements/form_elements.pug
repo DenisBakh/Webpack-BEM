@@ -6,6 +6,8 @@ include datepicker/datepicker.pug
 
 include ../logo_UI/logo_UI.pug
 
+include bullet-list/bullet-list.pug
+
 <!DOCTYPE html>
 html(lang='ru')
 	head
@@ -77,7 +79,7 @@ html(lang='ru')
 								include option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
 					.form-elements__column_2
 						.form-elements__item.form-elements__item_bulletList
-								include bullet-list/bullet-list.pug
+								+bullet-list('bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
 				.form-elements__row_3
 					.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
 						.form-elements__item.form-elements__item_advantages

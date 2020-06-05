@@ -1,5 +1,149 @@
 include ../../form_elements/text-field/text-field.pug
-include ../../form_elements/range-slider/range-slider.pug
-include ../../form_elements/pagination/pagination.pug
-include ../../form_elements/dropdawn/dropdawn.pug
-include ../../form_elements/datepicker/datepicker.pug
+include ../../logo_UI/logotype.pug
+include ../../form_elements/bullet-list/bullet-list.pug
+include ../../../_common/social/social.pug
+
+mixin footer(style='norm')
+	footer.footer
+		if style==='mini'
+			.footer__top
+				.container.footer__container
+					.footer__row
+						.footer__column.footer__column_title.footer__column_full
+							.footer-logo.footer-logo_mini
+								.footer-logo__logotype
+									+logotype()
+								p.footer-text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+								.footer-logo__social
+									+social()
+						.footer__column.footer-disabled
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Navigation
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link About Us
+									li.footer-list__item
+										a(href='#').footer-list__link News
+									li.footer-list__item
+										a(href='#').footer-list__link Support
+									li.footer-list__item
+										a(href='#').footer-list__link Products
+						.footer__column.footer-disabled
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title ABOUT US
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link Who we are
+									li.footer-list__item
+										a(href='#').footer-list__link Our team
+									li.footer-list__item
+										a(href='#').footer-list__link Careers
+									li.footer-list__item
+										a(href='#').footer-list__link Investors
+						.footer__column.footer-disabled
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Support
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link Documentation
+									li.footer-list__item
+										a(href='#').footer-list__link Community
+									li.footer-list__item
+										a(href='#').footer-list__link Get in Touch
+						.footer__column.footer__column_subscribe.footer-disabled
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Subscribe to our newsletter
+								p.footer-text Receive our latest news and promotions in your inbox!
+								.footer-list__subscribe
+									+subscribe("email_sub", "Your email address", label="",value="", descr="")
+			.footer__down.footer-disabled
+				.container
+					.footer__row.footer__row_down
+						p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+						.footer__social
+							+social()
+		else
+			.footer__top
+				.container
+					.footer__row
+						.footer__column.footer__column_title
+							.footer-logo
+								.footer-logo__logotype
+									+logotype()
+								p.footer-text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+									.footer-logo__social.footer-disabled
+										.social
+											a(href='').social__item
+												img(src='assets/img/twitter.svg', alt="twitter")
+											a(href='').social__item
+												img(src='assets/img/facebook.svg', alt="facebook")
+											a(href='').social__item
+												img(src='assets/img/inst.svg', alt="inst")
+						.footer__column
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Navigation
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link About Us
+									li.footer-list__item
+										a(href='#').footer-list__link News
+									li.footer-list__item
+										a(href='#').footer-list__link Support
+									li.footer-list__item
+										a(href='#').footer-list__link Products
+						.footer__column
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title ABOUT US
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link Who we are
+									li.footer-list__item
+										a(href='#').footer-list__link Our team
+									li.footer-list__item
+										a(href='#').footer-list__link Careers
+									li.footer-list__item
+										a(href='#').footer-list__link Investors
+						.footer__column
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Support
+								ul.footer-list__list
+									li.footer-list__item
+										a(href='#').footer-list__link Documentation
+									li.footer-list__item
+										a(href='#').footer-list__link Community
+									li.footer-list__item
+										a(href='#').footer-list__link Get in Touch
+						.footer__column.footer__column_subscribe
+							.footer-list
+								.footer-list__label
+									.label
+										h4.label__title Subscribe to our newsletter
+								p.footer-text Receive our latest news and promotions in your inbox!
+								.footer-list__subscribe
+									+subscribe("email_sub", "Your email address", label="",value="", descr="")
+			.footer__down
+				.container
+					.footer__row.footer__row_down
+						p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+						.footer__social
+							.social
+								a(href='').social__item
+									img(src='assets/img/twitter.svg', alt="twitter")
+								a(href='').social__item
+									img(src='assets/img/facebook.svg', alt="facebook")
+								a(href='').social__item
+									img(src='assets/img/inst.svg', alt="inst")
