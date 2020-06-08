@@ -1,8 +1,9 @@
-include ../../../form_elements/bullet-list/bullet-list.pug
-mixin submenu()
+include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
+
+mixin submenu(list)
 	.submenu-header
 		.submenu-header__body
 			.submenu-header__row
 				.submenu-header__column
-					+bullet-list('bullet list',['Wake up','Massage','Excursions'],'true')
+					+bullet-list('bullet list',list,'true')
 
