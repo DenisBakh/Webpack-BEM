@@ -1,12 +1,10 @@
-include text-field/text-field.pug
-include range-slider/range-slider.pug
-include pagination/pagination.pug
-include dropdawn/dropdawn.pug
-include datepicker/datepicker.pug
-
-include ../logo_UI/logo_UI.pug
-
-include bullet-list/bullet-list.pug
+include /project/common.blocks/ui_kit/form_elements/text-field/text-field.pug
+include /project/common.blocks/ui_kit/form_elements/datepicker/datepicker.pug
+include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pug
+include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
+include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
+include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
+include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
 
 <!DOCTYPE html>
 html(lang='ru')
@@ -79,7 +77,7 @@ html(lang='ru')
 								include option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
 					.form-elements__column_2
 						.form-elements__item.form-elements__item_bulletList
-								+bullet-list('bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
+								+bullet-list('bullet list','false',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
 				.form-elements__row_3
 					.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
 						.form-elements__item.form-elements__item_advantages

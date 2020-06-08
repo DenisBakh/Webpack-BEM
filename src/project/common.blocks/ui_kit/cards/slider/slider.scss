@@ -59,7 +59,7 @@
 	transform: translate3d(-45px, -50%, 0);
 	left: 0;
 	&:active {
-		animation-name: bounce_2;
+		animation-name: bounce_sliaderArrow_prev;
 		animation-duration: 250ms;
 		animation-iteration-count: 1;
 		animation-timing-function: linear;
@@ -70,7 +70,7 @@
 	right: 0;
 	transform: translate3d(45px, -50%, 0) rotate(180deg);
 	&:active {
-		animation-name: bounce_3;
+		animation-name: bounce_sliaderArrow_next;
 		animation-duration: 250ms;
 		animation-iteration-count: 1;
 		animation-timing-function: linear;
@@ -117,7 +117,7 @@
 	background-color: #ffffff;
 }
 
-@keyframes bounce_2 {
+@keyframes bounce_sliaderArrow_prev {
 	0% {
 		transform: translate3d(0, -50%, 0) scale(1);
 	}
@@ -132,7 +132,7 @@
 	}
 }
 
-@keyframes bounce_3 {
+@keyframes bounce_sliaderArrow_next {
 	0% {
 		transform: translate3d(0, -50%, 0) rotate(180deg) scale(1);
 	}

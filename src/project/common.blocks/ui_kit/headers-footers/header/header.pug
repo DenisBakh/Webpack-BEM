@@ -1,9 +1,9 @@
 
-include ../../form_elements/buttons/button.pug
-include ../../logo_UI/logotype.pug
-include submenu/submenu.pug
+include /project/common.blocks/ui_kit/form_elements/buttons/button.pug
+include /project/common.blocks/ui_kit/logo_UI/logotype.pug
+include /project/common.blocks/ui_kit/headers-footers/header/submenu/submenu.pug
 
-mixin header(logged='unlogged')
+mixin header(logged='unlogged',menu,loginButton,regButton)
 	.header
 		.container
 			.header__row
@@ -12,35 +12,30 @@ mixin header(logged='unlogged')
 				.header__navigation
 					nav.header-nav
 						ul.header-nav__list
-							li.header-nav__item
-								a.header-nav__link(href='#' title='Home') Home
-							li.header-nav__item 
-								a.header-nav__link(href='#' title='About Us') About Us
-							li.header-nav__item
-								a.header-nav__link.header-nav__link_menu(href='#' title='Services') Services
-									.dropdawn-icon.dropdawn-icon_header-menu
-								.header-nav__submenu
-									+submenu()
-							li.header-nav__item
-								a.header-nav__link(href='#' title='Careers') Careers
-							li.header-nav__item
-								a.header-nav__link(href='#' title='News') News
-							li.header-nav__item 
-								a.header-nav__link(href='#' title='Documentation') Documentation
+							for item in menu
+								li.header-nav__item
+									if !(item.submenu==='')
+										a.header-nav__link.header-nav__link_menu(href=item.link title=item.text)=item.text
+											.dropdawn-icon.dropdawn-icon_header-menu
+										.header-nav__submenu
+											+submenu(item.submenu)
+									else
+										a.header-nav__link(href=item.link title=item.text)=item.text
 					if logged==='logged'
 						.header-login.header-login_logged
 							.header-login__item
-								+button('Login',href='',type='',mode='button_border')
+								+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
 							.header-login__item
-								+button('REGISTER',href='',type='',mode='button')
+								+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
 							a(href='#').header-login__item_logged Cosmin Negoita
 					else 
 						.header-login
 							.header-login__item
-								+button('Login',href='',type='',mode='button_border')
+								+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
 							.header-login__item
-								+button('REGISTER',href='',type='',mode='button')
+								+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
 							a(href='#').header-login__item_logged Cosmin Negoita
+
 
 
 

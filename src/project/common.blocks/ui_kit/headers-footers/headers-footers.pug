@@ -15,10 +15,32 @@ html(lang='ru')
 			+logo('ui')
 		.container_ui__headerfooter
 			.ui-headersfooters__item
-				+header()
+				-
+					var headerMenu = [
+						{text: 'Home', link:'#',submenu:''}, 
+						{text: 'About Us', link:'#',submenu:''}, 
+						{text: 'Services', link:'#',submenu:['1','1','1']},
+						{text: 'Careers', link:'#',submenu:''},
+						{text: 'News', link:'#',submenu:''},
+						{text: 'Documentation', link:'#',submenu:''}
+					]
+				- var headerLoginButton = [{text: 'Login', link:'#',type:'', mode:'button_border'}]
+				- var headerRegButton =[{text: 'REGISTER', link:'#',type:'',mode:'button'}]
+				+header('unlogged', headerMenu, headerLoginButton,headerRegButton)
 			.ui-headersfooters__item
-				+header('logged')
+				+header('logged', headerMenu, headerLoginButton,headerRegButton)
 			.ui-headersfooters__item
-				+footer('norm')
+				-
+					var footerMenu = [
+						{label: 'Navigation', li:[{text:'About Us',link:'#'},{text:'News',link:'#'},{text:'Support',link:'#'},{text:'Products',link:'#'}]},
+						{label: 'ABOUT US', li:[{text:'Who we are',link:'#'},{text:'Our team',link:'#'},{text:'Careers',link:'#'},{text:'Investors',link:'#'}]},
+						{label: 'Support', li:[{text:'Documentation',link:'#'},{text:'Community',link:'#'},{text:'Get in Touch',link:'#'}]}
+					]
+				-var footerText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'
+				-var footerSubscrTitle='Subscribe to our newsletter'
+				-var footerSubscrText='Receive our latest news and promotions in your inbox!'
+				-var footerSubscrBtn='Your email address'
+				-var footerCopyRight='Copyright © 2018 Toxin UI Kit. All rights reserved.'
+				+footer('norm',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)
 			.ui-headersfooters__item
-				+footer('mini')
+				+footer('mini',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)

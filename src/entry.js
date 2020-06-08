@@ -50,6 +50,7 @@ import './assets/scss/index.scss'
 
 
 require.context('./project', true, /\.(png|svg|jpg|ico|mp3)$/);
+require.context('./pages', true, /\.(png|svg|jpg|ico|mp3)$/);
 require.context('./project', true, /\.(ttf|woff|woff2|eot)$/);
 
 
