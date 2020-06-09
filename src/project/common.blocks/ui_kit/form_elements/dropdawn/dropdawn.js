@@ -253,7 +253,7 @@ $(document).ready(function ($) {
 	*/
 	//TOGGLE ACTIVE на DROPDAWN
 	$('.text-field__wrapper').on('click', function (e) {
-		var isDatePick = $(this).children(".datepick").length > 0
+		var isDatePick = $(this).children(".dropdawn-icon_apart").length > 0
 		if (!isDatePick) {
 			var $wrapper = $(this);
 			var div = $wrapper.find('.dropdawn-field');

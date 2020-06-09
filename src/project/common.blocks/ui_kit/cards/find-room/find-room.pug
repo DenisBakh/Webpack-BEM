@@ -8,7 +8,34 @@ include ../common-blocks/card-info/card-info.pug
 	.card__container
 		h2.card__title Найдём номера под ваши пожелания
 		.card__info
-			+card-info('datepicker1','datepicker2','1','прибытие','выезд','гости','ДД.ММ.ГГГГ','ДД.ММ.ГГГГ','Сколько гостей','','','false','false', 'dd.mm.yyyy', 'dd.mm.yyyy','','','')
+			-
+				var inCome={
+					id:'datepicker1',
+					label:'прибытие',
+					placeholder:'ДД.ММ.ГГГГ',
+					value:'',
+					range:'true',
+					dateFormat:'dd.mm.yyyy',
+					descr:''
+					}
+			-
+				var outCome={
+					id:'datepicker2',
+					label:'выезд',
+					placeholder:'ДД.ММ.ГГГГ',
+					value:'',
+					range:'false',
+					dateFormat:'dd.mm.yyyy',
+					descr:''
+					}
+			-
+				var ddGuests={
+					id:'1',
+					label:'гости',
+					placeholder:'Сколько гостей',
+					descr:''
+					}
+			+card-info2(inCome,outCome,ddGuests)
 		.card__button
 			.card-button
 				+button('подобрать номер','#','','button_wide')

@@ -46,6 +46,23 @@ $DT-picker__fontColor_main: #8f90a0;
 }
 
 /* -------------------------------------------------
+	  Common styles to wrapper
+	 ------------------------------------------------- */
+.in-out {
+	position: relative;
+	&__spec {
+		position: absolute;
+		top: 20px;
+		left: 0;
+	}
+}
+.datepick_spec {
+	width: 0;
+	opacity: 0;
+	visibility: hidden;
+	z-index: -5;
+}
+/* -------------------------------------------------
 	  Datepicker cells
 	 ------------------------------------------------- */
 .datepicker--cells {

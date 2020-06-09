@@ -1,11 +1,20 @@
-mixin card-info(id1='datepicker1',id2='datepicker2',id3='1',label1='прибытие',label2='выезд',label3='гости',placeholder1='ДД.ММ.ГГГГ',placeholder2='ДД.ММ.ГГГГ',placeholder3='Сколько гостей',value1='',value2='',range1='false',range2='false',dateFormat1= 'dd.mm.yyyy',dateFormat2= 'dd.mm.yyyy',descr1='',descr2='',descr3='')
+mixin card-info(dtPicker1,dtPicker2,ddGuests,dtPicker2)
 	.info
 		.info__in-out
 			.in-out
 				.in-out__row
 					.in-out__column
-						+inputDatePicker(id1, label1, placeholder1,value1, range1, dateFormat1,descr1)
+						+inputDatePicker(dtPicker1.id, dtPicker1.label, dtPicker1.placeholder,dtPicker1.value, dtPicker1.range, dtPicker1.dateFormat,dtPicker1.descr)
 					.in-out__column
-						+inputDatePicker(id2, label2, placeholder2,value2, range2, dateFormat2,descr2)
+						+inputDatePicker(dtPicker2.id, dtPicker2.label, dtPicker2.placeholder,dtPicker2.value, dtPicker2.range, dtPicker2.dateFormat,dtPicker2.descr)
+				.in-out__row_b
+					+inputDatePicker(dtPicker2.id, dtPicker2.label, dtPicker2.placeholder,dtPicker2.value, dtPicker2.range, dtPicker2.dateFormat,dtPicker2.descr)
 		.info__guests
-			+inputDropdawnGuests(id3,label3, placeholder3, descr3)
+			+inputDropdawnGuests(ddGuests.id,ddGuests.label, ddGuests.placeholder, ddGuests.descr)
+
+mixin card-info2(inCome,outCome,ddGuests)
+	.info
+		.info__in-out
+			+inputDatePicker2(inCome,outCome)
+		.info__guests
+			+inputDropdawnGuests(ddGuests.id,ddGuests.label, ddGuests.placeholder, ddGuests.descr)
