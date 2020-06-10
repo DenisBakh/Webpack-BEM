@@ -118,6 +118,57 @@ const plugins = () => {
 			"window.jQuery": "jquery'",
 			"window.$": "jquery",
 		}),
+		new HTMLWebpackPlugin(
+			{
+				filename: './index.html',
+				template: `${PAGES_DIR}/index/index.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["index", "common"]
+			},
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: './ui_cards.html',
+				template: `${PAGES_DIR}/ui/ui_cards/cards.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["common", "ui_cards", "ui_common"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: './ui_form_elements.html',
+				template: `${PAGES_DIR}/ui/ui_form_elements/form_elements.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["common", "ui_formelements", "ui_common"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: './ui_color&type.html',
+				template: `${PAGES_DIR}/ui/ui_colortype/color&type.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["ui_colortype", "ui_common"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: './ui_headersfooters.html',
+				template: `${PAGES_DIR}/ui/ui_headersfooters/ui_headersfooters.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["common", "ui_headersfooters", "ui_common"]
+			}
+		),
+		/*
 		...PAGES.map(page => new HTMLWebpackPlugin({
 			template: `${PAGES_DIR}/${page}`,
 			filename: `./${page.replace(/\.pug/, '.html')}`,
@@ -125,6 +176,7 @@ const plugins = () => {
 				collapseWhitespace: isProd
 			}
 		}))
+		*/
 	]
 
 	if (isProd) {
@@ -143,7 +195,16 @@ module.exports = {
 		path: PATHS
 	},*/
 	entry: {
-		main: ['@babel/polyfill', './entry.js'],
+		common: ['@babel/polyfill', './pages/common/common.js'],
+		index: ['@babel/polyfill', './pages/index/index.js'],
+		search: ['@babel/polyfill', './pages/search/search.js'],
+		detail: ['@babel/polyfill', './pages/detail/detail.js'],
+		ui_common: ['@babel/polyfill', './pages/ui/ui_common/ui_common.js'],
+		ui_colortype: ['@babel/polyfill', './pages/ui/ui_colortype/color&type.js'],
+		ui_formelements: ['@babel/polyfill', './pages/ui/ui_form_elements/form_elements.js'],
+		ui_cards: ['@babel/polyfill', './pages/ui/ui_cards/cards.js'],
+		ui_headersfooters: ['@babel/polyfill', './pages/ui/ui_headersfooters/ui_headersfooters.js']
+		//`${PATHS.src}/js/about`,
 	},
 	output: {
 		//filename: filename('js'),

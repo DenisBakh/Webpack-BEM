@@ -1,4 +1,4 @@
-include ../logo_UI/logo_UI.pug
+include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
 
 <!DOCTYPE html>
 html(lang="en")
@@ -8,7 +8,8 @@ html(lang="en")
 		title Document
 	body
 	main.main
-		+logo('ui')
+		.container_ui
+			+logo('ui')
 		.container_ui__color-type
 			.content
 				.content__row

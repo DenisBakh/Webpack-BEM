@@ -1,10 +1,10 @@
-include ../form_elements/text-field/text-field.pug
-include ../form_elements/range-slider/range-slider.pug
-include ../form_elements/pagination/pagination.pug
-include ../form_elements/dropdawn/dropdawn.pug
-include room-card/room-card.pug
+include /project/common.blocks/ui_kit/form_elements/text-field/text-field.pug
+include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pug
+include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
+include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
+include /project/common.blocks/ui_kit/cards/room-card/room-card.pug
 
-include ../logo_UI/logo_UI.pug
+include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
 
 
 <!DOCTYPE html>
@@ -21,14 +21,14 @@ html(lang='ru')
 					.ui-cards__row
 						.ui-cards__column
 							.ui-cards__item
-								include find-room/find-room.pug
+								include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
 							.ui-cards__item
-								include registry-form/registry-form.pug
+								include /project/common.blocks/ui_kit/cards/registry-form/registry-form.pug
 						.ui-cards__column
 							.ui-cards__item
-								include book/book.pug
+								include /project/common.blocks/ui_kit/cards/book/book.pug
 							.ui-cards__item
-								include entrance-form/entrance-form.pug
+								include /project/common.blocks/ui_kit/cards/entrance-form/entrance-form.pug
 						.ui-cards__column.ui-cards__column_s
 							.ui-cards__item
 								.datePick-example(id='datePick-example')

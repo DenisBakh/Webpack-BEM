@@ -1,15 +1,5 @@
 //================================= Form_elements ==============================
 
-.container_ui {
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 30px;
-	&__form-elements {
-		max-width: 1160px;
-		margin: 66px auto 0 auto;
-	}
-}
-
 .form-elements {
 	&__row {
 		display: flex;

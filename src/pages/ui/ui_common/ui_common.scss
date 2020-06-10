@@ -1,0 +1,18 @@
+//================================= UI_Common ==============================
+
+.container_ui {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 30px;
+	&__form-elements {
+		max-width: 1160px;
+		margin: 66px auto 0 auto;
+	}
+	&__cards {
+		max-width: 1160px;
+		margin: 73px auto 0 auto;
+	}
+	&__headerfooter {
+		margin: 40px auto 0 auto;
+	}
+}
