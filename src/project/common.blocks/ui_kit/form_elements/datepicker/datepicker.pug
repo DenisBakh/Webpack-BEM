@@ -9,25 +9,25 @@ mixin inputDatePicker(id='datepicker', label='filter date dropdown', placeholder
 				input.text-field__input.datepick( type='text', name=id, placeholder=placeholder, id= id, value= value,data-range=range,data-dateFormat=dateFormat)
 
 
-mixin inputDatePicker2(inCome,outCome)
+mixin inputDatePicker_pseudo(inCome,outCome)
 	.in-out
 		.in-out__spec
 			div.text-field
-				input.text-field__input.datepick.datepick_spec( type='text', name=`${inCome.id}_in`, placeholder=inCome.placeholder, id= `${inCome.id}_in`, value= inCome.value,data-range='true',data-dateFormat=inCome.dateFormat)
+				input.text-field__input.datepick.datepick_spec( type='text', name=`${inCome.id}_inout`, id= `${inCome.id}_inout`, value= inCome.value,data-range='true',data-dateFormat=inCome.dateFormat)
 		.in-out__row
 			.in-out__column
 				div.text-field
 					.label
-						label.label__title(for=inCome.id)=inCome.label
+						label.label__title(for=`${inCome.id}_in`)=inCome.label
 						label.label__descr=inCome.descr
 					.text-field__wrapper
 							.dropdawn-icon.dropdawn-icon_apart
-							input.text-field__input.datepick_pseudo.text-field__inout( type='text', name=`${inCome.id}_in`, placeholder=inCome.placeholder, id= `${inCome.id}_in`, value= inCome.value,data-range=inCome.range,data-dateFormat=inCome.dateFormat)
+							input.text-field__input.datepick_pseudo.text-field__inout.text-field__in( type='text', name=`${inCome.id}_in`, placeholder=inCome.placeholder, id= `${inCome.id}_in`, value= inCome.value,data-range=inCome.range,data-dateFormat=inCome.dateFormat)
 			.in-out__column
 				div.text-field
 					.label
-						label.label__title(for=outCome.id)= outCome.label
+						label.label__title(for=`${outCome.id}_out`)= outCome.label
 						label.label__descr=outCome.descr
 					.text-field__wrapper
 							.dropdawn-icon.dropdawn-icon_apart
-							input.text-field__input.datepick_pseudo.text-field__inout( type='text', name=`${outCome.id}_in`, placeholder=outCome.placeholder, id= `${outCome.id}_in`, value= outCome.value,data-range=outCome.range,data-dateFormat=outCome.dateFormat)
+							input.text-field__input.datepick_pseudo.text-field__inout.text-field__out( type='text', name=`${outCome.id}_out`, placeholder=outCome.placeholder, id= `${outCome.id}_out`, value= outCome.value,data-range=outCome.range,data-dateFormat=outCome.dateFormat)

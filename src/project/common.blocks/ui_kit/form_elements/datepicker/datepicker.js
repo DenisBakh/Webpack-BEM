@@ -30,15 +30,26 @@ $(document).ready(function () {
 
 	*/
 
-	$('.text-field__inout').on('click', function (e) {
+	$('.datepick_pseudo').on('click', function (e) {
 		var $this = $(this);
 		var $wrapper = $this.closest('.text-field__wrapper');
 		var $icon = $wrapper.find('.dropdawn-icon')
 		var $parent = $this.closest('.in-out');
 		var $input = $parent.find('.datepick_spec');
 		if ($input.length > 0) {
-			$input.data('datepicker').show()
 			$icon.addClass('active')
+			$input.data('datepicker').show()
+		};
+	});
+
+	$('.datepick').on('click', function (e) {
+		var $this = $(this);
+		var $wrapper = $this.closest('.text-field__wrapper');
+		var $icon = $wrapper.find('.dropdawn-icon')
+		var $input = $this
+		if ($input.length > 0) {
+			$icon.addClass('active')
+			$input.data('datepicker').show()
 		};
 	});
 
@@ -47,25 +58,31 @@ $(document).ready(function () {
 		var $parent = $this.closest('.in-out');
 		if ($parent.length > 0) {
 			var $input = $parent.find('.datepick');
-			if (!$this.hasClass('active')) {
-				$input.data('datepicker').show()
-				$this.addClass("active");
-			} else {
-				$input.data('datepicker').hide()
-				$this.removeClass("active");
-			}
+		} else {
+			var $parent = $this.closest('.text-field__wrapper');
+			var $input = $parent.find('.datepick');
+		}
+		if (!$this.hasClass('active')) {
+			$input.data('datepicker').show()
+			$this.addClass("active");
+		} else {
+			$input.data('datepicker').hide()
+			$this.removeClass("active");
 		}
 	});
 
 	$('.datepick_spec').on('change', function () {
 		// If a date is picked from the datepicker and not manually put in, then this event will not fire.
-		console.log('Input value changed.');
-		var first = $(this).datepicker('getDate').val();
+		var $this = $(this);
+		var $dtRange = $this.val();
+		var $minDt = $dtRange.substr(0, 10);
+		var $maxDt = $dtRange.substr(-10, 10);
+		var $parent = $this.closest('.in-out');
+		var $income = $parent.find('.text-field__in');
+		var $outcome = $parent.find('.text-field__out');
 
-
-		var first = $(this).datepicker('maxDate');
-		console.log(first);
-
+		$income.val($minDt)
+		$outcome.val($maxDt)
 	});
 
 
@@ -83,10 +100,6 @@ $(document).ready(function () {
 			//inline: true,
 			clearButton: true,
 			//toggleSelected: false,
-			onSelect: function (date) {
-				alert(date);
-				console.log(2321)
-			},
 			navTitles: {
 				days: 'MM <i>yyyy</i>',
 				months: 'yyyy',

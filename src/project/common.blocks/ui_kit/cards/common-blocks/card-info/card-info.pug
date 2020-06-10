@@ -1,20 +1,6 @@
-mixin card-info(dtPicker1,dtPicker2,ddGuests,dtPicker2)
+mixin card-info(inCome,outCome,ddGuests)
 	.info
 		.info__in-out
-			.in-out
-				.in-out__row
-					.in-out__column
-						+inputDatePicker(dtPicker1.id, dtPicker1.label, dtPicker1.placeholder,dtPicker1.value, dtPicker1.range, dtPicker1.dateFormat,dtPicker1.descr)
-					.in-out__column
-						+inputDatePicker(dtPicker2.id, dtPicker2.label, dtPicker2.placeholder,dtPicker2.value, dtPicker2.range, dtPicker2.dateFormat,dtPicker2.descr)
-				.in-out__row_b
-					+inputDatePicker(dtPicker2.id, dtPicker2.label, dtPicker2.placeholder,dtPicker2.value, dtPicker2.range, dtPicker2.dateFormat,dtPicker2.descr)
-		.info__guests
-			+inputDropdawnGuests(ddGuests.id,ddGuests.label, ddGuests.placeholder, ddGuests.descr)
-
-mixin card-info2(inCome,outCome,ddGuests)
-	.info
-		.info__in-out
-			+inputDatePicker2(inCome,outCome)
+			+inputDatePicker_pseudo(inCome,outCome)
 		.info__guests
 			+inputDropdawnGuests(ddGuests.id,ddGuests.label, ddGuests.placeholder, ddGuests.descr)

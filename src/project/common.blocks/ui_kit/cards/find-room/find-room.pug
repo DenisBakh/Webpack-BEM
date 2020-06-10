@@ -20,11 +20,11 @@ include ../common-blocks/card-info/card-info.pug
 					}
 			-
 				var outCome={
-					id:'datepicker2',
+					id:inCome.id,
 					label:'выезд',
 					placeholder:'ДД.ММ.ГГГГ',
 					value:'',
-					range:'false',
+					range:'true',
 					dateFormat:'dd.mm.yyyy',
 					descr:''
 					}
@@ -35,7 +35,7 @@ include ../common-blocks/card-info/card-info.pug
 					placeholder:'Сколько гостей',
 					descr:''
 					}
-			+card-info2(inCome,outCome,ddGuests)
+			+card-info(inCome,outCome,ddGuests)
 		.card__button
 			.card-button
 				+button('подобрать номер','#','','button_wide')

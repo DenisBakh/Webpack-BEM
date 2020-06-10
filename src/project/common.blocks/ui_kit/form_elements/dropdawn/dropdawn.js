@@ -254,7 +254,9 @@ $(document).ready(function ($) {
 	//TOGGLE ACTIVE на DROPDAWN
 	$('.text-field__wrapper').on('click', function (e) {
 		var isDatePick = $(this).children(".dropdawn-icon_apart").length > 0
+		console.log(isDatePick)
 		if (!isDatePick) {
+			console.log(123123)
 			var $wrapper = $(this);
 			var div = $wrapper.find('.dropdawn-field');
 			if (!div.is(e.target) && (div.has(e.target).length === 0)) {  // если клик был не по нашему блоку
