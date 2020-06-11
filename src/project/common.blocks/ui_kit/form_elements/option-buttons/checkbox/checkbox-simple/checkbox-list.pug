@@ -1,0 +1,29 @@
+include checkbox.pug
+
+mixin checkbox(list,label='Checkbox Buttons',inSpoiler='false',inSpoiler_show='hide')
+	if inSpoiler==='inSpoiler'
+		if inSpoiler_show==='hide'
+			.spoiler
+				.spoiler__title.label
+					.label__title=label
+					.dropdawn-icon
+				.spoiler__content
+					each item in list
+						.option-item
+							+checkbox-shape(item.id,item.kind, item.name.value, item.name.descr)
+		else
+			.spoiler.active
+				.spoiler__title.label.active
+					.label__title=label
+					.dropdawn-icon.active
+				.spoiler__content.active
+					each item in list
+						.option-item
+							+checkbox-shape(item.id,item.kind, item.name.value, item.name.descr)
+	else
+		.label
+			.label__title=label
+		.checkbox-list
+			each item in list
+				.option-item
+					+checkbox-shape(item.id,item.kind, item.name.value, item.name.descr)

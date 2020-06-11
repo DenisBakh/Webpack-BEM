@@ -130,6 +130,16 @@ const plugins = () => {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: './search.html',
+				template: `${PAGES_DIR}/search/search.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["search", "common"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: './ui_cards.html',
 				template: `${PAGES_DIR}/ui/ui_cards/cards.pug`,
 				minify: {

@@ -7,10 +7,10 @@
 	border-radius: 4px;
 	overflow: hidden;
 	&__container {
-		padding: 22px 20px 20px 20px;
+		padding: 25px 20px 20px 20px;
 	}
 	&__header {
-		padding: 0 0 12px 0;
+		padding: 0 0 11px 0;
 		margin: 0 0 10px 0;
 		border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 	}
@@ -26,6 +26,10 @@
 	}
 
 	&__reviews {
+		font-family: $mainFont;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1em;
 		color: $fontColor_1-0;
 		&-cnt {
 			font-weight: 700;

@@ -4,7 +4,10 @@ include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pu
 include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
 include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
+
+
 
 <!DOCTYPE html>
 html(lang='ru')
@@ -40,7 +43,13 @@ html(lang='ru')
 							+subscribe('email_sub','Email','subscription text field')
 					.form-elements__column.form-elements__column_b
 						.form-elements__item.form-elements__item_checkbox
-							include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-example.pug
+							-
+								var checkboxList=[
+									{id:'allow_smoke',kind:'simple',name:{value:'Можно курить',descr:'asdasd'}},
+									{id:'with_pets',kind:'simple',name:{value:'Можно с питомцами',descr:'asdasd'}},
+									{id:'inv_guests',kind:'simple',name:{value:'Можно пригласить гостей (до 10 человек)',descr:'asdasqw'}},
+								]
+							+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
 						.form-elements__item.form-elements__item_radioBtn
 							include /project/common.blocks/ui_kit/form_elements/option-buttons/radio/radio-btn-example.pug
 						.form-elements__item.form-elements__item_checkboxToggle
@@ -51,7 +60,7 @@ html(lang='ru')
 							include /project/common.blocks/ui_kit/form_elements/stars/stars-example.pug
 					.form-elements__column.form-elements__column_c
 						.form-elements__item.form-elements__item_RangeSlider
-							+rangeSlider()
+							+rangeSlider("Range Slider", '')
 						.form-elements__item.form-elements__item_buttons
 							include /project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
 						.form-elements__item
@@ -71,10 +80,35 @@ html(lang='ru')
 				.form-elements__row_2.form-elements__row_2-a
 					.form-elements__column_2.form-elements__column_2-a
 						.form-elements__item.form-elements__item_spoiler
-								include /project/common.blocks/ui_kit/form_elements/spoiler/spoiler-example.pug
+							-
+								var checkboxList=[
+									{id:'breackfast',kind:'simple',name:{value:'Завтрак',descr:''}},
+									{id:'worktable',kind:'simple',name:{value:'Письменный стол',descr:''}},
+									{id:'foodchair',kind:'simple',name:{value:'Стул для кормления',descr:''}},
+									{id:'minibed',kind:'simple',name:{value:'Кроватка',descr:''}},
+									{id:'tv',kind:'simple',name:{value:'Телевизор',descr:''}},
+									{id:'shampoo',kind:'simple',name:{value:'Шампунь',descr:''}},
+								]
+							+checkbox(checkboxList,'expandable checkbox list','inSpoiler','hide')
+						.form-elements__item.form-elements__item_spoiler
+							-
+								var checkboxList=[
+									{id:'breackfast1',kind:'simple',name:{value:'Завтрак',descr:''}},
+									{id:'worktable2',kind:'simple',name:{value:'Письменный стол',descr:''}},
+									{id:'foodchair3',kind:'simple',name:{value:'Стул для кормления',descr:''}},
+									{id:'minibed4',kind:'simple',name:{value:'Кроватка',descr:''}},
+									{id:'tv5',kind:'simple',name:{value:'Телевизор',descr:''}},
+									{id:'shampoo6',kind:'simple',name:{value:'Шампунь',descr:''}},
+								]
+							+checkbox(checkboxList,'expandable checkbox list','inSpoiler','show')
 					.form-elements__column_2
 						.form-elements__item
-								include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-rich/checkbox-rich-example.pug
+							-
+								var checkboxList=[
+									{id:'wide',kind:'rich',name:{value:'Широкий коридор',descr:'Ширина коридоров в номере не менее 91 см.'}},
+									{id:'helper',kind:'rich',name:{value:'Помощник для инвалидов',descr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
+								]
+							+checkbox(checkboxList,'rich Checkbox Buttons')
 					.form-elements__column_2
 						.form-elements__item.form-elements__item_bulletList
 								+bullet-list('bullet list','false',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])

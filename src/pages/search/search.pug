@@ -1,36 +1,130 @@
 include /project/common.blocks/ui_kit/headers-footers/header/header.pug
 include /project/common.blocks/ui_kit/headers-footers/footer/footer.pug
+include /project/common.blocks/ui_kit/cards/room-card/room-card.pug
+
+include /project/common.blocks/ui_kit/form_elements/datepicker/datepicker.pug
+include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
+include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
+
+
+<!DOCTYPE html>
+html(lang='ru')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		title Document
+	body
+		-
+			var headerMenu = [
+				{text: 'О нас', link:'#',submenu:''}, 
+				{text: 'Услуги', link:'#',submenu:['1','2','3']}, 
+				{text: 'Вакансии', link:'#',submenu:''},
+				{text: 'Новости', link:'#',submenu:''},
+				{text: 'Соглашения', link:'#',submenu:['5','123','11']}
+			]
+		- var headerLoginButton = [{text: 'войти', link:'#',type:'', mode:'button_border'}]
+		- var headerRegButton =[{text: 'зарегистрироваться', link:'#',type:'',mode:'button'}]
+
+		.wrapper
+			+header('unlogged', headerMenu, headerLoginButton,headerRegButton)
+			main.main
+				.container.container_landing
+					.content
+						.content__row
+							.content__column.content__column_filter
+								.filter-block
+									.filter-block__item
+										-
+											var filter_date = {
+												id:'datepicker',
+												label:'даты пребывания в отеле',
+												placeholder:'ДД.ММ.ГГГГ',
+												value:'',
+												range:'true',
+												dateFormat:'dd M',
+												descr:''
+											}
+										+inputDatePicker(filter_date.id, filter_date.label, filter_date.placeholder,filter_date.value, filter_date.range, filter_date.dateFormat,filter_date.descr)
+									.filter-block__item.filter-block__item_guests
+										-
+											var filter_guests = {
+												id:'guests',
+												label:'гости',
+												value:'Сколько гостей',
+												descr:''
+											}
+										+inputDropdawnGuests(filter_guests.id,filter_guests.label, filter_guests.value, filter_guests.descr)
+									.filter-block__item.filter-block__item_rangeSlider
+										+rangeSlider('диапазон цены','Стоимость за сутки пребывания в номере')
+									.filter-block__item.filter-block__item_chckBox
+										-
+											var checkboxList=[
+												{id:'allow_smoke',kind:'simple',name:{value:'Можно курить',descr:'asdasd'}},
+												{id:'with_pets',kind:'simple',name:{value:'Можно с питомцами',descr:'asdasd'}},
+												{id:'inv_guests',kind:'simple',name:{value:'Можно пригласить гостей (до 10 человек)',descr:'asdasqw'}},
+											]
+										+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
+									.filter-block__item.filter-block__item_chckBox
+										-
+											var checkboxList=[
+												{id:'wide',kind:'rich',name:{value:'Широкий коридор',descr:'Ширина коридоров в номере не менее 91 см.'}},
+												{id:'helper',kind:'rich',name:{value:'Помощник для инвалидов',descr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
+											]
+										+checkbox(checkboxList,'доступность')
+									.filter-block__item.filter-block__item_ddEquip
+										+inputDropdawnEquip('',label='удобства номера', value='Параметры номера', descr='')
+									.filter-block__item
+										-
+											var checkboxList=[
+												{id:'breackfast',kind:'simple',name:{value:'Завтрак',descr:''}},
+												{id:'worktable',kind:'simple',name:{value:'Письменный стол',descr:''}},
+												{id:'foodchair',kind:'simple',name:{value:'Стул для кормления',descr:''}},
+												{id:'minibed',kind:'simple',name:{value:'Кроватка',descr:''}},
+												{id:'tv',kind:'simple',name:{value:'Телевизор',descr:''}},
+												{id:'shampoo',kind:'simple',name:{value:'Шампунь',descr:''}},
+											]
+										+checkbox(checkboxList,'дополнительные удобства','inSpoiler','hide')
+							.content__column.content__column_roomcards
+								.cards-block
+									h2.cards-block__title Номера, которые мы для вас подобрали
+										.cards-block__row
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
 
 
 
--
-	var headerMenu = [
-		{text: 'О нас', link:'#',submenu:''}, 
-		{text: 'Услуги', link:'#',submenu:['1','2','3']}, 
-		{text: 'Вакансии', link:'#',submenu:''},
-		{text: 'Новости', link:'#',submenu:''},
-		{text: 'Соглашения', link:'#',submenu:['5','123','11']}
-	]
-- var headerLoginButton = [{text: 'войти', link:'#',type:'', mode:'button_border'}]
-- var headerRegButton =[{text: 'зарегистрироваться', link:'#',type:'',mode:'button'}]
-
-.wrapper
-	+header('unlogged', headerMenu, headerLoginButton,headerRegButton)
-	main.main
-		.container.container_landing
-			.find-room
-				include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
-			.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-
-	-
-		var footerMenu = [
-			{label: 'навигация', li:[{text:'О нас',link:'#'},{text:'Новости',link:'#'},{text:'Служба поддержки',link:'#'},{text:'Услуги',link:'#'}]},
-			{label: 'о нас', li:[{text:'О сервисе',link:'#'},{text:'Наша команда',link:'#'},{text:'Вакансии',link:'#'},{text:'Инвесторы',link:'#'}]},
-			{label: 'Служба поддержки', li:[{text:'Соглашения',link:'#'},{text:'Сообщества',link:'#'},{text:'Связь с нами',link:'#'}]}
-		]
-	-var footerText = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
-	-var footerSubscrTitle='Подписка'
-	-var footerSubscrText='Получайте специальные предложения и новости сервиса'
-	-var footerSubscrBtn='Email'
-	-var footerCopyRight='Copyright © 2018 Toxin отель. Все права зачищены.'
-	+footer('norm',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)
+			-
+				var footerMenu = [
+					{label: 'навигация', li:[{text:'О нас',link:'#'},{text:'Новости',link:'#'},{text:'Служба поддержки',link:'#'},{text:'Услуги',link:'#'}]},
+					{label: 'о нас', li:[{text:'О сервисе',link:'#'},{text:'Наша команда',link:'#'},{text:'Вакансии',link:'#'},{text:'Инвесторы',link:'#'}]},
+					{label: 'Служба поддержки', li:[{text:'Соглашения',link:'#'},{text:'Сообщества',link:'#'},{text:'Связь с нами',link:'#'}]}
+				]
+			-var footerText = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+			-var footerSubscrTitle='Подписка'
+			-var footerSubscrText='Получайте специальные предложения и новости сервиса'
+			-var footerSubscrBtn='Email'
+			-var footerCopyRight='Copyright © 2018 Toxin отель. Все права зачищены.'
+			+footer('norm',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)

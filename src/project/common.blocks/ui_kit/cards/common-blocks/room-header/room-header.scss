@@ -17,8 +17,9 @@
 	&__number {
 		font-family: $fontFamily_2;
 		font-size: 24px;
+		line-height: 1em;
 		&_incard {
-			font-size: 20px;
+			font-size: 19px;
 		}
 	}
 	&__spec {
@@ -31,6 +32,8 @@
 	&__price {
 		font-weight: 700;
 		color: $fontColor_1-0;
+		font-family: $mainFont;
+		font-size: 14px;
 	}
 	&__per {
 		font-size: 12px;

@@ -1,4 +1,4 @@
-mixin rangeSlider(label="Range Slider")
+mixin rangeSlider(label="Range Slider", descr='Стоимость за сутки пребывания в номере')
 	.range-slider
 		.label.range-slider__label
 			label.label__title=label
@@ -11,3 +11,4 @@ mixin rangeSlider(label="Range Slider")
 					span.range-slider__to-upd 15000
 					|₽
 		div.r-slider
+		p.range-slider__descr=descr

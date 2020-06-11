@@ -1,28 +1,18 @@
 //=======================MAIN-LANDING==================
 
+@import "~/pages/common/common.scss";
+
 .wrapper {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
 }
 .main {
-	background: url("/assets/img/landing.jpg");
-	background-repeat: no-repeat;
+	background: #fff;
 	flex: 1 1 auto;
-	background-position: center bottom;
-	padding: 69px 0 20px 0;
-	height: 830px;
-	&__text {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		width: 260px;
-		font-family: $mainFont;
-		font-size: 1rem;
-		line-height: 1.8rem;
-		text-align: right;
-		color: $fontColor_1-2;
-	}
+	padding: 30px 0 20px 0;
+	box-shadow: inset 0px 31px 31px -34px rgba(31, 32, 65, 0.1);
+	border-bottom: 1px solid $borderColor_1-1;
 }
 
 .find-room {
@@ -32,4 +22,56 @@
 .container_landing {
 	position: relative;
 	height: 100%;
+}
+
+.content {
+	&__row {
+		display: flex;
+	}
+	&__column {
+		&_filter {
+			flex: 0 0 23%;
+			margin: 0 59px 0 0;
+		}
+		&_roomcards {
+			flex: 1 1 70%;
+		}
+	}
+}
+
+.filter-block {
+	&__item {
+		margin: 0 0 20px 0;
+		&_guests {
+			margin: 0 0 30px 0;
+		}
+		&_rangeSlider {
+			margin: 0 0 30px 0;
+		}
+		&_chckBox {
+			margin: 0 0 30px 0;
+		}
+		&_ddEquip {
+			margin: 0 0 30px 0;
+		}
+	}
+}
+
+.cards-block {
+	&__title {
+		font-family: $fontFamily_2;
+		font-weight: 700;
+		font-size: 1.7rem;
+		line-height: 1.25em;
+		color: $fontColor_1-3;
+	}
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -6px;
+	}
+	&__item {
+		margin: 20px 0 0 0;
+		padding: 0 6px;
+	}
 }
