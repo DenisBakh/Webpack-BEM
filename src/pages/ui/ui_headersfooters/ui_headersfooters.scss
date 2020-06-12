@@ -1,5 +1,9 @@
 //=========================HEADERS_FOOTERS====================================
+
+@import "~/pages/ui/_ui_common/ui_common.scss";
+
 .ui-headersfooters {
+	flex: 1 1 auto;
 	background: #f4f4f6;
 	padding: 0 0 100px 0;
 	&__item {

@@ -1,12 +1,9 @@
 //=======================MAIN-LANDING==================
 
-@import "~/pages/common/common.scss";
+@import "~/main/main.scss";
+@import "~/pages/common/common/common.scss";
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-}
+
 .main {
 	background: #fff;
 	flex: 1 1 auto;
@@ -17,11 +14,6 @@
 
 .find-room {
 	width: 380px;
-}
-
-.container_landing {
-	position: relative;
-	height: 100%;
 }
 
 .content {

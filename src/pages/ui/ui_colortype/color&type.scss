@@ -1,5 +1,9 @@
 //================================= color&type ==============================
-@import "~/pages/common/common.scss";
+@import "~/pages/ui/_ui_common/ui_common.scss";
+
+.main{
+	flex:1 1 auto;
+}
 
 .content {
 	&__row {

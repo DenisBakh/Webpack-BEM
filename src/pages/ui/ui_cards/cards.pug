@@ -14,25 +14,26 @@ html(lang='ru')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1')
 		title Document
 	body
-	main.ui-cards
-		.container_ui
-				+logo('ui')
-				.container_ui__cards
-					.ui-cards__row
-						.ui-cards__column
-							.ui-cards__item
-								include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
-							.ui-cards__item
-								include /project/common.blocks/ui_kit/cards/registry-form/registry-form.pug
-						.ui-cards__column
-							.ui-cards__item
-								include /project/common.blocks/ui_kit/cards/book/book.pug
-							.ui-cards__item
-								include /project/common.blocks/ui_kit/cards/entrance-form/entrance-form.pug
-						.ui-cards__column.ui-cards__column_s
-							.ui-cards__item
-								.datePick-example(id='datePick-example')
-							.ui-cards__item
-								+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','true')
-							.ui-cards__item
-								+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840',' ', '9 990₽ ','true')
+		.wrapper
+			main.ui-cards
+				.container_ui
+						+logo('ui')
+						.container_ui__cards
+							.ui-cards__row
+								.ui-cards__column
+									.ui-cards__item
+										include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
+									.ui-cards__item
+										include /project/common.blocks/ui_kit/cards/registry-form/registry-form.pug
+								.ui-cards__column
+									.ui-cards__item
+										include /project/common.blocks/ui_kit/cards/book/book.pug
+									.ui-cards__item
+										include /project/common.blocks/ui_kit/cards/entrance-form/entrance-form.pug
+								.ui-cards__column.ui-cards__column_s
+									.ui-cards__item
+										.datePick-example(id='datePick-example')
+									.ui-cards__item
+										+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','true')
+									.ui-cards__item
+										+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840',' ', '9 990₽ ','true')

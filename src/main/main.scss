@@ -1,22 +1,16 @@
 @import "~/project/common.blocks/_common/vars.scss";
 @import "~/project/common.blocks/_common/reset.scss";
 @import "~/project/common.blocks/_common/libs.scss";
-
 @import "~/project/common.blocks/_common/mixins.scss";
 @import "~/project/common.blocks/_common/fonts.scss";
-
 @import "~/project/common.blocks/_common/main.scss";
 
-//@import "~/project/common.blocks/ui_kit/color&type/color&type.scss";
-
-//@import "~/project/common.blocks/ui_kit/form_elements/form_elements.scss";
 @import "~/project/common.blocks/ui_kit/logo_UI/logo_UI.scss";
 @import "~/project/common.blocks/ui_kit/logo_UI/logotype.scss";
 
 @import "~/project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.scss";
 @import "~/project/common.blocks/ui_kit/form_elements/text-field/text-field.scss";
 
-//@import "~/project/common.blocks/ui_kit/form_elements/spoiler/spoiler.scss";
 @import "~/project/common.blocks/ui_kit/form_elements/option-buttons/option-buttons-common.scss";
 @import "~/project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox.scss";
 @import "~/project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.scss";
@@ -38,7 +32,6 @@
 
 @import "~/project/common.blocks/ui_kit/form_elements/range-slider/range-slider.scss";
 
-//@import "~/project/common.blocks/ui_kit/cards/cards.scss";
 @import "~/project/common.blocks/ui_kit/cards/common-blocks/room-header/room-header.scss";
 @import "~/project/common.blocks/ui_kit/cards/common-blocks/card-info/card-info.scss";
 
@@ -49,16 +42,7 @@
 @import "~/project/common.blocks/ui_kit/cards/room-card/room-card.scss";
 @import "~/project/common.blocks/ui_kit/cards/slider/slider.scss";
 
-//@import "~/project/common.blocks/ui_kit/headers-footers/headers-footers.scss";
-
-/////////////////////////////////
 @import "~/project/common.blocks/_common/social/social.scss";
 @import "~/project/common.blocks/ui_kit/headers-footers/header/submenu/submenu.scss";
 @import "~/project/common.blocks/ui_kit/headers-footers/header/header.scss";
 @import "~/project/common.blocks/ui_kit/headers-footers/footer/footer.scss";
-
-/*
-body {
-	background: url("/dist/assets/img/logo_UI.png");
-}
-*/

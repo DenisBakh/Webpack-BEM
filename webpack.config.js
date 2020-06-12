@@ -125,7 +125,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["index", "common"]
+				chunks: ["index"]
 			},
 		),
 		new HTMLWebpackPlugin(
@@ -135,7 +135,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["search", "common"]
+				chunks: ["search"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -145,7 +145,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["common", "ui_cards", "ui_common"]
+				chunks: [ "ui_cards"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -155,7 +155,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["common", "ui_formelements", "ui_common"]
+				chunks: [ "ui_formelements"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -165,7 +165,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["ui_colortype", "ui_common"]
+				chunks: ["ui_colortype"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -175,7 +175,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["common", "ui_headersfooters", "ui_common"]
+				chunks: ["ui_headersfooters"]
 			}
 		),
 		/*
@@ -205,11 +205,12 @@ module.exports = {
 		path: PATHS
 	},*/
 	entry: {
-		common: ['@babel/polyfill', './pages/common/common.js'],
+		main: ['@babel/polyfill', './main/main.js'],
+		//common: ['@babel/polyfill', './pages/common/common.js'],
 		index: ['@babel/polyfill', './pages/index/index.js'],
 		search: ['@babel/polyfill', './pages/search/search.js'],
 		detail: ['@babel/polyfill', './pages/detail/detail.js'],
-		ui_common: ['@babel/polyfill', './pages/ui/ui_common/ui_common.js'],
+		//ui_common: ['@babel/polyfill', './pages/ui/ui_common/ui_common.js'],
 		ui_colortype: ['@babel/polyfill', './pages/ui/ui_colortype/color&type.js'],
 		ui_formelements: ['@babel/polyfill', './pages/ui/ui_form_elements/form_elements.js'],
 		ui_cards: ['@babel/polyfill', './pages/ui/ui_cards/cards.js'],

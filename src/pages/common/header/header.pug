@@ -1,0 +1,14 @@
+include /project/common.blocks/ui_kit/headers-footers/header/header.pug
+
+
+-
+	var headerMenu = [
+		{text: 'О нас', link:'#',submenu:''}, 
+		{text: 'Услуги', link:'#',submenu:['1','2','3']}, 
+		{text: 'Вакансии', link:'#',submenu:''},
+		{text: 'Новости', link:'#',submenu:''},
+		{text: 'Соглашения', link:'#',submenu:['5','123','11']}
+	]
+- var headerLoginButton = [{text: 'войти', link:'#',type:'', mode:'button_border'}]
+- var headerRegButton =[{text: 'зарегистрироваться', link:'#',type:'',mode:'button'}]
++header('unlogged', headerMenu, headerLoginButton,headerRegButton)

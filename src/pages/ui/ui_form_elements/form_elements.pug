@@ -16,106 +16,108 @@ html(lang='ru')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title Document
 	body
-	main.form-elements
-		.container_ui
-			+logo('ui')
-			.container_ui__form-elements
-				.form-elements__row
-					.form-elements__column.form-elements__column_a
-						.form-elements__item
-							+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
-						.form-elements__item
-							+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
-						.form-elements__item.form-elements__item_DropdawnGuests
-							+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
-						.form-elements__item.form-elements__item_Date
-							+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
-						.form-elements__item.form-elements__item_Date
-							.item-formElement
-								.item-formElement__row
-									.item-formElement__column
-										+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-									.item-formElement__column
-										+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-						.form-elements__item.form-elements__item_Date.form-elements__item_small
-							+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
-						.form-elements__item.form-elements__item_small
-							+subscribe('email_sub','Email','subscription text field')
-					.form-elements__column.form-elements__column_b
-						.form-elements__item.form-elements__item_checkbox
-							-
-								var checkboxList=[
-									{id:'allow_smoke',kind:'simple',name:{value:'Можно курить',descr:'asdasd'}},
-									{id:'with_pets',kind:'simple',name:{value:'Можно с питомцами',descr:'asdasd'}},
-									{id:'inv_guests',kind:'simple',name:{value:'Можно пригласить гостей (до 10 человек)',descr:'asdasqw'}},
-								]
-							+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
-						.form-elements__item.form-elements__item_radioBtn
-							include /project/common.blocks/ui_kit/form_elements/option-buttons/radio/radio-btn-example.pug
-						.form-elements__item.form-elements__item_checkboxToggle
-							include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle-example.pug
-						.form-elements__item.form-elements__item_checkboxLike
-							include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-like/checkbox-like-example.pug
-						.form-elements__item.form-elements__item_stars
-							include /project/common.blocks/ui_kit/form_elements/stars/stars-example.pug
-					.form-elements__column.form-elements__column_c
-						.form-elements__item.form-elements__item_RangeSlider
-							+rangeSlider("Range Slider", '')
-						.form-elements__item.form-elements__item_buttons
-							include /project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
-						.form-elements__item
-							+pagination()
-				.form-elements__row_2
-					.form-elements__column_2.form-elements__column_2-a
-						.form-elements__item.form-elements__item_small
-							+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
-						.form-elements__item.form-elements__item_small
-							+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
-					.form-elements__column_2
-						.form-elements__item
-							+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
-					.form-elements__column_2
-						.form-elements__item
-							+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
-				.form-elements__row_2.form-elements__row_2-a
-					.form-elements__column_2.form-elements__column_2-a
-						.form-elements__item.form-elements__item_spoiler
-							-
-								var checkboxList=[
-									{id:'breackfast',kind:'simple',name:{value:'Завтрак',descr:''}},
-									{id:'worktable',kind:'simple',name:{value:'Письменный стол',descr:''}},
-									{id:'foodchair',kind:'simple',name:{value:'Стул для кормления',descr:''}},
-									{id:'minibed',kind:'simple',name:{value:'Кроватка',descr:''}},
-									{id:'tv',kind:'simple',name:{value:'Телевизор',descr:''}},
-									{id:'shampoo',kind:'simple',name:{value:'Шампунь',descr:''}},
-								]
-							+checkbox(checkboxList,'expandable checkbox list','inSpoiler','hide')
-						.form-elements__item.form-elements__item_spoiler
-							-
-								var checkboxList=[
-									{id:'breackfast1',kind:'simple',name:{value:'Завтрак',descr:''}},
-									{id:'worktable2',kind:'simple',name:{value:'Письменный стол',descr:''}},
-									{id:'foodchair3',kind:'simple',name:{value:'Стул для кормления',descr:''}},
-									{id:'minibed4',kind:'simple',name:{value:'Кроватка',descr:''}},
-									{id:'tv5',kind:'simple',name:{value:'Телевизор',descr:''}},
-									{id:'shampoo6',kind:'simple',name:{value:'Шампунь',descr:''}},
-								]
-							+checkbox(checkboxList,'expandable checkbox list','inSpoiler','show')
-					.form-elements__column_2
-						.form-elements__item
-							-
-								var checkboxList=[
-									{id:'wide',kind:'rich',name:{value:'Широкий коридор',descr:'Ширина коридоров в номере не менее 91 см.'}},
-									{id:'helper',kind:'rich',name:{value:'Помощник для инвалидов',descr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
-								]
-							+checkbox(checkboxList,'rich Checkbox Buttons')
-					.form-elements__column_2
-						.form-elements__item.form-elements__item_bulletList
-								+bullet-list('bullet list','false',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
-				.form-elements__row_3
-					.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
-						.form-elements__item.form-elements__item_advantages
-								include /project/common.blocks/ui_kit/form_elements/advantages/advantages.pug
-					.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
-						.form-elements__item.form-elements__item_review
-								include /project/common.blocks/ui_kit/form_elements/review/review.pug
+		.wrapper
+			header.header
+				.container_ui
+					+logo('ui')
+			main.form-elements
+				.container_ui.container_ui__form-elements
+					.form-elements__row
+						.form-elements__column.form-elements__column_a
+							.form-elements__item
+								+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
+							.form-elements__item
+								+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
+							.form-elements__item.form-elements__item_DropdawnGuests
+								+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
+							.form-elements__item.form-elements__item_Date
+								+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
+							.form-elements__item.form-elements__item_Date
+								.item-formElement
+									.item-formElement__row
+										.item-formElement__column
+											+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+										.item-formElement__column
+											+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+							.form-elements__item.form-elements__item_Date.form-elements__item_small
+								+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
+							.form-elements__item.form-elements__item_small
+								+subscribe('email_sub','Email','subscription text field')
+						.form-elements__column.form-elements__column_b
+							.form-elements__item.form-elements__item_checkbox
+								-
+									var checkboxList=[
+										{id:'allow_smoke',kind:'simple',name:{value:'Можно курить',descr:'asdasd'}},
+										{id:'with_pets',kind:'simple',name:{value:'Можно с питомцами',descr:'asdasd'}},
+										{id:'inv_guests',kind:'simple',name:{value:'Можно пригласить гостей (до 10 человек)',descr:'asdasqw'}},
+									]
+								+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
+							.form-elements__item.form-elements__item_radioBtn
+								include /project/common.blocks/ui_kit/form_elements/option-buttons/radio/radio-btn-example.pug
+							.form-elements__item.form-elements__item_checkboxToggle
+								include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle-example.pug
+							.form-elements__item.form-elements__item_checkboxLike
+								include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-like/checkbox-like-example.pug
+							.form-elements__item.form-elements__item_stars
+								include /project/common.blocks/ui_kit/form_elements/stars/stars-example.pug
+						.form-elements__column.form-elements__column_c
+							.form-elements__item.form-elements__item_RangeSlider
+								+rangeSlider("Range Slider", '')
+							.form-elements__item.form-elements__item_buttons
+								include /project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
+							.form-elements__item
+								+pagination()
+					.form-elements__row_2
+						.form-elements__column_2.form-elements__column_2-a
+							.form-elements__item.form-elements__item_small
+								+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
+							.form-elements__item.form-elements__item_small
+								+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
+						.form-elements__column_2
+							.form-elements__item
+								+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
+						.form-elements__column_2
+							.form-elements__item
+								+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
+					.form-elements__row_2.form-elements__row_2-a
+						.form-elements__column_2.form-elements__column_2-a
+							.form-elements__item.form-elements__item_spoiler
+								-
+									var checkboxList=[
+										{id:'breackfast',kind:'simple',name:{value:'Завтрак',descr:''}},
+										{id:'worktable',kind:'simple',name:{value:'Письменный стол',descr:''}},
+										{id:'foodchair',kind:'simple',name:{value:'Стул для кормления',descr:''}},
+										{id:'minibed',kind:'simple',name:{value:'Кроватка',descr:''}},
+										{id:'tv',kind:'simple',name:{value:'Телевизор',descr:''}},
+										{id:'shampoo',kind:'simple',name:{value:'Шампунь',descr:''}},
+									]
+								+checkbox(checkboxList,'expandable checkbox list','inSpoiler','hide')
+							.form-elements__item.form-elements__item_spoiler
+								-
+									var checkboxList=[
+										{id:'breackfast1',kind:'simple',name:{value:'Завтрак',descr:''}},
+										{id:'worktable2',kind:'simple',name:{value:'Письменный стол',descr:''}},
+										{id:'foodchair3',kind:'simple',name:{value:'Стул для кормления',descr:''}},
+										{id:'minibed4',kind:'simple',name:{value:'Кроватка',descr:''}},
+										{id:'tv5',kind:'simple',name:{value:'Телевизор',descr:''}},
+										{id:'shampoo6',kind:'simple',name:{value:'Шампунь',descr:''}},
+									]
+								+checkbox(checkboxList,'expandable checkbox list','inSpoiler','show')
+						.form-elements__column_2
+							.form-elements__item
+								-
+									var checkboxList=[
+										{id:'wide',kind:'rich',name:{value:'Широкий коридор',descr:'Ширина коридоров в номере не менее 91 см.'}},
+										{id:'helper',kind:'rich',name:{value:'Помощник для инвалидов',descr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
+									]
+								+checkbox(checkboxList,'rich Checkbox Buttons')
+						.form-elements__column_2
+							.form-elements__item.form-elements__item_bulletList
+									+bullet-list('bullet list','false',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
+					.form-elements__row_3
+						.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
+							.form-elements__item.form-elements__item_advantages
+									include /project/common.blocks/ui_kit/form_elements/advantages/advantages.pug
+						.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
+							.form-elements__item.form-elements__item_review
+									include /project/common.blocks/ui_kit/form_elements/review/review.pug

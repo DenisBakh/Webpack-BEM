@@ -1,6 +1,9 @@
 //================================= Form_elements ==============================
 
+@import "~/pages/ui/_ui_common/ui_common.scss";
+
 .form-elements {
+	flex:1 1 auto;
 	&__row {
 		display: flex;
 		margin: 0 -60px;

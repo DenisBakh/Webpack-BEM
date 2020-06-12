@@ -1,0 +1,16 @@
+include /project/common.blocks/ui_kit/headers-footers/footer/footer.pug
+
+
+-
+	var footerMenu = [
+		{label: 'навигация', li:[{text:'О нас',link:'#'},{text:'Новости',link:'#'},{text:'Служба поддержки',link:'#'},{text:'Услуги',link:'#'}]},
+		{label: 'о нас', li:[{text:'О сервисе',link:'#'},{text:'Наша команда',link:'#'},{text:'Вакансии',link:'#'},{text:'Инвесторы',link:'#'}]},
+		{label: 'Служба поддержки', li:[{text:'Соглашения',link:'#'},{text:'Сообщества',link:'#'},{text:'Связь с нами',link:'#'}]}
+	]
+-var footerText = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
+-var footerSubscrTitle='Подписка'
+-var footerSubscrText='Получайте специальные предложения и новости сервиса'
+-var footerSubscrBtn='Email'
+-var footerCopyRight='Copyright © 2018 Toxin отель. Все права зачищены.'
+
++footer('norm',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)

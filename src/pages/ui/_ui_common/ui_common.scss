@@ -1,9 +1,13 @@
 //================================= UI_Common ==============================
 
+@import "~/main/main.scss";
+@import "~/pages/common/common/common.scss";
+
 .container_ui {
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 30px;
+	width:100%;
 	&__form-elements {
 		max-width: 1160px;
 		margin: 66px auto 0 auto;

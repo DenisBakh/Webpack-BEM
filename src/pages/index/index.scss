@@ -1,12 +1,10 @@
 //=======================MAIN-LANDING==================
 
-@import "~/pages/common/common.scss";
+@import "~/main/main.scss";
+@import "~/pages/common/common/common.scss";
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
+
+
 .main {
 	flex: 1 1 auto;
 
@@ -35,7 +33,3 @@
 	width: 380px;
 }
 
-.container_landing {
-	position: relative;
-	height: 100%;
-}

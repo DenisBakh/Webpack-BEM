@@ -1,10 +1,8 @@
 //=======================MAIN-LANDING==================
+@import "~/main/main.scss";
+@import "~/pages/common/common/common.scss";
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-}
+
 .main {
 	background: url("/assets/img/landing.jpg");
 	background-repeat: no-repeat;
@@ -29,7 +27,3 @@
 	width: 380px;
 }
 
-.container_landing {
-	position: relative;
-	height: 100%;
-}
