@@ -1,13 +1,14 @@
 mixin pagination(label='pagination')
-	.label.label_pagination
-		.label__title=label
 	.pagination
-		.pagination__navigation(id='pagination-main')
-		.pagination__text 
-			span.pagination__current-items 1 – 12 
-			| из 
-			span.pagination__total-items 100+ 
-			| вариантов аренды
+		.label.label_pagination
+			.label__title=label
+		.pagination__body
+			.pagination__navigation(id='pagination-main')
+			.pagination__text 
+				span.pagination__current-items 1 – 12 
+				| из 
+				span.pagination__total-items 100+ 
+				| вариантов аренды
 
 
 

@@ -2,6 +2,7 @@ include /project/common.blocks/ui_kit/cards/room-card/room-card.pug
 include /project/common.blocks/ui_kit/form_elements/datepicker/datepicker.pug
 include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pug
+include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
 
 
@@ -73,33 +74,63 @@ html(lang='ru')
 										+checkbox(checkboxList,'дополнительные удобства','inSpoiler','hide')
 							.content__column.content__column_roomcards
 								.cards-block
-									h2.cards-block__title Номера, которые мы для вас подобрали
+									h2.cards-block__title(id='scroll-here') Номера, которые мы для вас подобрали
 										.cards-block__row
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
-											.cards-block__item
+											.cards-block__item.pagination-item
 												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='1888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='2888',lux=' люкс', price='9 990₽ ',incard='true')
+											.cards-block__item.pagination-item
+												+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],room='2888',lux=' люкс', price='9 990₽ ',incard='true')
 
+
+								+pagination('')
 
 
 			include /pages/common/footer/footer.pug

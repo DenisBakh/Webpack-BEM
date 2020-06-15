@@ -66,6 +66,10 @@ html(lang='ru')
 							.form-elements__item.form-elements__item_buttons
 								include /project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
 							.form-elements__item
+								- var x = 178;
+								- for (var i=0; i<x; i++) {     
+									.pagination-item
+								- }
 								+pagination()
 					.form-elements__row_2
 						.form-elements__column_2.form-elements__column_2-a

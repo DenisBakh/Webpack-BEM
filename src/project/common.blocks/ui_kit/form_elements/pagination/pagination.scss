@@ -4,14 +4,16 @@
 	margin: 0 0 18px 0;
 }
 .pagination {
-	display: inline-block;
-}
-.pagination__text {
-	margin: 0 auto;
-	text-align: center;
-}
-.pagination__navigation {
-	margin: 0 0 5px 0;
+	&__body {
+		display: inline-block;
+	}
+	&__text {
+		margin: 0 auto;
+		text-align: center;
+	}
+	&__navigation {
+		margin: 0 0 5px 0;
+	}
 }
 
 .simple-pagination {

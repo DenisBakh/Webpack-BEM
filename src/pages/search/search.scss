@@ -3,7 +3,6 @@
 @import "~/main/main.scss";
 @import "~/pages/common/common/common.scss";
 
-
 .main {
 	background: #fff;
 	flex: 1 1 auto;
@@ -27,6 +26,9 @@
 		}
 		&_roomcards {
 			flex: 1 1 70%;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }
@@ -50,6 +52,8 @@
 }
 
 .cards-block {
+	margin: 0 0 25px 0;
+	flex: 1 1 auto;
 	&__title {
 		font-family: $fontFamily_2;
 		font-weight: 700;
