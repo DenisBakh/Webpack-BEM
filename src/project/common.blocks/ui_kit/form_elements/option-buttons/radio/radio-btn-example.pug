@@ -1,11 +1,13 @@
 include radio-btn.pug
 
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-item/checkbox.pug
+
 .text-field_less
 	.label
 		.label__title Radio Buttons
 	.checkbox-list.radio-list
 		.radio-list__item
-			+radio-btn("gender1","gender", "Мужчина","Мужчина")
+			+radio-btn("gender1", "gender","Мужчина")
 		.radio-list__item
-			+radio-btn("gender2","gender", "Женщина","Женщина")
+			+radio-btn("gender2", "gender","Женщина")
 

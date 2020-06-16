@@ -8,6 +8,7 @@ $border: 1px;
 	height: 20px;
 	border-radius: 10px;
 	background: #fff;
+	cursor: pointer;
 	&_grdBorder {
 		color: $fontColor_1-1;
 		background: #fff;
@@ -28,6 +29,15 @@ $border: 1px;
 		flex-grow: 0;
 		border: 1px solid $border-base;
 		border-radius: 4px;
+	}
+	&_simple-circle {
+		padding: 3px;
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+		flex-grow: 0;
+		border: 1px solid $border-base;
+		border-radius: 50%;
 	}
 }
 
@@ -92,6 +102,26 @@ $border: 1px;
 	}
 }
 
+.inside-option {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	&:before {
+		content: "";
+		position: absolute;
+		height: 12px;
+		width: 12px;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transform: scale(0);
+		@include transition;
+
+		background: $mainGradient;
+		border-radius: 50%;
+	}
+}
+
 .checkbox-shape {
 	font-size: 14px;
 	line-height: 18px;
@@ -114,8 +144,24 @@ $border: 1px;
 	}
 
 	&__input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+		+ label {
+			user-select: none;
+			display: flex;
+			align-items: flex-start;
+		}
 		&:checked + label .checkbox-shape__shape_like:after {
 		}
+		//============================================================COMMON
+		:focus + label .button-checkbox {
+			animation-name: bounce_1;
+			animation-duration: 250ms;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		//============================================================LIKE
 		&:checked + label .button-checkbox_grdBorder {
 			border: double $border transparent;
 			background-image: linear-gradient(white, white),
@@ -153,7 +199,7 @@ $border: 1px;
 				animation-duration: 300ms;
 				animation-iteration-count: 1;
 				animation-timing-function: linear;
-				transform: translateX(20px);
+				transform: translateX(19px);
 			}
 		}
 		&:focus:not(:checked) + label .inside-toggle::before {
@@ -167,6 +213,13 @@ $border: 1px;
 		//============================================================SIMPLE
 
 		&:checked + label .inside-check {
+			&::before {
+				transform: scale(1);
+			}
+		}
+
+		//============================================================OPTION
+		&:checked + label .inside-option {
 			&::before {
 				transform: scale(1);
 			}
@@ -199,6 +252,13 @@ $border: 1px;
 	}
 }
 
+.checkbox-shape__input:focus + label .option-shape {
+	animation-name: bounce_1;
+	animation-duration: 250ms;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
 @keyframes like {
 	0% {
 		transform: scale(2);
@@ -219,7 +279,7 @@ $border: 1px;
 		width: 12px;
 	}
 	50% {
-		width: 100%;
+		width: 34px;
 	}
 	100% {
 		width: 12px;
@@ -231,9 +291,24 @@ $border: 1px;
 		width: 12px;
 	}
 	50% {
-		width: 100%;
+		width: 34px;
 	}
 	100% {
 		width: 12px;
+	}
+}
+
+@keyframes bounce_1 {
+	0% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(0.9);
+	}
+	66% {
+		transform: scale(1.1);
+	}
+	100% {
+		tranform: scale(1);
 	}
 }

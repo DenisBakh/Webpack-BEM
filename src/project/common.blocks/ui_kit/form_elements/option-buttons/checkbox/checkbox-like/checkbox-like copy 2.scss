@@ -3,74 +3,10 @@
 
 $border: 1px;
 
-.button-checkbox {
-	width: 40px;
-	height: 20px;
-	border-radius: 10px;
-	background: #fff;
-	&_grdBorder {
-		color: $fontColor_1-1;
-		background: #fff;
-		border: $border solid $borderColor_1-1;
-		@include transition;
-	}
-	&_smplBorder {
-		color: $fontColor_1-1;
-		background: #fff;
-		border: $border solid $borderColor_1-1;
-		@include transition;
-	}
-	&_simple {
-		padding: 3px;
-		width: 20px;
-		height: 20px;
-		flex-shrink: 0;
-		flex-grow: 0;
-		border: 1px solid $border-base;
-		border-radius: 4px;
-	}
-}
-
-.inside-check {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	&:before {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		display: block;
-
-		top: 0;
-		left: 0;
-		background-repeat: no-repeat;
-		background-position: center 40%;
-		transform: scale(0);
-		@include transition;
-		//background-size: 50% 50%;
-		background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.46439 4.40768L5.70703 8.65032L4.29282 10.0645L0.0501771 5.82189L1.46439 4.40768Z' fill='url(%23paint0_linear)'/%3E%3Cpath d='M8.53546 2.99347L9.94967 4.40768L4.29282 10.0645L2.8786 8.65032L8.53546 2.99347Z' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='7.82835' y1='2.28636' x2='2.1715' y2='7.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='7.82835' y1='2.28636' x2='2.1715' y2='7.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
-	}
-}
-
-.inside-toggle {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding: 3px;
-	&:before {
-		content: "";
-		position: absolute;
-		display: block;
-		@include transition;
-		top: auto;
-		left: auto;
-		height: 12px;
-		width: 12px;
-		border-radius: 12px;
-		background: $border-base;
-		transform: scale(1);
-		transition: 0.15s transform linear;
+.checkbox-list_like {
+	display: flex;
+	&__item {
+		margin: 0 10px 0 0;
 	}
 }
 
@@ -86,44 +22,76 @@ $border: 1px;
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
-	&__val {
+	&__cnt {
 		font-size: 10px;
 		line-height: 0.8em;
 	}
 }
 
+.button-like {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 10px 6px 4px;
+	width: 40px;
+	height: 20px;
+	border-radius: 10px;
+	background: #fff;
+	&_border {
+		//font-size: 12px;
+		//padding: calc(1.3em - 2px) calc(1.6em - 2px);
+		//min-width: 99px;
+		//padding: 9px 17px;
+		//padding: 0.75em 1.41666em;
+		//padding: calc(0.75em - 2px) calc(1.58333em - 2px);
+		color: $secondaryFontColor;
+		background: #fff;
+		border: $border solid $border-base;
+		@include transition;
+		&:hover {
+			opacity: 1;
+			background-image: linear-gradient(white, white),
+				linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+		}
+	}
+}
+
 .checkbox-shape {
-	font-size: 14px;
-	line-height: 18px;
-	color: $fontColor_1-0;
-	&__text {
-		margin: 0 0 0 0.7em;
-		&_toggle {
-			color: $fontColor_1-2;
-		}
-		&_richText {
-			color: $fontColor_1-2;
-			font-weight: 700;
-			font-size: 1em;
-			margin: 0 0 4px 0;
-		}
-		&_smallText {
-			font-size: 0.86em;
-			line-height: 1.3em;
+	&__shape_like {
+		width: 40px;
+		height: 20px;
+		border-radius: 10px;
+		background: #fff;
+		background-clip: padding-box; /* !importanté */
+		border: solid $border transparent; /* !importanté */
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			margin: -$border;
+			border-radius: 20px;
+			background: $border-base;
+			@include transition;
 		}
 	}
 
 	&__input {
 		&:checked + label .checkbox-shape__shape_like:after {
+			background: $mainGradient;
 		}
-		&:checked + label .button-checkbox_grdBorder {
+		&:checked + label .button-like_border {
 			border: double $border transparent;
 			background-image: linear-gradient(white, white),
 				linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
 			background-origin: border-box;
 			background-clip: padding-box, border-box;
 		}
-		&:focus + label .button-checkbox {
+		&:focus + label .button-like_border {
 			animation-name: bounce_1;
 			animation-duration: 250ms;
 			animation-iteration-count: 1;
@@ -137,39 +105,8 @@ $border: 1px;
 			animation-iteration-count: 1;
 			animation-timing-function: linear;
 		}
-		&:checked + label .inside-like__val {
-			color: $fontColor_2-0;
-		}
-		//============================================================TOGGLE
-		&:checked + label .button-checkbox_smplBorder {
-			border-color: $fontColor_2-0;
-		}
-		&:checked + label .inside-toggle {
-			&::before {
-				background: $mainGradient;
-				transition-delay: 0.15s;
-				//transform: translateX(200%) scale(1);
-				animation-name: slide-to-right;
-				animation-duration: 300ms;
-				animation-iteration-count: 1;
-				animation-timing-function: linear;
-				transform: translateX(20px);
-			}
-		}
-		&:focus:not(:checked) + label .inside-toggle::before {
-			transition-delay: 0;
-			animation-name: slide-to-left;
-			animation-duration: 300ms;
-			animation-iteration-count: 1;
-			animation-timing-function: linear;
-		}
-
-		//============================================================SIMPLE
-
-		&:checked + label .inside-check {
-			&::before {
-				transform: scale(1);
-			}
+		&:checked + label .checkbox-shape__inside_likeCnt {
+			color: $secondaryFontColor;
 		}
 		/* стили при наведении курсора на checkbox */
 		&:not(:disabled):not(:checked) + label .checkbox-shape__inside:hover::before {
@@ -211,29 +148,5 @@ $border: 1px;
 	}
 	100% {
 		transform: scale(1);
-	}
-}
-
-@keyframes slide-to-right {
-	0% {
-		width: 12px;
-	}
-	50% {
-		width: 100%;
-	}
-	100% {
-		width: 12px;
-	}
-}
-
-@keyframes slide-to-left {
-	0% {
-		width: 12px;
-	}
-	50% {
-		width: 100%;
-	}
-	100% {
-		width: 12px;
 	}
 }

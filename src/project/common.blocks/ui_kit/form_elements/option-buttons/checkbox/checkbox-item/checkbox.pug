@@ -1,0 +1,35 @@
+mixin checkbox(id='id',type='like',textValue, kindOfSimple,textDescr)
+	.checkbox-shape
+		input.checkbox-shape__input(type="checkbox" id=id name=id value="yes")
+		label(for=id) 
+			if type==='like'
+				.button-checkbox.button-checkbox_grdBorder
+					.inside-like
+						.inside-like__icon
+						.inside-like__val 12
+			else if  type==='toggle'
+				.button-checkbox.button-checkbox_smplBorder
+					.inside-toggle
+				.checkbox-shape__text
+					span.checkbox-shape__text_toggle=textValue
+			else
+				.button-checkbox.button-checkbox_simple.button-checkbox_smplBorder
+					.inside-check
+				.checkbox-shape__text
+					if kindOfSimple==='rich'
+						p.checkbox-shape__text_richText=textValue
+						p.checkbox-shape__text_smallText=textDescr
+					else 
+						span=textValue
+
+mixin radio(id,name,value)
+	.checkbox-shape
+		input.checkbox-shape__input(type="radio" id=id name=name value=value)
+		label(for=id) 
+			.button-checkbox.button-checkbox_simple-circle.button-checkbox_smplBorder
+				.inside-option
+			.checkbox-shape__text
+				span=value
+
+
+

@@ -3,7 +3,8 @@
 @import "~/pages/ui/_ui_common/ui_common.scss";
 
 .form-elements {
-	flex:1 1 auto;
+	background: #fff;
+	flex: 1 1 auto;
 	&__row {
 		display: flex;
 		margin: 0 -60px;
@@ -89,6 +90,9 @@
 		&_buttons {
 			margin: 0 0 28px 0;
 		}
+		&_review {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -101,5 +105,28 @@
 	&__column {
 		padding: 0 10px;
 		flex: 0 1 50%;
+	}
+}
+
+.radio-row {
+	display: flex;
+	margin: 15px 0 0 0;
+	&__item:first-child {
+		margin: 0 15px 0 0;
+	}
+}
+
+.toggle-row {
+	margin: 15px 0 0 0;
+	&__item:first-child {
+		margin: 0 0 15px 0;
+	}
+}
+
+.like-row {
+	display: flex;
+	margin: 17px 0 0 0;
+	&__item:first-child {
+		margin: 0 9px 0 0;
 	}
 }

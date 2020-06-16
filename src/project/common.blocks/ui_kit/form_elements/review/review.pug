@@ -1,14 +1,41 @@
-include ../option-buttons/checkbox/checkbox-like/checkbox-like.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-item/checkbox.pug
 
-.review
+mixin reviews(list)
+	.review
+		ul.review__list
+			each item in list
+				.review__item
+					.review__info.review__row
+						.review__photo.review__column
+							img.review__img(src=`assets/img/${item.photo}`)
+						.review__who.review__column
+							.review__name=item.name
+							.review__date=item.when
+					.review__item.review__row
+						.review__column.review__column_b.review__like
+							+checkbox(`review-like__${item.photo}`,'like','', '')
+						p.review__text.review__column.review__column_b=item.descr
+				//
+					.review__info.review__row
+						.review__photo.review__column
+							img.review__img(src='assets/img/image.png')
+						.review__who.review__column
+							.review__name Мурад Сарафанов
+							.review__date 5 дней назад
+					.review__item.review__row
+						.review__column.review__column_b.review__like
+							+checkbox-like('review-like')
+						p.review__text.review__column.review__column_b Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+mixin review-item(item)
 	.review__info.review__row
 		.review__photo.review__column
-			img.review__img(src='assets/img/image.png')
+			img.review__img(src=`assets/img/${item.photo}`)
 		.review__who.review__column
-			.review__name Мурад Сарафанов
-			.review__date 5 дней назад
+			.review__name=item.name
+			.review__date=item.when
 	.review__item.review__row
 		.review__column.review__column_b.review__like
-			+checkbox-like('review-like')
-		p.review__text.review__column.review__column_b Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+			+checkbox('id_like_4','like','', '')
+		p.review__text.review__column.review__column_b=item.descr
 

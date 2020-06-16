@@ -1,11 +1,14 @@
 include checkbox-toggle.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-like/checkbox-like.pug
+
 
 .text-field_less
 	.label
 		.label__title Toggle
 	.checkbox-list
 		.checkbox-list__item_toggle
-			+checkbox-toggle("recieve_smth", "Получать спецпредложения")
+			+checkbox('id32','toggle','Получать спецпредложения', '')
+			//+checkbox-toggle2("recieve_smth", "Получать спецпредложения")
 		.checkbox-list__item_toggle
-			+checkbox-toggle("recieve_smth_1", "Получать спецпредложения")
+			//+checkbox-toggle("recieve_smth_1", "Получать спецпредложения")
 

@@ -51,14 +51,14 @@ html(lang='ru')
 												{id:'with_pets',kind:'simple',name:{value:'Можно с питомцами',descr:'asdasd'}},
 												{id:'inv_guests',kind:'simple',name:{value:'Можно пригласить гостей (до 10 человек)',descr:'asdasqw'}},
 											]
-										+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
+										//+checkbox(checkboxList,'Checkbox Buttons','notSpoiler')
 									.filter-block__item.filter-block__item_chckBox
 										-
 											var checkboxList=[
 												{id:'wide',kind:'rich',name:{value:'Широкий коридор',descr:'Ширина коридоров в номере не менее 91 см.'}},
 												{id:'helper',kind:'rich',name:{value:'Помощник для инвалидов',descr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
 											]
-										+checkbox(checkboxList,'доступность')
+										//+checkbox(checkboxList,'доступность')
 									.filter-block__item.filter-block__item_ddEquip
 										+inputDropdawnEquip('',label='удобства номера', value='Параметры номера', descr='')
 									.filter-block__item
@@ -71,7 +71,7 @@ html(lang='ru')
 												{id:'tv',kind:'simple',name:{value:'Телевизор',descr:''}},
 												{id:'shampoo',kind:'simple',name:{value:'Шампунь',descr:''}},
 											]
-										+checkbox(checkboxList,'дополнительные удобства','inSpoiler','hide')
+										//+checkbox(checkboxList,'дополнительные удобства','inSpoiler','hide')
 							.content__column.content__column_roomcards
 								.cards-block
 									h2.cards-block__title(id='scroll-here') Номера, которые мы для вас подобрали

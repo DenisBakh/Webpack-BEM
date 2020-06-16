@@ -140,12 +140,22 @@ const plugins = () => {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: './detail.html',
+				template: `${PAGES_DIR}/detail/detail.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["detail"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: './ui_cards.html',
 				template: `${PAGES_DIR}/ui/ui_cards/cards.pug`,
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: [ "ui_cards"]
+				chunks: ["ui_cards"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -155,7 +165,7 @@ const plugins = () => {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: [ "ui_formelements"]
+				chunks: ["ui_formelements"]
 			}
 		),
 		new HTMLWebpackPlugin(

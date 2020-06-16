@@ -5,8 +5,10 @@
 		display: flex;
 		margin: 0 0 25px 0;
 		align-items: center;
-		border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 		padding: 0 0 22px 5px;
+	}
+	&__item:not(:last-child) {
+		border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 	}
 	&__pic {
 		margin: 0 12px 0 0;
@@ -19,4 +21,8 @@
 		font-weight: 700;
 		margin: 0 0 10px 0;
 	}
+}
+
+.label_advantages {
+	margin: 0 0 25px 0;
 }
