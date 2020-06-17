@@ -4,9 +4,11 @@ include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pug
 include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
-
+include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
 include /project/common.blocks/ui_kit/form_elements/advantages/advantages.pug
 include /project/common.blocks/ui_kit/form_elements/review/review.pug
+
+include /project/common.blocks/ui_kit/form_elements/diagramm/diagramm.pug
 
 mixin room-photo(bigPic='888big.jpg',smallPicTop='888_2.jpg',smallPicBottom='888_3.jpg')
 	.room-photo
@@ -44,14 +46,36 @@ html(lang='ru')
 													'windows',
 													'cosy'
 												]
-											+advantages(advantagesList,'Сведения о номере')
+											+advantages(advantagesList,'true','Сведения о номере')
+										.info-content__column.info-content__column_impression
+											.impression
+												.impression__title
+													+block-header('Впечатления от номера')
+												.impression__canvas
+													+diagramm()
 									.info-content__reviews
 										-
 											var reviewList=[
 												{photo:'murad.png',name:'Мурад Сарафанов',when:'5 дней назад',descr:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'},
 												{photo:'patricia.png',name:'Патрисия Стёклышкова',when:'Неделю назад',descr:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'}
+												
 											]
-										+reviews(reviewList)
+										+reviews(reviewList,'true','Отзывы посетителей номера')
+									.info-content__how
+										.how-to
+											.how-to__column.how-to__rules
+												-
+													var bulletList=[
+														'Нельзя с питомцами',
+														'Без вечеринок и мероприятий',
+														'Время прибытия — после 13:00, а выезд до 12:00'
+														]
+												+bullet-list(bulletList,links='false',isHeader='big',title='Правила')
+											.how-to__column.how-to__cancel
+												.cancel-about
+													.cancel-about__title
+														+block-header('Отмена')
+													p.cancel-about__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 							.content__column.content__column_bill
 
 

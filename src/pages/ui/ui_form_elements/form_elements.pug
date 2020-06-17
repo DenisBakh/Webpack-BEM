@@ -139,7 +139,13 @@ html(lang='ru')
 								+checkbox-list(checkboxList,'rich Checkbox Buttons')
 						.form-elements__column_2
 							.form-elements__item.form-elements__item_bulletList
-									+bullet-list('bullet list','false',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
+								-
+									var bulletList=[
+										'Нельзя с питомцами',
+										'Без вечеринок и мероприятий',
+										'Время прибытия — после 13:00, а выезд до 12:00'
+										]
+								+bullet-list(bulletList,links='false',isHeader='small',title='bullet list')
 					.form-elements__row_3
 						.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
 							.form-elements__item.form-elements__item_advantages

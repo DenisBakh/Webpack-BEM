@@ -1,0 +1,11 @@
+//==================================BLOCK-HEADER=====================
+.block-header {
+	&__title {
+		font-family: $fontFamily_2;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 19px;
+		line-height: 1.2em;
+		color: $fontColor_1-3;
+	}
+}

@@ -1,8 +1,10 @@
-mixin advantages(list,label='')
+include /project/common.blocks/ui_kit/form_elements/block-header/block-header.pug
+
+mixin advantages(list,isHeader='false',title='сведения о номере')
 	.advantages
-		if !(label==='')
-			.label.label_advantages
-				.label__title=label
+		if isHeader==='true'
+			.advantages__header
+				+block-header(title)
 		ul.advantages__list
 			each item in list
 				+advantage-item(item)

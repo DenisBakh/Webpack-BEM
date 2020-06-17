@@ -1,7 +1,13 @@
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-item/checkbox.pug
 
-mixin reviews(list)
+include /project/common.blocks/ui_kit/form_elements/block-header/block-header.pug
+
+mixin reviews(list,isHeader='false',title='Отзывы посетителей номера')
 	.review
+		if isHeader==='true'
+			.review__header
+				+block-header(title)
+				.review__counter(data-declensions='отзыв,отзыва,отзывов',data-cnt=list.length)
 		ul.review__list
 			each item in list
 				.review__item

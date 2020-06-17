@@ -1,8 +1,15 @@
-mixin bullet-list(title='bullet list',list,links='false')
+include /project/common.blocks/ui_kit/form_elements/block-header/block-header.pug
+
+mixin bullet-list(list,links='false',isHeader='big',title='bullet list')
 	.bullet-list
-		.label
-			.label__title=title
-		ul.bullet-list__list.checkbox-list
+		if isHeader==='big'
+			.bullet-list__header
+				+block-header(title)
+		else if isHeader==='small'
+			.bullet-list__header_small
+				.label
+					.label__title=title
+		ul.bullet-list__list
 			if links==='false'
 				each item in list
 					li.bullet-list__item=item

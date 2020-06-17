@@ -10,10 +10,10 @@
 }
 
 .content {
-	padding: 30px 0 78px 0;
+	padding: 71px 0 64px 0;
 }
 .room-photo {
-	max-width: 1440px;
+	max-width: 1460px;
 	padding: 0 10px;
 	margin: 0 auto;
 	&__row {
@@ -58,7 +58,10 @@
 	}
 	&__column {
 		&_info {
-			flex: 0 1 60%;
+			flex: 0 1 62%;
+		}
+		&_bill {
+			flex: 0 1 38%;
 		}
 	}
 }
@@ -66,6 +69,7 @@
 .info-content {
 	&__row {
 		display: flex;
+		margin: 0 0 12px 0;
 	}
 	&__column {
 		flex: 0 1 50%;
@@ -73,5 +77,33 @@
 			margin: 0 30px 0 0;
 			max-width: 280px;
 		}
+	}
+	&__reviews {
+		margin: 0 0 35px 0;
+	}
+	&__how {
+	}
+}
+
+.how-to {
+	display: flex;
+	&__column {
+		flex: 1 1 50%;
+	}
+	&__rules {
+		margin: 0 100px 0 0;
+		max-width: 260px;
+	}
+}
+
+.cancel-about {
+	&__title {
+		margin: 0 0 19px 0;
+	}
+	&__text {
+		font-family: $mainFont;
+		font-size: 14px;
+		line-height: 1.71em;
+		color: $fontColor_1-2;
 	}
 }

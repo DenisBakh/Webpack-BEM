@@ -28,4 +28,11 @@
 		color: inherit;
 		font-family: inherit;
 	}
+	&__header {
+		margin: 0 0 19px 0;
+		padding: 0 0 0 21px;
+		&_small {
+			margin: 0 0 14px 0;
+		}
+	}
 }

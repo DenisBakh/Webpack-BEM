@@ -1,0 +1,14 @@
+mixin diagramm(label='pagination')
+	- var total=100
+	.canvas
+		.legend
+			ul.caption-list(data-total=total)
+				li.caption-item(data-cnt='30') Великолпено
+				li.caption-item(data-cnt='30') Хорошо
+				li.caption-item(data-cnt='30') Удовлетворительно
+				li.caption-item(data-cnt='30') Разочарован
+			svg.chart(width='500' height='500' viewbox='0 0 50 50')
+				circle.unit(data-cnt='30' r='15.9' cx='50%' cy='50%')
+				circle.unit(data-cnt='20' r='15.9' cx='50%' cy='50%')
+				circle.unit(data-cnt='40' r='15.9' cx='50%' cy='50%')
+				circle.unit(data-cnt='10' r='15.9' cx='50%' cy='50%')
