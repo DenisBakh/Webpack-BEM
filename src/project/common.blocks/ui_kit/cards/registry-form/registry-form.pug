@@ -1,7 +1,6 @@
-include ../../form_elements/buttons/button.pug
-include ../../form_elements/option-buttons/radio/radio-btn.pug
-include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
-include ../../form_elements/text-field/text-field.pug
+include /project/common.blocks/ui_kit/form_elements/buttons/button.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-item/checkbox.pug
+include /project/common.blocks/ui_kit/form_elements/text-field/text-field.pug
 
 
 .card
@@ -14,9 +13,9 @@ include ../../form_elements/text-field/text-field.pug
 				+inputs('user-lastname', 'text', '', '', 'Фамилия', '')
 			.registry-form__user.registry-form__user-gender
 				.registry-form__user-male
-					+radio-btn('gender_m','gender','Мужчина')
+					+radio('gender_m','gender','Мужчина')
 				.registry-form__user-female
-					+radio-btn('gender_f','gender','Женщина')
+					+radio('gender_f','gender','Женщина')
 			.registry-form__user.registry-form__user-birthday
 				+inputDate('birthday', 'дата рождения', '', 'ДД.ММ.ГГГГ', '')
 			.registry-form__user.registry-form__user-email
@@ -24,7 +23,7 @@ include ../../form_elements/text-field/text-field.pug
 			.registry-form__user.registry-form__user-password
 				+inputs('user-password', 'password', '', '', 'Пароль', '')
 			.registry-form__user.registry-form__user-adv
-				+checkbox-toggle('adv', 'Получать спецпредложения')
+				+checkbox('id_toggle_1','toggle','Получать спецпредложения', '')
 			.registry-form__user.registry-form__button_create
 				.card-button
 					+button('создать','#','submit','button_wide')

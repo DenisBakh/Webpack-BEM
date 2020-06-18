@@ -55,13 +55,15 @@
 .content {
 	&__row {
 		display: flex;
+		justify-content: space-between;
 	}
 	&__column {
 		&_info {
 			flex: 0 1 62%;
 		}
 		&_bill {
-			flex: 0 1 38%;
+			flex: 0 1 380px;
+			width: 380px;
 		}
 	}
 }
@@ -70,6 +72,7 @@
 	&__row {
 		display: flex;
 		margin: 0 0 12px 0;
+		justify-content: space-between;
 	}
 	&__column {
 		flex: 0 1 50%;
@@ -105,5 +108,14 @@
 		font-size: 14px;
 		line-height: 1.71em;
 		color: $fontColor_1-2;
+	}
+}
+
+.impression {
+	&__title {
+		margin: 0 0 20px 0;
+	}
+	&__canvas {
+		max-width: 300px;
 	}
 }

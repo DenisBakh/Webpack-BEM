@@ -1,10 +1,11 @@
-include ../../form_elements/buttons/button.pug
-include ../../form_elements/option-buttons/radio/radio-btn.pug
-include ../../form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
-include ../../form_elements/text-field/text-field.pug
-include ../../form_elements/datepicker/datepicker.pug
-include ../common-blocks/room-header/room-header.pug
-include ../common-blocks/card-info/card-info.pug
+include /project/common.blocks/ui_kit/form_elements/buttons/button.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/radio/radio-btn.pug
+include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-toggle/checkbox-toggle.pug
+include /project/common.blocks/ui_kit/form_elements/text-field/text-field.pug
+include /project/common.blocks/ui_kit/form_elements/datepicker/datepicker.pug
+
+include /project/common.blocks/ui_kit/cards/common-blocks/room-header/room-header.pug
+include /project/common.blocks/ui_kit/cards/common-blocks/card-info/card-info.pug
 
 
 .card
@@ -15,7 +16,34 @@ include ../common-blocks/card-info/card-info.pug
 			.book__form
 				form(action='#' method='post').book-form
 					.book-form__info
-						+card-info('datepicker3','datepicker4','2','прибытие','выезд','гости','ДД.ММ.ГГГГ','ДД.ММ.ГГГГ','Сколько гостей','','','false','false', 'dd.mm.yyyy', 'dd.mm.yyyy','','','')
+						-
+							var inCome={
+								id:'datepicker3',
+								label:'прибытие',
+								descr:'',
+								range:'',
+								dateFormat:'dd.mm.yyyy',
+								placeholder:'ДД.ММ.ГГГГ',
+								value:''
+							}
+						-
+							var outCome={
+								id:inCome.id,
+								label:'выезд',
+								descr:'',
+								range:'',
+								dateFormat:inCome.dateFormat,
+								placeholder:inCome.placeholder,
+								value:''
+							}
+						-
+							var cardInfo={
+								id:'гости',
+								label:'гости', 
+								placeholder:'Сколько гостей', 
+								descr:''
+								}
+						+card-info(inCome,outCome,cardInfo)
 					.book-form__bill.bill
 						.bill__list
 							li.bill__row

@@ -22,7 +22,7 @@ mixin inputDatePicker_pseudo(inCome,outCome)
 						label.label__descr=inCome.descr
 					.text-field__wrapper
 							.dropdawn-icon.dropdawn-icon_apart
-							input.text-field__input.datepick_pseudo.text-field__inout.text-field__in( type='text', name=`${inCome.id}_in`, placeholder=inCome.placeholder, id= `${inCome.id}_in`, value= inCome.value,data-range=inCome.range,data-dateFormat=inCome.dateFormat)
+							input.text-field__input.datepick_pseudo.text-field__inout.text-field__in( type='text', name=`${inCome.id}_in`, placeholder=inCome.placeholder, id= `${inCome.id}_in`, value= inCome.value)
 			.in-out__column
 				div.text-field
 					.label
@@ -30,4 +30,4 @@ mixin inputDatePicker_pseudo(inCome,outCome)
 						label.label__descr=outCome.descr
 					.text-field__wrapper
 							.dropdawn-icon.dropdawn-icon_apart
-							input.text-field__input.datepick_pseudo.text-field__inout.text-field__out( type='text', name=`${outCome.id}_out`, placeholder=outCome.placeholder, id= `${outCome.id}_out`, value= outCome.value,data-range=outCome.range,data-dateFormat=outCome.dateFormat)
+							input.text-field__input.datepick_pseudo.text-field__inout.text-field__out( type='text', name=`${outCome.id}_out`, placeholder=outCome.placeholder, id= `${outCome.id}_out`, value= outCome.value)

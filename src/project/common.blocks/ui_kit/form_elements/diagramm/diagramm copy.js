@@ -1,4 +1,5 @@
 
+
 $(document).ready(function () {
 	var canvases = document.querySelectorAll('.canvas');
 
@@ -21,9 +22,6 @@ $(document).ready(function () {
 		});
 
 		var $strokeDashoffset = 0
-		var $summOtrezkov = 0
-
-		var xss = 0
 
 		captionsList.forEach(function (item, index) {
 			item.addEventListener('mouseover', function () {
@@ -34,30 +32,17 @@ $(document).ready(function () {
 				unitsList[index].classList.remove('hovered');
 			});
 
-
-		});
-
-
-		unitsList.forEach(function (item, index) {
-			var $unit = $(item)
+			var $unit = $(unitsList[index])
 			//Определяем каждой секции минус пробел между ними: 1% от общей длины окружости
-			var $unitSize = $unit.data('cnt')
-			if ($unitSize < 0) {
-				$unitSize = 0
-			}
+			var $unitSize = $unit.data('cnt') - 0.01 * $totalSize
 			var $strokeDasharray = $unitSize + ' ' + $totalSize
-
-			$strokeDashoffset = $summOtrezkov + $unitSize * 2 //Смещяем элемент на 2 своих длины (одна длина для смещения, другая - для резервировании места)
-			$summOtrezkov = $summOtrezkov + $unitSize   //Дополнительное смещение на сумму предыдущих длин отрезков
-
 			$unit.css({
 				'stroke-dasharray': $strokeDasharray,
 				//Смещаем каждую секцию и дополнительно смещаем на сумму предыдущих пробелов: 1%*количество секций которые прошли от общей длины окружости
-				//'stroke-dashoffset': ($strokeDashoffset - 0.01 * $totalSize * index) + 1 / 4 * $totalSize
-				'stroke-dashoffset': ($strokeDashoffset)
+				'stroke-dashoffset': ($strokeDashoffset - 0.01 * $totalSize * index)
 			})
 			//Смещаем каждую секцию 
-			//$strokeDashoffset = $strokeDashoffset + parseInt($unitSize)
+			$strokeDashoffset = $strokeDashoffset - parseInt($unitSize)
 
 			/*
 			Попытка увеличить stroke-width при hover - не получается, увеличиваются все юниты, а не конкретный

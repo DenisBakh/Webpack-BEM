@@ -52,7 +52,16 @@ html(lang='ru')
 												.impression__title
 													+block-header('Впечатления от номера')
 												.impression__canvas
-													+diagramm()
+													-
+														var diagrammList=[
+															{name:'Великолепно', amount:100},
+															{name:'Хорошо', amount:50},
+															{name:'Удовлетворительно', amount:50},
+															{name:'Разочарован', amount:0},
+														]
+													// бберем для каждого li по 1% от суммы кроме тех, где amount=0, т.к. их не рисуем 
+													-var sd=2+2+2+0
+													+diagramm('',diagrammList,58,4,200+sd)
 									.info-content__reviews
 										-
 											var reviewList=[
@@ -77,6 +86,8 @@ html(lang='ru')
 														+block-header('Отмена')
 													p.cancel-about__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 							.content__column.content__column_bill
+								.bill-block
+									include /project/common.blocks/ui_kit/cards/book/book.pug
 
 
 

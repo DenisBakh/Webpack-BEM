@@ -1,14 +1,51 @@
-mixin diagramm(label='pagination')
-	- var total=100
+mixin diagramm(label='pagination',diagrammList,radius=20,strokeWidth=10,totalCnt)
+	-var circleL=2*3.14*radius
+	//
+		как присваивать переменным новые значения и делать арифметические операции???????\
+
+		-var totalCnt=0
+		each item in diagrammList
+			totalCnt=totalCnt*1 + item.amount*1
+			p=totalCnt
+	//
+		each item in diagrammList
+			item.amount=
+		- var total=150
+		- var x=30
+
+
 	.canvas
-		.legend
-			ul.caption-list(data-total=total)
-				li.caption-item(data-cnt='30') Великолпено
-				li.caption-item(data-cnt='30') Хорошо
-				li.caption-item(data-cnt='30') Удовлетворительно
-				li.caption-item(data-cnt='30') Разочарован
-			svg.chart(width='500' height='500' viewbox='0 0 50 50')
-				circle.unit(data-cnt='30' r='15.9' cx='50%' cy='50%')
-				circle.unit(data-cnt='20' r='15.9' cx='50%' cy='50%')
-				circle.unit(data-cnt='40' r='15.9' cx='50%' cy='50%')
-				circle.unit(data-cnt='10' r='15.9' cx='50%' cy='50%')
+		.canvas__chart
+			//
+				svg.chart(width='500' height='500' viewbox='0 0 50 50')
+			.canvas__descr
+				.canvas__descr_cnt 260
+				.canvas__descr_what голосов
+			svg.chart(width=radius*2+strokeWidth*2 height=radius*2+strokeWidth*2)
+				defs
+					linearGradient(id="gradient1" y1="0" y2="1")
+						stop(stop-color="#ffe39c" offset="0")
+						stop(stop-color="#ffba9c" offset="1")
+					linearGradient(id="gradient2" y1="0" y2="1")
+						stop(stop-color="#6fcf97" offset="0")
+						stop(stop-color="#66d2ea" offset="1")
+					linearGradient(id="gradient3" y1="0" y2="1")
+						stop(stop-color="#8ba4f9" offset="0")
+						stop(stop-color="#bc9cff" offset="1")
+					linearGradient(id="gradient4" y1="0" y2="1")
+						stop(stop-color="#919191" offset="0")
+						stop(stop-color="#3d4975" offset="1")
+					linearGradient(id="gradient5" y1="0" y2="1")
+						stop(stop-color="#919191" offset="0")
+						stop(stop-color="#3d4975" offset="1")
+				each item, index in diagrammList
+					if !(item.amount===0)
+						circle.chart__unit.chart__unit_space(data-cnt=(circleL*0.01) r=radius cx='50%' cy='50%')
+						circle.chart__unit(data-cnt=(circleL*(item.amount)/totalCnt) stroke=`url(#gradient${index+1})` r=radius cx='50%' cy='50%')
+		.canvas__legend
+			ul.caption-list(data-total=circleL data-strokewidth=strokeWidth)
+				each item in diagrammList
+					li.caption-item_space() 1
+					li.caption-item()=item.name
+
+
