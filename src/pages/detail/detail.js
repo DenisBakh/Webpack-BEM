@@ -15,6 +15,9 @@ import '~/project/common.blocks/ui_kit/form_elements/review/review.js'
 import '~/project/common.blocks/ui_kit/form_elements/diagramm/diagramm.js'
 
 
+import '~/project/common.blocks/ui_kit/cards/book/book.js'
+
+
 
 
 

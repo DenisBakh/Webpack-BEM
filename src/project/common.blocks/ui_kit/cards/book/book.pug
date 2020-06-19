@@ -11,8 +11,14 @@ include /project/common.blocks/ui_kit/cards/common-blocks/card-info/card-info.pu
 .card
 	.card__container
 		.book
+			-var cost=9990
+			-var servdisc=2179
+			-var services1=0
+			-var services2=300
 			.book__header
-				+room-header('888 ','люкс','9 990₽ ')
+				//
+					+room-header('888 ','люкс',`${price}₽ `)
+				+room-header('888 ','люкс',cost)
 			.book__form
 				form(action='#' method='post').book-form
 					.book-form__info
@@ -49,38 +55,35 @@ include /project/common.blocks/ui_kit/cards/common-blocks/card-info/card-info.pu
 							li.bill__row
 								.bill__subject
 									.bill__option
-										span.bill__room-price 9 990
-										|₽ х 
-										span.bill__room-long 4 
-										|суток
+										span.bill__room-price.room-cost(data-cost=cost)
+										| х 
+										span.bill__room-long.room-long 0 
+										span.bill__room-long.room-long_name суток
 								.bill__value 
-									span.bill__room-total 39 960
-									|₽
+									span.bill__room-total.room-cost_alldays
 							li.bill__row
 								.bill__subject
 									.bill__option
 										span.bill__services Сбор за услуги: 
-										span.bill__discount скидка 2 179₽
+										span.bill__discount='скидка '
+										span.bill__discount.room-services_discount(data-roomservicesdisc=servdisc)
 									.bill__info
 								.bill__value 
-									span.bill__services-total 0
-									|₽
+									span.bill__services-total.room-services(data-roomservices=services1)
 							li.bill__row
 								.bill__subject
 									.bill__option
 										span.bill__services2 Сбор за дополнительные услуги
 									.bill__info
 								.bill__value 
-									span.bill__services2-total 300
-									|₽
+									span.bill__services2-total.room-services2(data-roomservices2=services2)
 						.bill__total
 							h3.bill__total-subject
 								.bill__option
 									span.bill__total Итого
 							.bill__total-dots
 							.bill__total-value
-								span.bill__total-bill 38 081
-								|₽
+								span.bill__total-bill.room-total 38 081
 					.book-form__user.book-form__button_create
 						.card-button
 							+button('забронировать','#','submit','button_wide')

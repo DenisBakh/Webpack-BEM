@@ -41,11 +41,10 @@ mixin diagramm(label='pagination',diagrammList,radius=20,strokeWidth=10,totalCnt
 				each item, index in diagrammList
 					if !(item.amount===0)
 						circle.chart__unit.chart__unit_space(data-cnt=(circleL*0.01) r=radius cx='50%' cy='50%')
-						circle.chart__unit(data-cnt=(circleL*(item.amount)/totalCnt) stroke=`url(#gradient${index+1})` r=radius cx='50%' cy='50%')
+						circle.chart__unit.chart__unit_real(data-connect=index data-cnt=(circleL*(item.amount)/totalCnt) stroke=`url(#gradient${index+1})` r=radius cx='50%' cy='50%')
 		.canvas__legend
 			ul.caption-list(data-total=circleL data-strokewidth=strokeWidth)
-				each item in diagrammList
-					li.caption-item_space() 1
-					li.caption-item()=item.name
+				each item, index in diagrammList
+					li.caption-item(data-connect=index)=item.name
 
 

@@ -8,5 +8,5 @@ mixin room-header(number='111',spec='люкс',cost='9 990₽ ',incard='false')
 				span.room-header__number=number
 			span.room-header__spec=spec
 		.room-header__price
-			span.room-header__cost=cost
+			span.room-header__cost.room-cost(data-cost=cost)
 			span.room-header__per в сутки

@@ -83,6 +83,35 @@ $(document).ready(function () {
 
 		$income.val($minDt)
 		$outcome.val($maxDt)
+
+		//В данном проекте элемент этот всегда находится в карточке, 
+		//поэтому сделаем обработчик события по карте здесь же
+		/*
+
+		var $dateMin_dd = $minDt.substr(0, 2);
+		var $dateMin_mm = $minDt.substr(3, 2);
+		var $dateMin_yyyy = $minDt.substr(6, 4);
+
+		var $dateMax_dd = $maxDt.substr(0, 2);
+		var $dateMax_mm = $maxDt.substr(3, 2);
+		var $dateMax_yyyy = $maxDt.substr(6, 4);
+
+		var $date_min = new Date($dateMin_yyyy, $dateMin_mm, $dateMin_dd);
+		var $date_max = new Date($dateMax_yyyy, $dateMax_mm, $dateMax_dd);
+
+		var timeDiff = Math.abs($date_min.getTime() - $date_max.getTime());
+		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+		var $card = $this.closest('.card');
+		var $roomLong = $card.find('.room-long');
+		if (diffDays === 1) {
+			var $roomLong_text = diffDays + ' ' + 'сутки'
+		} else {
+			var $roomLong_text = diffDays + ' ' + 'суток'
+		}
+		$roomLong.text($roomLong_text)
+		console.log(diffDays);
+		*/
 	});
 
 

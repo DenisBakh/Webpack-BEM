@@ -11,6 +11,7 @@ import '~/project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
 //import '~/project/common.blocks/ui_kit/form_elements/spoiler/spoiler.js'
 //import '~/project/common.blocks/ui_kit/form_elements/pagination/pagination.js'
 
+import '~/project/common.blocks/ui_kit/cards/room-card/room-card.js'
 
 
 

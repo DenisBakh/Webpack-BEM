@@ -25,13 +25,18 @@ $(document).ready(function () {
 
 		var xss = 0
 
+		let unitsList_real = item.querySelectorAll('.chart__unit_real');
+
 		captionsList.forEach(function (item, index) {
 			item.addEventListener('mouseover', function () {
-				unitsList[index].classList.add('hovered');
+				if (!(unitsList_real[index] === 'undefined')) {
+					console.log(unitsList_real[index])
+					unitsList_real[index].classList.add('hovered');
+				}
 			});
 
 			item.addEventListener('mouseout', function () {
-				unitsList[index].classList.remove('hovered');
+				unitsList_real[index].classList.remove('hovered');
 			});
 
 
