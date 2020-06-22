@@ -1,0 +1,40 @@
+//=======================MAIN-LANDING==================
+
+@import "~/main/main.scss";
+@import "~/pages/common/common/common.scss";
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.main {
+	flex: 1 1 auto;
+
+	&__bg {
+		//background: url("/assets/img/regBG.jpg");
+		background-repeat: no-repeat;
+		background-position: center -72px;
+		height: 682px;
+		min-height: 682px;
+	}
+}
+
+.login-block {
+	margin: 0 auto;
+	width: 380px;
+	&__form {
+		display: none;
+		animation-name: appear;
+		animation-duration: 1s;
+		transition-property: all;
+		transition-duration: 1s;
+		&.active {
+			display: block;
+		}
+	}
+}

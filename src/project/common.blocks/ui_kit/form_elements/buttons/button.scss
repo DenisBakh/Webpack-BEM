@@ -103,6 +103,7 @@ $border: 2px;
 	cursor: pointer;
 	height: 100%;
 	width: 100%;
+	@include transition;
 }
 
 .button-wrapper {
@@ -110,10 +111,14 @@ $border: 2px;
 	width: 100%;
 	position: relative;
 	cursor: pointer;
-	@include transition;
 	&:hover {
+		/*
 		.button_full {
 			opacity: 0.5;
+		}
+		*/
+		.button {
+			opacity: 0.75;
 		}
 	}
 }
@@ -130,7 +135,6 @@ $border: 2px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	top: 50%;
 	transform: translateY(-50%);
 }

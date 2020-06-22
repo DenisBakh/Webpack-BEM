@@ -3,29 +3,22 @@
 .submenu-header {
 	&__body {
 		min-width: 250px;
+		max-width: 300px;
 		font-family: $fontFamily_1;
-		display: flex;
-		flex-direction: column;
 		box-shadow: 0 17px 24px rgba(0, 0, 0, 0.14);
 		background-color: #f8f8f8;
-		padding: 25px;
+		padding: 0 10px;
 		@media (max-width: 1024px) {
 			max-width: 100%;
 			width: auto;
-			padding: 15px;
 		}
 		@media (max-width: 420px) {
-			padding: 7px;
 		}
 	}
 	&__row {
-		flex: 1 1 auto;
-		display: flex;
 		@media (max-width: 1024px) {
-			margin: 0 0 25px 0;
 		}
 		@media (max-width: 500px) {
-			margin: 0 0 25px 0;
 		}
 	}
 	&__title {
@@ -40,8 +33,11 @@
 	}
 	&__item {
 		transition: 0.2s all ease;
-		margin: 0 0 20px 0;
 		color: $fontColor_1-0;
+		&:not(:last-child) {
+			border-bottom: 1px solid $borderColor_1-1;
+		}
+
 		&:hover {
 			font-weight: 700;
 			text-shadow: 3px 3px 3px;
@@ -51,7 +47,9 @@
 		}
 	}
 	&__link {
+		display: block;
 		color: $fontColor_1-0;
-		font-weight: 300;
+		padding: 10px 10px;
+		cursor: pointer;
 	}
 }

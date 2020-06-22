@@ -5,5 +5,8 @@ mixin submenu(list)
 		.submenu-header__body
 			.submenu-header__row
 				.submenu-header__column
-					+bullet-list('bullet list',list,'true')
+					ul.submenu-header__list
+						each item in list
+							li.submenu-header__item
+								a.submenu-header__link=item
 

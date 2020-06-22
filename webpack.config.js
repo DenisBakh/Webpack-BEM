@@ -150,6 +150,16 @@ const plugins = () => {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: './registration.html',
+				template: `${PAGES_DIR}/registration/registration.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["registration"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: './ui_cards.html',
 				template: `${PAGES_DIR}/ui/ui_cards/cards.pug`,
 				minify: {
@@ -220,6 +230,7 @@ module.exports = {
 		index: ['@babel/polyfill', './pages/index/index.js'],
 		search: ['@babel/polyfill', './pages/search/search.js'],
 		detail: ['@babel/polyfill', './pages/detail/detail.js'],
+		registration: ['@babel/polyfill', './pages/registration/registration.js'],
 		//ui_common: ['@babel/polyfill', './pages/ui/ui_common/ui_common.js'],
 		ui_colortype: ['@babel/polyfill', './pages/ui/ui_colortype/color&type.js'],
 		ui_formelements: ['@babel/polyfill', './pages/ui/ui_form_elements/form_elements.js'],

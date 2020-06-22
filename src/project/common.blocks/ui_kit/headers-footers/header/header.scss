@@ -1,4 +1,11 @@
 //=========================HEADER====================================
+@keyframes appear2 {
+	0% {
+		//transform: rotate3d(1, 0, 0, 90deg);
+		transform: rotateX(-180deg);
+		opacity: 0;
+	}
+}
 
 .header {
 	background: #fff;
@@ -32,13 +39,34 @@
 			.header-nav__submenu {
 				opacity: 1;
 				visibility: visible;
+				transform: rotateX(0);
+			}
+			.header-nav__link {
+				color: $fontColor_1-2;
+				font-weight: 700;
+				//text-shadow: 0.25px 0.1px 0px $fontColor_1-2, -0.25px -0.1px 0px $fontColor_1-2;
+			}
+			.dropdawn-icon_header-menu {
+				&:before,
+				&:after {
+					background-color: $fontColor_1-2;
+				}
+				&:before {
+					transform: translate(6.25px, -50%) rotate(45deg);
+				}
+				&:after {
+					transform: translate(-6.25px, -50%) rotate(-45deg);
+				}
 			}
 		}
 	}
 	&__submenu {
+		transform: rotateX(-90deg);
+		transform-origin: 0 0;
+		transition: all 0.4s ease-in;
 		opacity: 0;
 		visibility: hidden;
-		@include transition;
+		//@include transition;
 		position: absolute;
 		top: 100%;
 		left: -5px;
@@ -52,6 +80,7 @@
 		}
 	}
 	&__link {
+		//display: inline-block;
 		font-family: inherit;
 		font-size: inherit;
 		line-height: inherit;
@@ -65,24 +94,6 @@
 			color: transparent;
 			overflow: hidden;
 			visibility: hidden;
-		}
-		&:hover {
-			color: $fontColor_1-2;
-			font-weight: 700;
-			//text-shadow: 0.25px 0.1px 0px $fontColor_1-2, -0.25px -0.1px 0px $fontColor_1-2;
-
-			.dropdawn-icon_header-menu {
-				&:before,
-				&:after {
-					background-color: $fontColor_1-2;
-				}
-				&:before {
-					transform: translate(6.25px, -50%) rotate(45deg);
-				}
-				&:after {
-					transform: translate(-6.25px, -50%) rotate(-45deg);
-				}
-			}
 		}
 		&_menu {
 			padding: 0 20px 0 0;
