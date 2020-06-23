@@ -9,11 +9,21 @@
 .header {
 	background: #fff;
 	padding: 15px 0;
-	position: relative;
+	//position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+
 	&__row {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@media (max-width: 600px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 	&__navigation {
 		display: flex;
@@ -22,6 +32,46 @@
 		font-size: 14px;
 		line-height: 1.3em;
 		color: $fontColor_1-0;
+		@media (max-width: 600px) {
+			margin-top: 10px;
+			align-self: center;
+		}
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: 1000px) {
+			width: 100%;
+		}
+	}
+	&__burger {
+		display: none;
+		@media (max-width: 1000px) {
+			display: block;
+		}
+	}
+}
+
+.header-menu {
+	&__nav {
+		@media (max-width: 1000px) {
+			width: 100%;
+			background: rgba(31, 32, 65, 0.8);
+			z-index: 50;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			padding: 120px 0;
+			transition: all 0.5s linear;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform: translateY(-150%);
+			&.active {
+				transform: translateY(0);
+			}
+		}
 	}
 }
 
@@ -31,7 +81,7 @@
 		@media (max-width: 1000px) {
 			flex-direction: column;
 			align-items: flex-start;
-			width: 320px;
+			width: 300px;
 		}
 	}
 	&__item:not(:last-child) {
@@ -88,7 +138,7 @@
 	&__submenu {
 		transform: rotateX(-90deg);
 		transform-origin: 0 0;
-		//transition: all 0.4s ease-in;
+		transition: all 0.4s ease-in;
 		opacity: 0;
 		visibility: hidden;
 		//@include transition;
@@ -99,18 +149,16 @@
 		z-index: 10;
 		@media (max-width: 1000px) {
 			display: none;
-			//transform-origin: center;
+			transition: none;
 			transform: rotateX(0);
 			opacity: 1;
 			visibility: visible;
-			//@include transition;
 			position: static;
 			align-self: flex-end;
-			width: 280px;
+			width: 260px;
 		}
 	}
 	&__link {
-		//display: inline-block;
 		font-family: inherit;
 		font-size: inherit;
 		line-height: inherit;
@@ -134,66 +182,31 @@
 	}
 }
 
-.burger-menu {
-	position: relative;
-	width: 25px;
-	height: 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	&__line {
-		position: absolute;
-		height: 2px;
-		width: 100%;
-		background: black;
-		&:first-child {
-			top: 0;
-		}
-		&:last-child {
-			bottom: 0;
-		}
-	}
-}
-
-.header-menu {
-	&__nav {
-		@media (max-width: 1000px) {
-			width: 100%;
-			background: rgba(31, 32, 65, 0.8);
-			z-index: 50;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			//min-height: 50vh;
-			padding: 120px 0;
-			@include transition;
-			//transform: translateY(-1000px);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			&.active {
-				transform: translateY(0);
-			}
-		}
-	}
-}
-
 .header-buttons {
+	margin: 0 0 0 26px;
 	display: flex;
 	align-items: center;
+	@media (max-width: 600px) {
+		justify-content: space-between;
+		width: 100%;
+		margin: 0;
+	}
 	&__burger {
 		display: none;
 		@media (max-width: 1000px) {
 			display: block;
-			@include transition;
-
-			&.active {
-			}
 		}
 	}
 }
 
+/*
+.header-burger{
+	display: none;
+	@media (max-width: 1000px) {
+		display: block;
+	}
+}
+*/
 .dropdawn-icon_header-menu {
 	width: auto;
 	@media (max-width: 1000px) {
@@ -214,11 +227,13 @@
 }
 
 .header-login {
-	margin: 0 0 0 26px;
 	display: flex;
 	align-items: center;
 	&__item:first-child {
 		margin: 0 20px 0 0;
+		@media (max-width: 400px) {
+			margin: 0 5px 0 0;
+		}
 	}
 	&__item_logged {
 		font-family: inherit;
@@ -239,6 +254,44 @@
 		}
 		.header-login__item_logged {
 			display: block;
+		}
+	}
+}
+
+.burger-menu {
+	position: relative;
+	width: 25px;
+	height: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&__line {
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: black;
+		@include transition;
+		&:first-child {
+			top: 0;
+		}
+		&:last-child {
+			bottom: 0;
+		}
+	}
+	&.active {
+		.burger-menu__line {
+			top: auto;
+			bottom: auto;
+			&:first-child {
+				transform: rotate(-45deg);
+			}
+			&:last-child {
+				transform: rotate(45deg);
+			}
+			&:nth-child(2) {
+				display: none;
+			}
 		}
 	}
 }

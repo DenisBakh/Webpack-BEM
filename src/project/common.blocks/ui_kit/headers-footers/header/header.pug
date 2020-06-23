@@ -9,6 +9,11 @@ mixin header(logged='unlogged',menu,loginButton,regButton)
 			.header__row
 				.header__logo
 					+logotype()
+					.header__burger
+						.burger-menu
+							.burger-menu__line
+							.burger-menu__line
+							.burger-menu__line
 				.header__navigation
 					.header-menu
 						.header-menu__nav
@@ -24,11 +29,6 @@ mixin header(logged='unlogged',menu,loginButton,regButton)
 											else
 												a.header-nav__link(href=item.link title=item.text)=item.text
 					.header-buttons
-						.header-buttons__burger
-							.burger-menu
-								.burger-menu__line
-								.burger-menu__line
-								.burger-menu__line
 						if logged==='logged'
 							.header-login.header-login_logged
 								.header-login__item

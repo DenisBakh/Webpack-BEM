@@ -1,7 +1,9 @@
 $DT-picker__cellWidth: 40px;
 $DT-picker__cellHeight: 40px;
+
 $DT-picker__contPadding: 10px;
 $DT-picker__contWidth: ($DT-picker__contPadding * 2) + ($DT-picker__cellWidth * 7);
+$DT-picker__contWidth_400px: ($DT-picker__contPadding * 2) + (($DT-picker__cellWidth - 3.6) * 7);
 
 $DT-picker__inRangeColor: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%);
 $DT-picker__currentColor: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
@@ -48,14 +50,34 @@ $DT-picker__fontColor_main: #8f90a0;
 /* -------------------------------------------------
 	  Common styles to wrapper
 	 ------------------------------------------------- */
+
 .in-out {
 	position: relative;
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		margin: 0 -10px;
+		&_b {
+			//transform: scale(1);
+		}
+		@media (max-width: 400px) {
+			margin: 0 -5px;
+		}
+	}
+	&__column {
+		padding: 0 10px;
+		flex: 0 1 50%;
+		@media (max-width: 400px) {
+			padding: 0 5px;
+		}
+	}
 	&__spec {
 		position: absolute;
 		top: 20px;
 		left: 0;
 	}
 }
+
 .datepick_spec {
 	width: 0;
 	opacity: 0;
@@ -92,6 +114,9 @@ $DT-picker__fontColor_main: #8f90a0;
 	height: $DT-picker__cellHeight;
 	color: $DT-picker__fontColor_main;
 	z-index: 1;
+	@media (max-width: 400px) {
+		height: $DT-picker__cellHeight - 3.6px;
+	}
 }
 .datepicker--cell.-focus-:not(.-selected-) {
 	//background: #f0f0f0;
@@ -332,6 +357,9 @@ $DT-picker__fontColor_main: #8f90a0;
 .datepicker--cell-day {
 	//width: 14.28571%;
 	width: $DT-picker__cellWidth;
+	@media (max-width: 400px) {
+		width: $DT-picker__cellWidth - 3.6px;
+	}
 }
 
 .datepicker--cells-months {
@@ -429,6 +457,9 @@ $DT-picker__fontColor_main: #8f90a0;
 	transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
 	transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
 	z-index: 100;
+	@media (max-width: 400px) {
+		width: $DT-picker__contWidth_400px;
+	}
 }
 .datepicker.-from-top- {
 	-webkit-transform: translateY(-8px);
@@ -615,6 +646,9 @@ $DT-picker__fontColor_main: #8f90a0;
 	//min-height: 32px;
 	padding: 0 5px;
 	margin: 0 0 37px 0;
+	@media (max-width: 400px) {
+		margin: 0 0 17px 0;
+	}
 }
 .-only-timepicker- .datepicker--nav {
 	display: none;

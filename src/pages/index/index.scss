@@ -3,10 +3,19 @@
 @import "~/main/main.scss";
 @import "~/pages/common/common/common.scss";
 
-
-
 .main {
 	flex: 1 1 auto;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+	&__content {
+		flex: 1 1 auto;
+	}
+	&__footer {
+		align-self: flex-end;
+	}
 
 	&__bg {
 		background: url("/assets/img/landing.jpg");
@@ -17,9 +26,9 @@
 		height: 830px;
 	}
 	&__text {
-		position: absolute;
-		bottom: 0;
-		right: 0;
+		//position: absolute;
+		//bottom: 0;
+		//right: 0;
 		width: 260px;
 		font-family: $mainFont;
 		font-size: 1rem;
@@ -31,5 +40,7 @@
 
 .find-room {
 	width: 380px;
+	@media (max-width: 400px) {
+		width: 310px;
+	}
 }
-

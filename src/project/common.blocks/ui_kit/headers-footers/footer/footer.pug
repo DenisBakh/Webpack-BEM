@@ -49,11 +49,11 @@ mixin footer(style='norm',footerMenu,footerText,footerSubscr,footerSubscrText,fo
 							.footer-logo
 								.footer-logo__logotype
 									+logotype()
-								p.footer-text=footerText
+								p.footer-text.footer-text_forWide=footerText
 								.footer-logo__social.footer-disabled
 									+social()
 						for list in footerMenu
-							.footer__column
+							.footer__column.footer__column_forWide
 								.footer-list
 									.footer-list__label
 										.label

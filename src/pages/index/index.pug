@@ -12,9 +12,12 @@ html(lang='ru')
 			main.main
 				.main__bg
 					.container.container_landing
-						.find-room
-							include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
-						.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+						.main__wrapper
+							.main__content
+								.find-room
+									include /project/common.blocks/ui_kit/cards/find-room/find-room.pug
+							.main__footer
+								.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 			include /pages/common/footer/footer.pug
 
 
