@@ -2,6 +2,8 @@
 // SCSS
 import '~/pages/index/index.scss'
 
+//js
+import '~/pages/common/common/common.js'
 
 import '~/project/common.blocks/ui_kit/form_elements/text-field/jquery.maskedinput.min'
 import '~/project/common.blocks/ui_kit/form_elements/text-field/mask-it'

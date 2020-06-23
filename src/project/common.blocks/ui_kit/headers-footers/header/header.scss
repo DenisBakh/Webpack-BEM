@@ -1,7 +1,6 @@
 //=========================HEADER====================================
 @keyframes appear2 {
 	0% {
-		//transform: rotate3d(1, 0, 0, 90deg);
 		transform: rotateX(-180deg);
 		opacity: 0;
 	}
@@ -10,6 +9,7 @@
 .header {
 	background: #fff;
 	padding: 15px 0;
+	position: relative;
 	&__row {
 		display: flex;
 		justify-content: space-between;
@@ -20,18 +20,25 @@
 		align-items: center;
 		font-family: $mainFont;
 		font-size: 14px;
-		line-height: 1.2em;
+		line-height: 1.3em;
 		color: $fontColor_1-0;
 	}
 }
 
 .header-nav {
-	margin: 0 26px 0 0;
 	&__list {
 		display: flex;
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			align-items: flex-start;
+			width: 320px;
+		}
 	}
 	&__item:not(:last-child) {
 		margin: 0 26px 0 0;
+		@media (max-width: 1000px) {
+			margin: 0 0 25px 0;
+		}
 	}
 	&__item {
 		position: relative;
@@ -45,25 +52,43 @@
 				color: $fontColor_1-2;
 				font-weight: 700;
 				//text-shadow: 0.25px 0.1px 0px $fontColor_1-2, -0.25px -0.1px 0px $fontColor_1-2;
+				@media (max-width: 1000px) {
+					color: $fontColor_1-1;
+					font-weight: 700;
+				}
 			}
 			.dropdawn-icon_header-menu {
 				&:before,
 				&:after {
 					background-color: $fontColor_1-2;
+					@media (max-width: 1000px) {
+						background-color: $fontColor_1-1;
+					}
 				}
-				&:before {
-					transform: translate(6.25px, -50%) rotate(45deg);
-				}
-				&:after {
-					transform: translate(-6.25px, -50%) rotate(-45deg);
+				@media (min-width: 1001px) {
+					&:before {
+						transform: translate(6.25px, -50%) rotate(45deg);
+					}
+					&:after {
+						transform: translate(-6.25px, -50%) rotate(-45deg);
+					}
 				}
 			}
+		}
+		@media (max-width: 1000px) {
+			font-size: 1.5rem;
+			color: $fontColor_1-1;
+			padding: 0 0 20px 0;
+			border-bottom: 1px solid red;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 	&__submenu {
 		transform: rotateX(-90deg);
 		transform-origin: 0 0;
-		transition: all 0.4s ease-in;
+		//transition: all 0.4s ease-in;
 		opacity: 0;
 		visibility: hidden;
 		//@include transition;
@@ -72,11 +97,16 @@
 		left: -5px;
 		padding: 20px 0 0 0;
 		z-index: 10;
-		@media (max-width: 1024px) {
-			left: auto;
-			top: 120px;
-			right: 100%;
-			padding: 0 0 0 0;
+		@media (max-width: 1000px) {
+			display: none;
+			//transform-origin: center;
+			transform: rotateX(0);
+			opacity: 1;
+			visibility: visible;
+			//@include transition;
+			position: static;
+			align-self: flex-end;
+			width: 280px;
 		}
 	}
 	&__link {
@@ -104,11 +134,87 @@
 	}
 }
 
+.burger-menu {
+	position: relative;
+	width: 25px;
+	height: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&__line {
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: black;
+		&:first-child {
+			top: 0;
+		}
+		&:last-child {
+			bottom: 0;
+		}
+	}
+}
+
+.header-menu {
+	&__nav {
+		@media (max-width: 1000px) {
+			width: 100%;
+			background: rgba(31, 32, 65, 0.8);
+			z-index: 50;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			//min-height: 50vh;
+			padding: 120px 0;
+			@include transition;
+			//transform: translateY(-1000px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&.active {
+				transform: translateY(0);
+			}
+		}
+	}
+}
+
+.header-buttons {
+	display: flex;
+	align-items: center;
+	&__burger {
+		display: none;
+		@media (max-width: 1000px) {
+			display: block;
+			@include transition;
+
+			&.active {
+			}
+		}
+	}
+}
+
 .dropdawn-icon_header-menu {
 	width: auto;
+	@media (max-width: 1000px) {
+		transform: scale(1.2);
+		&:before,
+		&:after {
+			background-color: $fontColor_1-1;
+		}
+		&.active {
+			&:before {
+				transform: translate(6.25px, -50%) rotate(45deg);
+			}
+			&:after {
+				transform: translate(-6.25px, -50%) rotate(-45deg);
+			}
+		}
+	}
 }
 
 .header-login {
+	margin: 0 0 0 26px;
 	display: flex;
 	align-items: center;
 	&__item:first-child {

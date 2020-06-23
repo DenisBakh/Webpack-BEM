@@ -10,31 +10,39 @@ mixin header(logged='unlogged',menu,loginButton,regButton)
 				.header__logo
 					+logotype()
 				.header__navigation
-					nav.header-nav
-						ul.header-nav__list
-							for item in menu
-								li.header-nav__item
-									if !(item.submenu==='')
-										a.header-nav__link.header-nav__link_menu(href=item.link title=item.text)=item.text
-											.dropdawn-icon.dropdawn-icon_header-menu
-										.header-nav__submenu
-											+submenu(item.submenu)
-									else
-										a.header-nav__link(href=item.link title=item.text)=item.text
-					if logged==='logged'
-						.header-login.header-login_logged
-							.header-login__item
-								+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
-							.header-login__item
-								+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
-							a(href='#').header-login__item_logged Cosmin Negoita
-					else 
-						.header-login
-							.header-login__item
-								+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
-							.header-login__item
-								+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
-							a(href='#').header-login__item_logged Cosmin Negoita
+					.header-menu
+						.header-menu__nav
+							nav.header-nav
+								ul.header-nav__list
+									for item in menu
+										li.header-nav__item
+											if !(item.submenu==='')
+												a.header-nav__link.header-nav__link_menu(href=item.link title=item.text)=item.text
+													.dropdawn-icon.dropdawn-icon_header-menu
+												.header-nav__submenu
+													+submenu(item.submenu)
+											else
+												a.header-nav__link(href=item.link title=item.text)=item.text
+					.header-buttons
+						.header-buttons__burger
+							.burger-menu
+								.burger-menu__line
+								.burger-menu__line
+								.burger-menu__line
+						if logged==='logged'
+							.header-login.header-login_logged
+								.header-login__item
+									+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
+								.header-login__item
+									+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
+								a(href='#').header-login__item_logged Cosmin Negoita
+						else 
+							.header-login
+								.header-login__item
+									+button(loginButton[0].text,loginButton[0].link,loginButton[0].type,loginButton[0].mode)
+								.header-login__item
+									+button(regButton[0].text,regButton[0].link,regButton[0].type,regButton[0].mode)
+								a(href='#').header-login__item_logged Cosmin Negoita
 
 
 
