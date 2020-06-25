@@ -29,14 +29,15 @@ $(document).ready(function () {
 
 		captionsList.forEach(function (item, index) {
 			item.addEventListener('mouseover', function () {
-				if (!(unitsList_real[index] === 'undefined')) {
-					console.log(unitsList_real[index])
+				if (unitsList_real[index] !== undefined) {
 					unitsList_real[index].classList.add('hovered');
 				}
 			});
 
 			item.addEventListener('mouseout', function () {
-				unitsList_real[index].classList.remove('hovered');
+				if (unitsList_real[index] !== undefined) {
+					unitsList_real[index].classList.remove('hovered');
+				}
 			});
 
 

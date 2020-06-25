@@ -3,9 +3,17 @@
 $(document).ready(function () {
 	//Т.к. header position:fixed, он выпадает из потока, поэтому рассчитываем отступ верхний у контента в величине высоты header
 	var headerHeight = $('.header').innerHeight()
-	var main = $('.main').css({
+	$('.main').css({
 		'margin-top': headerHeight
 	})
+	window.addEventListener('resize', reportWindowSize);
+	function reportWindowSize() {
+		currentWidth = window.innerWidth
+		var headerHeight = $('.header').innerHeight()
+		$('.main').css({
+			'margin-top': headerHeight
+		})
+	}
 
 	//бургер
 	$('.burger-menu').on('click', function () {
@@ -28,6 +36,15 @@ $(document).ready(function () {
 			$this.find('.dropdawn-icon').toggleClass("active");
 			//$this.closest('.spoiler').toggleClass("active");
 			//$this.closest('.spoiler').find('.spoiler__content').toggleClass("active");
+
+			var mq = window.matchMedia("(max-width: 600px)");
+			if (mq.matches) {
+				var headerHeight = $('.header').innerHeight()
+				var main = $('.main').css({
+					'margin-top': headerHeight
+				})
+			}
+
 		}
 		else {
 			// window width is greater than 570px

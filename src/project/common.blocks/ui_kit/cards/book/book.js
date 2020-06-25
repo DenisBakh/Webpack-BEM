@@ -94,10 +94,10 @@ $(document).ready(function () {
 			var $roomLong = billBlock.find('.room-long');
 			var $roomLong_name = billBlock.find('.room-long_name');
 			if (diffDays === 1) {
-				$roomLong_name.text(' ' + 'суток')
+				$roomLong_name.text(' ' + 'сутки')
 				//var $roomLong_text = diffDays + ' ' + 'сутки'
 			} else {
-				$roomLong_name.text(' ' + 'сутки')
+				$roomLong_name.text(' ' + 'суток')
 				//var $roomLong_text = diffDays + ' ' + 'суток'
 			}
 			$roomLong.text(diffDays)

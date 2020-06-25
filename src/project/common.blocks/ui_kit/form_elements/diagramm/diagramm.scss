@@ -11,10 +11,25 @@
 	justify-content: space-between;
 	align-items: flex-end;
 	max-width: 800px;
+	@media (max-width: 650px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	@media (max-width: 475px) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
 	&__legend {
 		max-width: 250px;
 		margin-left: 30px;
 		padding: 0 0 3px 0;
+		@media (max-width: 650px) {
+			margin-left: 0;
+		}
+		@media (max-width: 475px) {
+			margin-left: 10px;
+		}
 	}
 	&__chart {
 		position: relative;
@@ -73,7 +88,7 @@
 	&:before {
 		content: "";
 		position: absolute;
-		top: 50%;
+		top: 10px;
 		transform: translateY(-50%);
 		left: 0;
 		width: 10px;
