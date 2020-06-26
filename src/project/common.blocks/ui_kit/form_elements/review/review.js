@@ -28,14 +28,22 @@ $(document).ready(function () {
 			var $counter = $(this).find('.review__counter')
 			//var $counter = $reviews[i].find('.review-header__counter');
 			if (!($counter === '0') && ($counter.length > 0)) {
-				console.log(111111)
+				var $amount = $counter.find('.review__amount')
 				var declensions = $counter.data('declensions').split(',')
 				var cnt = $counter.data('cnt')
 				var $equipmentPhrase = cnt + ' ' + declension(cnt, declensions)
 
 				$result = $equipmentPhrase
-				$counter.text($result);
+				$amount.text($result);
 			}
 		});
+	});
+
+
+	// выпадающий список review
+	$('.review__header').click(function (event) {
+		var $this = $(this)
+		$this.toggleClass('active').next().slideToggle(500);
+		$this.find('.dropdawn-icon').toggleClass("active");
 	});
 });

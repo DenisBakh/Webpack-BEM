@@ -3,6 +3,18 @@
 @import "~/main/main.scss";
 @import "~/pages/common/common/common.scss";
 
+@keyframes filter-button {
+	0% {
+		transform: translate(-10%, -50%) rotate(-90deg) scale(1.5);
+	}
+	50% {
+		transform: translate(-90%, -50%) rotate(-90deg) scale(1.5);
+	}
+	100% {
+		transform: translate(-10%, -50%) rotate(-90deg) scale(1.5);
+	}
+}
+
 .main {
 	background: #fff;
 	flex: 1 1 auto;
@@ -14,6 +26,33 @@
 	width: 380px;
 }
 
+.filter-button {
+	display: none;
+	@media (max-width: 1000px) {
+		display: block;
+		box-shadow: inset -6px -12px 8px 3px rgba(31, 32, 65, 0.1);
+		width: 25px;
+		position: relative;
+		border-left: 1px solid $borderColor_1-1;
+		cursor: pointer;
+		@include transition;
+		&.active {
+			box-shadow: inset 6px 12px 8px 3px rgba(31, 32, 65, 0.1);
+		}
+	}
+}
+.dropdawn-icon_filterColumn {
+	height: auto;
+	width: 15px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-90deg) scale(1.5);
+	animation-name: filter-button;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
 .content {
 	padding: 30px 0 78px 0;
 	&__row {
@@ -23,12 +62,41 @@
 		&_filter {
 			flex: 0 0 23%;
 			margin: 0 59px 0 0;
+			@media (max-width: 1000px) {
+				position: fixed;
+				z-index: 40;
+				background: white;
+				top: 50%;
+				left: 0;
+				margin: 0;
+				border-radius: 5px;
+				box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5), 4px 4px 4px rgba(0, 0, 0, 0.5);
+				display: flex;
+				transform: translate(-280px, -50%);
+				@include transition;
+				&.active {
+					transform: translate(0, -50%);
+				}
+			}
+		}
+		&_icon {
+			width: 20px;
+			height: 100%;
+			background: white;
 		}
 		&_roomcards {
 			flex: 1 1 70%;
 			text-align: center;
 			display: flex;
 			flex-direction: column;
+			@media (max-width: 1000px) {
+				width: 100%;
+				padding: 0 0 0 30px;
+				@include transition;
+				&.disactive {
+					opacity: 0.15;
+				}
+			}
 		}
 	}
 }
@@ -49,6 +117,10 @@
 			margin: 0 0 30px 0;
 		}
 	}
+	@media (max-width: 1000px) {
+		width: 280px;
+		padding: 20px 10px;
+	}
 }
 
 .cards-block {
@@ -60,11 +132,18 @@
 		font-size: 1.7rem;
 		line-height: 1.25em;
 		color: $fontColor_1-3;
+		text-align: left;
+		@media (max-width: 1000px) {
+			text-align: center;
+		}
 	}
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -6px;
+		@media (max-width: 1000px) {
+			justify-content: center;
+		}
 	}
 	&__item {
 		margin: 20px 0 0 0;

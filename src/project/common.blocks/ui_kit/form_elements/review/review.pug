@@ -8,6 +8,8 @@ mixin reviews(list,isHeader='false',title='Отзывы посетителей �
 			.review__header
 				+block-header(title)
 				.review__counter(data-declensions='отзыв,отзыва,отзывов',data-cnt=list.length)
+					.review__amount
+					.dropdawn-icon.dropdawn-icon_review.active
 		ul.review__list
 			each item in list
 				.review__item
