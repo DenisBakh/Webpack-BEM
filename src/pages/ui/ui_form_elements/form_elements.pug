@@ -23,166 +23,188 @@ html(lang='ru')
 		.wrapper
 			.container_ui
 				+logotype('ui')
-			main.form-elements
-				.container_ui__form-elements
-					.form-elements__row
-						.form-elements__column.form-elements__column_a
-							.form-elements__item
-								+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
-							.form-elements__item
-								+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
-							.form-elements__item.form-elements__item_DropdawnGuests
-								+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
-							.form-elements__item.form-elements__item_Date
-								+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
-							.form-elements__item.form-elements__item_Date
-								.item-formElement
-									.item-formElement__row
-										.item-formElement__column
-											+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-										.item-formElement__column
-											+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
-							.form-elements__item.form-elements__item_Date.form-elements__item_small
-								+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
-							.form-elements__item.form-elements__item_small
-								+subscribe('email_sub','Email','subscription text field')
-						.form-elements__column.form-elements__column_b
-							.form-elements__item.form-elements__item_checkbox
-								-
-									var checkboxList=[
-										{id:'allow_smoke',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно курить',textDescr:'asdasd'}},
-										{id:'with_pets',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно с питомцами',textDescr:'asdasd'}},
-										{id:'inv_guests',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно пригласить гостей (до 10 человек)',textDescr:'asdasqw'}},
-									]
-								+checkbox-list(checkboxList,'Checkbox Buttons','notSpoiler')
-							.form-elements__item.form-elements__item_radioBtn
-								.label
-									.label__title radio buttons
-								.radio-row
-									.radio-row__item
-										+radio("gender-w", "gender","Женщина")
-									.radio-row__item
-										+radio("gender-m", "gender","Мужчина")
-							.form-elements__item.form-elements__item_checkboxToggle
-								.label
-									.label__title Toggle
-								.toggle-row
-									.toggle-row__item
-										+checkbox('id_toggle_1','toggle','Получать спецпредложения', '')
-									.toggle-row__item
-										+checkbox('id_toggle_2','toggle','Получать спецпредложения', '')
-							.form-elements__item.form-elements__item_checkboxLike
-								.label
-									.label__title like button
-								.like-row
-									.like-row__item
-										+checkbox('id_like_1','like','', '')
-									.like-row__item
-										+checkbox('id_like_2','like','', '')
-							.form-elements__item.form-elements__item_stars
-								.label
-									.label__title rate button
-								.checkbox-list.star-list
-									.star-list__item
-										+stars(1)
-									.star-list__item
-										+stars(2)
-						.form-elements__column.form-elements__column_c
-							.form-elements__item.form-elements__item_RangeSlider
-								+rangeSlider("Range Slider", '')
-							.form-elements__item.form-elements__item_buttons
-								.label
-									.label__title buttons
-								.button-list
-									.button-list__row
-										.button-list__column
-											+button('CLICK ME','#','','button')
-										.button-list__column
-											+button('CLICK ME','#','','button')
-									.button-list__row
-										.button-list__column
-											+button('CLICK ME','#','','button_border')
-										.button-list__column
-											+button('CLICK ME','#','','button_border')
-									.button-list__row.button-list__row_s
-										.button-list__column.button-list__column_s
-											+button('CLICK ME','#','','button_simple')
-										.button-list__column.button-list__column_s
-											+button('CLICK ME','#','','button_simple')
-									.button-list__row.button-list__row_b
-										.button-list__column.button-list__column_b
-											+button('перейти к оплате','#','submit','button_wide')
-							.form-elements__item
-								- var x = 178;
-								- for (var i=0; i<x; i++) {     
-									.pagination-item
-								- }
-								+pagination()
-					.form-elements__row_2
-						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item.form-elements__item_small.form-elements__item_drop
-								+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
-							.form-elements__item.form-elements__item_small.form-elements__item_drop
-								+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
-						.form-elements__column_2
-							.form-elements__item.form-elements__item_drop
-								+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
-						.form-elements__column_2
-							.form-elements__item.form-elements__item_drop
-								+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
-					.form-elements__row_2.form-elements__row_2-a
-						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item.form-elements__item_spoiler
-								-
-									var checkboxList=[
-										{id:'breackfast',type:'simple',kindOfSimple:'simple',name:{textValue:'Завтрак',textDescr:''}},
-										{id:'worktable',type:'simple',kindOfSimple:'simple',name:{textValue:'Письменный стол',textDescr:''}},
-										{id:'foodchair',type:'simple',kindOfSimple:'simple',name:{textValue:'Стул для кормления',textDescr:''}},
-										{id:'minibed',type:'simple',kindOfSimple:'simple',name:{textValue:'Кроватка',textDescr:''}},
-										{id:'tv',type:'simple',kindOfSimple:'simple',name:{textValue:'Телевизор',textDescr:''}},
-										{id:'shampoo',type:'simple',kindOfSimple:'simple',name:{textValue:'Шампунь',textDescr:''}},
-									]
-								+checkbox-list(checkboxList,'expandable checkbox list','inSpoiler','hide')
-							.form-elements__item.form-elements__item_spoiler
-								-
-									var checkboxList=[
-										{id:'breackfast1',type:'simple',kindOfSimple:'simple',name:{textValue:'Завтрак',textDescr:''}},
-										{id:'worktable2',type:'simple',kindOfSimple:'simple',name:{textValue:'Письменный стол',textDescr:''}},
-										{id:'foodchair3',type:'simple',kindOfSimple:'simple',name:{textValue:'Стул для кормления',textDescr:''}},
-										{id:'minibed4',type:'simple',kindOfSimple:'simple',name:{textValue:'Кроватка',textDescr:''}},
-										{id:'tv5',type:'simple',kindOfSimple:'simple',name:{textValue:'Телевизор',textDescr:''}},
-										{id:'shampoo6',type:'simple',kindOfSimple:'simple',name:{textValue:'Шампунь',textDescr:''}},
-									]
-								+checkbox-list(checkboxList,'expandable checkbox list','inSpoiler','show')
-						.form-elements__column_2
-							.form-elements__item
-								-
-									var checkboxList=[
-										{id:'wide',type:'simple',kindOfSimple:'rich',name:{textValue:'Широкий коридор',textDescr:'Ширина коридоров в номере не менее 91 см.'}},
-										{id:'helper',type:'simple',kindOfSimple:'rich',name:{textValue:'Помощник для инвалидов',textDescr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
-									]
-								+checkbox-list(checkboxList,'rich Checkbox Buttons')
-						.form-elements__column_2
-							.form-elements__item.form-elements__item_bulletList
-								-
-									var bulletList=[
-										'Нельзя с питомцами',
-										'Без вечеринок и мероприятий',
-										'Время прибытия — после 13:00, а выезд до 12:00'
+				main.form-elements
+					.container_ui__form-elements
+						.form-elements__row
+							.form-elements__column.form-elements__column_a
+								.form-elements__item
+									+inputs('text-field', 'email', 'Text Field', '', 'Email', 'DEFAULT')
+								.form-elements__item
+									+inputs('text-field2', 'text', 'Text Field', 'This is pretty awesome', 'Email', 'Hover / Focus')
+								.form-elements__item.form-elements__item_DropdawnGuests
+									+inputDropdawnGuests('1','Dropdown','Сколько гостей','DEFAULT')
+								.form-elements__item.form-elements__item_Date
+									+inputDate('date-field', 'masked text field', '', 'ДД.ММ.ГГГГ', 'DEFAULT')
+								.form-elements__item.form-elements__item_Date
+									.item-formElement
+										-
+											var inCome={
+												id:'datepicker1',
+												label:'date Dropdown',
+												placeholder:'ДД.ММ.ГГГГ',
+												value:'',
+												range:'true',
+												dateFormat:'dd.mm.yyyy',
+												descr:''
+												}
+										-
+											var outCome={
+												id:inCome.id,
+												label:'date Dropdown',
+												placeholder:'ДД.ММ.ГГГГ',
+												value:'',
+												range:'true',
+												dateFormat:'dd.mm.yyyy',
+												descr:''
+												}
+										+inputDatePicker_pseudo(inCome,outCome)
+										//
+											.item-formElement__row
+												.item-formElement__column
+													+inputDatePicker('datepicker1', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+												.item-formElement__column
+													+inputDatePicker('datepicker2', 'date Dropdown', 'ДД.ММ.ГГГГ','', 'false', 'dd.mm.yyyy','')
+								.form-elements__item.form-elements__item_Date.form-elements__item_small
+									+inputDatePicker('datepicker', 'filter date dropdown', 'ДД.ММ.ГГГГ','', 'true', 'dd M','')
+								.form-elements__item.form-elements__item_small
+									+subscribe('email_sub','Email','subscription text field')
+							.form-elements__column.form-elements__column_b
+								.form-elements__item.form-elements__item_checkbox
+									-
+										var checkboxList=[
+											{id:'allow_smoke',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно курить',textDescr:'asdasd'}},
+											{id:'with_pets',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно с питомцами',textDescr:'asdasd'}},
+											{id:'inv_guests',type:'simple',kindOfSimple:'simple',name:{textValue:'Можно пригласить гостей (до 10 человек)',textDescr:'asdasqw'}},
 										]
-								+bullet-list(bulletList,links='false',isHeader='small',title='bullet list')
-					.form-elements__row_3
-						.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
-							.form-elements__item.form-elements__item_advantages
-								-
-									var advantagesList=[
-										'comfort','windows'
-									]
-								+advantages(advantagesList,'')
-						.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
-							.form-elements__item.form-elements__item_review
-								-
-									var reviewList=[
-										{photo:'murad.png',name:'Мурад Сарафанов',when:'5 дней назад',descr:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
-									]
-								+reviews(reviewList,'false','empty')
+									+checkbox-list(checkboxList,'Checkbox Buttons','notSpoiler')
+								.form-elements__item.form-elements__item_radioBtn
+									.label
+										.label__title radio buttons
+									.radio-row
+										.radio-row__item
+											+radio("gender-w", "gender","Женщина")
+										.radio-row__item
+											+radio("gender-m", "gender","Мужчина")
+								.form-elements__item.form-elements__item_checkboxToggle
+									.label
+										.label__title Toggle
+									.toggle-row
+										.toggle-row__item
+											+checkbox('id_toggle_1','toggle','Получать спецпредложения', '')
+										.toggle-row__item
+											+checkbox('id_toggle_2','toggle','Получать спецпредложения', '')
+								.form-elements__item.form-elements__item_checkboxLike
+									.label
+										.label__title like button
+									.like-row
+										.like-row__item
+											+checkbox('id_like_1','like','', '')
+										.like-row__item
+											+checkbox('id_like_2','like','', '')
+								.form-elements__item.form-elements__item_stars
+									.label
+										.label__title rate button
+									.checkbox-list.star-list
+										.star-list__item
+											+stars(1)
+										.star-list__item
+											+stars(2)
+							.form-elements__column.form-elements__column_c
+								.form-elements__item.form-elements__item_RangeSlider
+									+rangeSlider("Range Slider", '')
+								.form-elements__item.form-elements__item_buttons
+									.label
+										.label__title buttons
+									.button-list
+										.button-list__row
+											.button-list__column
+												+button('CLICK ME','#','','button')
+											.button-list__column
+												+button('CLICK ME','#','','button')
+										.button-list__row
+											.button-list__column
+												+button('CLICK ME','#','','button_border')
+											.button-list__column
+												+button('CLICK ME','#','','button_border')
+										.button-list__row.button-list__row_s
+											.button-list__column.button-list__column_s
+												+button('CLICK ME','#','','button_simple')
+											.button-list__column.button-list__column_s
+												+button('CLICK ME','#','','button_simple')
+										.button-list__row.button-list__row_b
+											.button-list__column.button-list__column_b
+												+button('перейти к оплате','#','submit','button_wide')
+								.form-elements__item
+									- var x = 178;
+									- for (var i=0; i<x; i++) {     
+										.pagination-item
+									- }
+									+pagination()
+						.form-elements__row_2
+							.form-elements__column_2.form-elements__column_2-a
+								.form-elements__item.form-elements__item_small.form-elements__item_drop
+									+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
+								.form-elements__item.form-elements__item_small.form-elements__item_drop
+									+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
+							.form-elements__column_2
+								.form-elements__item.form-elements__item_drop
+									+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
+							.form-elements__column_2
+								.form-elements__item.form-elements__item_drop
+									+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
+						.form-elements__row_2.form-elements__row_2-a
+							.form-elements__column_2.form-elements__column_2-a
+								.form-elements__item.form-elements__item_spoiler
+									-
+										var checkboxList=[
+											{id:'breackfast',type:'simple',kindOfSimple:'simple',name:{textValue:'Завтрак',textDescr:''}},
+											{id:'worktable',type:'simple',kindOfSimple:'simple',name:{textValue:'Письменный стол',textDescr:''}},
+											{id:'foodchair',type:'simple',kindOfSimple:'simple',name:{textValue:'Стул для кормления',textDescr:''}},
+											{id:'minibed',type:'simple',kindOfSimple:'simple',name:{textValue:'Кроватка',textDescr:''}},
+											{id:'tv',type:'simple',kindOfSimple:'simple',name:{textValue:'Телевизор',textDescr:''}},
+											{id:'shampoo',type:'simple',kindOfSimple:'simple',name:{textValue:'Шампунь',textDescr:''}},
+										]
+									+checkbox-list(checkboxList,'expandable checkbox list','inSpoiler','hide')
+								.form-elements__item.form-elements__item_spoiler
+									-
+										var checkboxList=[
+											{id:'breackfast1',type:'simple',kindOfSimple:'simple',name:{textValue:'Завтрак',textDescr:''}},
+											{id:'worktable2',type:'simple',kindOfSimple:'simple',name:{textValue:'Письменный стол',textDescr:''}},
+											{id:'foodchair3',type:'simple',kindOfSimple:'simple',name:{textValue:'Стул для кормления',textDescr:''}},
+											{id:'minibed4',type:'simple',kindOfSimple:'simple',name:{textValue:'Кроватка',textDescr:''}},
+											{id:'tv5',type:'simple',kindOfSimple:'simple',name:{textValue:'Телевизор',textDescr:''}},
+											{id:'shampoo6',type:'simple',kindOfSimple:'simple',name:{textValue:'Шампунь',textDescr:''}},
+										]
+									+checkbox-list(checkboxList,'expandable checkbox list','inSpoiler','show')
+							.form-elements__column_2
+								.form-elements__item
+									-
+										var checkboxList=[
+											{id:'wide',type:'simple',kindOfSimple:'rich',name:{textValue:'Широкий коридор',textDescr:'Ширина коридоров в номере не менее 91 см.'}},
+											{id:'helper',type:'simple',kindOfSimple:'rich',name:{textValue:'Помощник для инвалидов',textDescr:'На 1 этаже вас встретит специалист  и проводит до номера.'}}
+										]
+									+checkbox-list(checkboxList,'rich Checkbox Buttons')
+							.form-elements__column_2
+								.form-elements__item.form-elements__item_bulletList
+									-
+										var bulletList=[
+											'Нельзя с питомцами',
+											'Без вечеринок и мероприятий',
+											'Время прибытия — после 13:00, а выезд до 12:00'
+											]
+									+bullet-list(bulletList,links='false',isHeader='small',title='bullet list')
+						.form-elements__row_3
+							.form-elements__column_2.form-elements__column_3.form-elements__column_2-a
+								.form-elements__item.form-elements__item_advantages
+									-
+										var advantagesList=[
+											'comfort','windows'
+										]
+									+advantages(advantagesList,'')
+							.form-elements__column_2.form-elements__column_3.form-elements__column_2-b
+								.form-elements__item.form-elements__item_review
+									-
+										var reviewList=[
+											{photo:'murad.png',name:'Мурад Сарафанов',when:'5 дней назад',descr:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
+										]
+									+reviews(reviewList,'false','empty')

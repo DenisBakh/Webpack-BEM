@@ -3,16 +3,30 @@
 
 .ui-cards {
 	flex: 1 1 auto;
-	background:#F4F4F6;
+	background: #f4f4f6;
 	&__row {
 		display: flex;
 		margin: 0 -20px;
+		@media (max-width: 1300px) {
+			flex-direction: column;
+			margin: 0;
+		}
 	}
 	&__column {
 		padding: 0 20px;
 		flex: 0 1 420px;
 		&_s {
 			flex: 0 1 360px;
+		}
+		@media (max-width: 1300px) {
+			width: 380px;
+			padding: 0;
+			margin: 0 auto;
+		}
+		@media (max-width: 400px) {
+			width: 310px;
+			padding: 0;
+			margin: 0 auto;
 		}
 	}
 	&__item {
