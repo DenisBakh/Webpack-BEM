@@ -1,5 +1,23 @@
 @import "~/project/common.blocks/_common/vars.scss";
 
+@keyframes spoiler-review {
+	0% {
+		transform: translateY(0px);
+	}
+	25% {
+		transform: translateY(3px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	75% {
+		transform: translateY(-3px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
 .review {
 	color: $fontColor_1-2;
 	display: table;
@@ -48,6 +66,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 0 20px 0;
+		cursor: pointer;
 		@media (max-width: 450px) {
 			margin: 0 0 10px 0;
 		}
@@ -61,6 +80,9 @@
 		display: flex;
 		align-items: center;
 	}
+	&__amount {
+		padding: 0 30px 0 0;
+	}
 	&__item:not(:last-child) {
 		margin: 0 0 25px 0;
 		@media (max-width: 450px) {
@@ -70,6 +92,11 @@
 }
 
 .dropdawn-icon_review {
-	position: static;
-	height: 100%;
+	top: 1px;
+	animation-name: spoiler-review;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	//position: static;
+	//height: 100%;
 }
