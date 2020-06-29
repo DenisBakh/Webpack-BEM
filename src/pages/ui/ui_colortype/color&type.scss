@@ -1,8 +1,8 @@
 //================================= color&type ==============================
 @import "~/pages/ui/_ui_common/ui_common.scss";
 
-.main{
-	flex:1 1 auto;
+.main {
+	flex: 1 1 auto;
 }
 
 .content {
@@ -10,17 +10,49 @@
 		display: flex;
 		margin: 0 -215px;
 		justify-content: space-between;
+		@media (max-width: 1300px) {
+			margin: 0 -100px;
+		}
+		@media (max-width: 1000px) {
+			margin: 0 -30px;
+		}
+		@media (max-width: 750px) {
+			margin: 0;
+			flex-direction: column;
+		}
 	}
 	&__column {
 		padding: 0 215px;
 
 		&:first-child {
 			flex: 0 0 auto;
+			@media (max-width: 750px) {
+				padding: 0;
+				margin: 0 0 30px 0;
+			}
 		}
 		&:last-child {
 			padding: 0 245px 0 215px;
 			display: flex;
 			flex-direction: column;
+			@media (max-width: 1300px) {
+				padding: 0 100px;
+			}
+			@media (max-width: 1000px) {
+				padding: 0 30px;
+			}
+			@media (max-width: 750px) {
+				padding: 0;
+			}
+		}
+		@media (max-width: 1300px) {
+			padding: 0 100px;
+		}
+		@media (max-width: 1000px) {
+			padding: 0 30px;
+		}
+		@media (max-width: 750px) {
+			padding: 0;
 		}
 	}
 }
@@ -87,21 +119,24 @@
 	&__cell {
 		display: table-cell;
 		padding: 0 0 50px 0;
+		@media (max-width: 750px) {
+			padding: 0 0 20px 0;
+		}
 	}
 	&__descr {
 		font-family: "Quicksand";
 		font-style: normal;
 		font-weight: 700;
-		font-size: 24px;
-		line-height: 30px;
+		font-size: 1.714rem;
+		line-height: 1.25em;
 		word-wrap: break-word;
 		color: #1f2041;
 	}
 	&__mark {
 		padding: 0 30px 0 0;
 		font-family: "Montserrat";
-		font-size: 24px;
-		line-height: 29px;
+		font-size: 1.714rem;
+		line-height: 1.25em;
 		margin: 0 30px 0 0;
 		color: rgba(31, 32, 65, 0.25);
 		text-align: end;
@@ -110,39 +145,37 @@
 		display: table-row;
 		&:nth-child(2) {
 			.item-text__descr {
-				font-size: 19px;
-				line-height: 24px;
+				font-size: 1.357rem;
+				line-height: 1.263em;
 			}
 			.item-text__mark {
-				font-size: 19px;
-				line-height: 23px;
+				font-size: 1.357rem;
+				line-height: 1.263em;
 			}
 		}
 		&:nth-child(3) {
 			.item-text__descr {
 				font-family: "Montserrat";
-
 				font-weight: 700;
-				font-size: 12px;
-				line-height: 15px;
-
+				font-size: 0.857rem;
+				line-height: 1.25em;
 				text-transform: uppercase;
 			}
 			.item-text__mark {
-				font-size: 12px;
-				line-height: 15px;
+				font-size: 0.857rem;
+				line-height: 1.25em;
 			}
 		}
 		&:nth-child(4) {
 			.item-text__descr {
 				font-family: "Montserrat";
 				font-weight: 400;
-				font-size: 14px;
-				line-height: 24px;
+				font-size: 1rem;
+				line-height: 1.714em;
 			}
 			.item-text__mark {
-				font-size: 14px;
-				line-height: 24px;
+				font-size: 1rem;
+				line-height: 1.714em;
 			}
 		}
 	}
