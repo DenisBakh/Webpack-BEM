@@ -9,6 +9,7 @@ $padding: 10px;
 		&_dropDawn {
 			cursor: pointer;
 			position: relative;
+			min-width: 260px;
 			&.active {
 				border-bottom-right-radius: 0;
 				border-bottom-left-radius: 0;

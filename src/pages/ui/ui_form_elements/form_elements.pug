@@ -120,15 +120,15 @@ html(lang='ru')
 								+pagination()
 					.form-elements__row_2
 						.form-elements__column_2.form-elements__column_2-a
-							.form-elements__item.form-elements__item_small
+							.form-elements__item.form-elements__item_small.form-elements__item_drop
 								+inputDropdawnEquip('1','Dropdown','Параметры номера','DEFAULT')
-							.form-elements__item.form-elements__item_small
+							.form-elements__item.form-elements__item_small.form-elements__item_drop
 								+inputDropdawnEquipActive('2','Dropdown','Параметры номера','EXPANDED')
 						.form-elements__column_2
-							.form-elements__item
+							.form-elements__item.form-elements__item_drop
 								+inputDropdawnGuestsActive('2','Dropdown','Сколько гостей','')
 						.form-elements__column_2
-							.form-elements__item
+							.form-elements__item.form-elements__item_drop
 								+inputDropdawnGuestsActive('3','Dropdown','Сколько гостей','',2,1,0)
 					.form-elements__row_2.form-elements__row_2-a
 						.form-elements__column_2.form-elements__column_2-a
@@ -183,6 +183,6 @@ html(lang='ru')
 							.form-elements__item.form-elements__item_review
 								-
 									var reviewList=[
-										{photo:'murad.png',name:'Мурад Сарафанов',when:'5 дней назад',textDescr:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
+										{photo:'murad.png',name:'Мурад Сарафанов',when:'5 дней назад',descr:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
 									]
-								+reviews(reviewList)
+								+reviews(reviewList,'false','empty')

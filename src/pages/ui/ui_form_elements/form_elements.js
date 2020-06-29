@@ -9,3 +9,4 @@ import '~/project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
 import '~/project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-list/checkbox-list.js'
 import '~/project/common.blocks/ui_kit/form_elements/pagination/pagination.js'
 
+import '~/project/common.blocks/ui_kit/form_elements/review/review.js'
