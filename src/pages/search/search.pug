@@ -5,13 +5,11 @@ include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pu
 include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
 
+include /pages/common/head/head.pug
 
 <!DOCTYPE html>
 html(lang='ru')
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		title Document
+	+head('Выберите комнату для себя')
 	body
 		.wrapper
 			include /pages/common/header/header.pug
@@ -79,131 +77,131 @@ html(lang='ru')
 									h2.cards-block__title(id='scroll-here') Номера, которые мы для вас подобрали
 									.cards-block__row
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','145')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9990','145')
 										.cards-block__item.pagination-item
-											+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840','', '9 990₽ ','65')
+											+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840','', '9990','65')
 										.cards-block__item.pagination-item
-											+room-card(['980.jpg','980.jpg','980.jpg','980.jpg'],'980',' люкс', '8 500₽ ','35')
+											+room-card(['980.jpg','980.jpg','980.jpg','980.jpg'],'980',' люкс', '8500','35')
 										.cards-block__item.pagination-item
-											+room-card(['856.jpg','856.jpg','856.jpg','856.jpg'],'856','', '7 300₽ ','19')
+											+room-card(['856.jpg','856.jpg','856.jpg','856.jpg'],'856','', '7300','19')
 										.cards-block__item.pagination-item
-											+room-card(['740.jpg','740.jpg','740.jpg','740.jpg'],'740','', '6 000₽ ','44')
+											+room-card(['740.jpg','740.jpg','740.jpg','740.jpg'],'740','', '8000','44')
 										.cards-block__item.pagination-item
-											+room-card(['982.jpg','982.jpg','982.jpg','982.jpg'],'982','', '5 800₽ ','56')
+											+room-card(['982.jpg','982.jpg','982.jpg','982.jpg'],'982','', '5800','56')
 										.cards-block__item.pagination-item
-											+room-card(['678.jpg','678.jpg','678.jpg','678.jpg'],'678','', '5 500₽ ','45')
+											+room-card(['678.jpg','678.jpg','678.jpg','678.jpg'],'678','', '5500','45')
 										.cards-block__item.pagination-item
-											+room-card(['450.jpg','450.jpg','450.jpg','450.jpg'],'450','', '5 300₽ ','39')
+											+room-card(['450.jpg','450.jpg','450.jpg','450.jpg'],'450','', '5300','39')
 										.cards-block__item.pagination-item
-											+room-card(['350.jpg','350.jpg','350.jpg','350.jpg'],'350','', '5 000₽ ','77')
+											+room-card(['350.jpg','350.jpg','350.jpg','350.jpg'],'350','', '5000','77')
 										.cards-block__item.pagination-item
-											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5 000₽ ','25')
+											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5000','25')
 										.cards-block__item.pagination-item
-											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5 000₽ ','15')
+											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5000','15')
 										.cards-block__item.pagination-item
-											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5 000₽ ','55')
+											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5000','55')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5 000₽ ','25')
+											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5000','25')
 										.cards-block__item.pagination-item
-											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5 000₽ ','15')
+											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5000','15')
 										.cards-block__item.pagination-item
-											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5 000₽ ','55')
+											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5000','55')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5 000₽ ','25')
+											+room-card(['666.jpg','666.jpg','666.jpg','666.jpg'],'666','', '5000','25')
 										.cards-block__item.pagination-item
-											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5 000₽ ','15')
+											+room-card(['444.jpg','444.jpg','444.jpg','444.jpg'],'444','', '5000','15')
 										.cards-block__item.pagination-item
-											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5 000₽ ','55')
+											+room-card(['352.jpg','352.jpg','352.jpg','352.jpg'],'352','', '5000','55')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'1888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 										.cards-block__item.pagination-item
-											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9 990₽ ','20')
+											+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'2888',' люкс', '9990','20')
 
 								+pagination('')
 			include /pages/common/footer/footer.pug

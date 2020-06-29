@@ -1,6 +1,15 @@
 //================================= room-card ==============================
+@keyframes link-icon {
+	0% {
+		transform: translateX(-100%) rotate(-90deg);
+	}
+	100% {
+		transform: translateX(100%) rotate(-90deg);
+	}
+}
 
 .room-card {
+	display: block;
 	width: 270px;
 	background: #ffffff;
 	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -8,6 +17,7 @@
 	overflow: hidden;
 	&__slider {
 		user-select: none;
+		position: relative;
 	}
 	&__container {
 		padding: 25px 20px 20px 20px;
@@ -25,6 +35,27 @@
 	&__img {
 		position: relative;
 		max-height: 151.5px;
+		overflow: hidden;
+	}
+	&__link {
+		display: block;
+		font-size: 1em;
+		line-height: 1.4em;
+		font-family: $mainFont;
+		color: $fontColor_2-0;
+		font-weight: 700;
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		transform: translate(-50%, -100%);
+		display: flex;
+		@include transition;
+	}
+	&__detail {
+		margin: 0 2px 0 0;
+	}
+	&__icon {
+		width: 15px;
 		overflow: hidden;
 	}
 
@@ -78,5 +109,24 @@
 				transform: matrix(-1, 0, 0, 1, 0, 0) translateX(0);
 			}
 		}
+		.room-card__link {
+			transform: translate(-50%, 0);
+		}
+		.dropdawn-icon_slider {
+			animation-name: link-icon;
+			animation-duration: 1500ms;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+	}
+}
+
+.dropdawn-icon_slider {
+	position: static;
+	width: 15px;
+	transform: rotate(-90deg);
+	&::before,
+	&::after {
+		background: $fontColor_2-0;
 	}
 }

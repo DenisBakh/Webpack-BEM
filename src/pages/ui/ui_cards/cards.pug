@@ -4,20 +4,18 @@ include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/cards/room-card/room-card.pug
 
-include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
+include /project/common.blocks/ui_kit/logotype/logotype.pug
 
+include /pages/common/head/head.pug
 
 <!DOCTYPE html>
 html(lang='ru')
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1')
-		title Document
+	+head('UI_Карточки')
 	body
 		.wrapper
 			main.ui-cards
 				.container_ui
-						+logo('ui')
+						+logotype('ui')
 						.container_ui__cards
 							.ui-cards__row
 								.ui-cards__column
@@ -34,6 +32,6 @@ html(lang='ru')
 									.ui-cards__item
 										.datePick-example(id='datePick-example')
 									.ui-cards__item
-										+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9 990₽ ','145')
+										+room-card(['888.jpg','888.jpg','888.jpg','888.jpg'],'888',' люкс', '9990','145')
 									.ui-cards__item
-										+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840',' ', '9 990₽ ','65')
+										+room-card(['840.jpg','840.jpg','840.jpg','840.jpg'],'840',' ', '9990','65')

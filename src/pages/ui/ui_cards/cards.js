@@ -8,3 +8,4 @@ import '~/project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn'
 import '~/project/common.blocks/ui_kit/form_elements/datepicker/datepicker.js'
 
 import '~/project/common.blocks/ui_kit/cards/slider/slider'
+import '~/project/common.blocks/ui_kit/cards/room-card/room-card.js'

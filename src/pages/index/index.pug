@@ -1,16 +1,14 @@
-
+include /pages/common/head/head.pug
 
 <!DOCTYPE html>
 html(lang='ru')
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		title Document
+	+head('Чувствуйте себя как дома!')
 	body
 		.wrapper
 			include /pages/common/header/header.pug
 			main.main
-				.main__bg
+				.main__bg.ibg
+					img(src='assets/img/landing.jpg',alt='landing.jpg')
 					.container.container_landing
 						.main__wrapper
 							.main__content

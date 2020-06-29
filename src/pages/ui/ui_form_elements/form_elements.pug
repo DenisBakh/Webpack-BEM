@@ -5,7 +5,7 @@ include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
-include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
+include /project/common.blocks/ui_kit/logotype/logotype.pug
 
 include /project/common.blocks/ui_kit/form_elements/advantages/advantages.pug
 include /project/common.blocks/ui_kit/form_elements/review/review.pug
@@ -14,16 +14,15 @@ include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/chec
 
 
 
+include /pages/common/head/head.pug
+
 <!DOCTYPE html>
 html(lang='ru')
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		title Document
+	+head('UI_Основные элементы')
 	body
 		.wrapper
 			.container_ui
-				+logo('ui')
+				+logotype('ui')
 			main.form-elements
 				.container_ui__form-elements
 					.form-elements__row

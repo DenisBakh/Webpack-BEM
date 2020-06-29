@@ -22,12 +22,11 @@ mixin room-photo(bigPic='888big.jpg',smallPicTop='888_2.jpg',smallPicBottom='888
 				.room-photo__item.room-photo__item_bottom.ibg
 					img(src=`assets/img/${smallPicBottom}`,alt=smallPicBottom)
 
+include /pages/common/head/head.pug
+
 <!DOCTYPE html>
 html(lang='ru')
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		title Document
+	+head('Комната в деталях')
 	body
 		.wrapper
 			include /pages/common/header/header.pug

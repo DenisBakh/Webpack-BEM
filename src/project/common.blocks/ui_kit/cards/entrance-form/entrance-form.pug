@@ -7,9 +7,9 @@ include ../../form_elements/buttons/button.pug
 			.entrance__form
 				form(action='#' method='post').registry-form
 					.registry-form__user.registry-form__user-email
-						+inputs('user-email', 'email', '', '', 'Email', '')
+						+inputs('user-email_entry', 'email', '', '', 'Email', '')
 					.registry-form__user.registry-form__user-password
-						+inputs('user-password', 'password', '', '', 'Пароль', '')
+						+inputs('user-password_entry', 'password', '', '', 'Пароль', '')
 					.registry-form__user.registry-form__button_create
 						.card-button
 							+button('войти','#','submit','button_wide')

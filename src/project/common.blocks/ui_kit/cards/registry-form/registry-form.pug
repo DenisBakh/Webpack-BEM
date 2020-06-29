@@ -8,9 +8,9 @@ include /project/common.blocks/ui_kit/form_elements/text-field/text-field.pug
 		h2.card__title Регистрация аккаунта
 		form(action='#' method='post').registry-form
 			.registry-form__user.registry-form__user-name
-				+inputs('user-name', 'text', '', '', 'Имя', '')
+				+inputs('user-name_reg', 'text', '', '', 'Имя', '')
 			.registry-form__user.registry-form__user-lastname
-				+inputs('user-lastname', 'text', '', '', 'Фамилия', '')
+				+inputs('user-lastname_reg', 'text', '', '', 'Фамилия', '')
 			.registry-form__user.registry-form__user-gender
 				.registry-form__user-male
 					+radio('gender_m','gender','Мужчина')

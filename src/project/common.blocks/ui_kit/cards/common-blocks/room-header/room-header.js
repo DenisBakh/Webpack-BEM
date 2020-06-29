@@ -4,6 +4,7 @@ $(document).ready(function () {
 	var roomHeader = $(this).find('.room-header');
 
 	roomHeader.each(function (index) {
+
 		var item = $(this)
 		var _sep = ' ';
 		var costPer = item.find('.room-cost');

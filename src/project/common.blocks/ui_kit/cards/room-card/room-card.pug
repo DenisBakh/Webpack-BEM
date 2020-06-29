@@ -2,7 +2,7 @@
 include /project/common.blocks/ui_kit/cards/common-blocks/room-header/room-header.pug
 include /project/common.blocks/ui_kit/form_elements/stars/stars.pug
 
-mixin room-card(sliderItems,room='888',lux=' люкс', price='9 990₽ ',reviews='20')
+mixin room-card(sliderItems,room='888',lux=' люкс', price='9990',reviews='20')
 	.room-card
 		.room-card__slider
 			.slider
@@ -11,6 +11,10 @@ mixin room-card(sliderItems,room='888',lux=' люкс', price='9 990₽ ',review
 						.room-card__img
 							img(src=`assets/img/${item}`, alt=item)
 							.room-card__shadow
+			a.room-card__link(href='detail.html')
+				.room-card__detail Подробнее
+				.room-card__icon
+					.dropdawn-icon.dropdawn-icon_slider
 		.room-card__container
 			.room-card__header
 				+room-header(room,lux,price,'true')

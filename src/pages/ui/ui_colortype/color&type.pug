@@ -1,15 +1,14 @@
-include /project/common.blocks/ui_kit/logo_UI/logo_UI.pug
+include /project/common.blocks/ui_kit/logotype/logotype.pug
+
+include /pages/common/head/head.pug
 
 <!DOCTYPE html>
-html(lang="en")
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Document
+html(lang='ru')
+	+head('UI_Цвета')
 	body
 		.wrapper
 			.container_ui
-				+logo('ui')
+				+logotype('ui')
 			main.main
 				.container_ui.container_ui__color-type
 					.content

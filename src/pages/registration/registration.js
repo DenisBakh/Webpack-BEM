@@ -24,10 +24,8 @@ $(document).ready(function () {
 		e.preventDefault();
 		var $this = $(this);
 		var $loginBlock = $this.closest('.login-block')
-		console.log($loginBlock)
 		var $toggleBlock = $loginBlock.find('.login-block__form')
 
 		$toggleBlock.toggleClass('active')
-
 	});
 })
