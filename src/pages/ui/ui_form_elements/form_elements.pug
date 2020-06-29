@@ -4,14 +4,14 @@ include /project/common.blocks/ui_kit/form_elements/range-slider/range-slider.pu
 include /project/common.blocks/ui_kit/form_elements/dropdawn/dropdawn.pug
 include /project/common.blocks/ui_kit/form_elements/pagination/pagination.pug
 include /project/common.blocks/ui_kit/form_elements/bullet-list/bullet-list.pug
-include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-simple/checkbox-list.pug
 include /project/common.blocks/ui_kit/logotype/logotype.pug
+include /project/common.blocks/ui_kit/form_elements/stars/stars.pug
 
 include /project/common.blocks/ui_kit/form_elements/advantages/advantages.pug
 include /project/common.blocks/ui_kit/form_elements/review/review.pug
-
 include /project/common.blocks/ui_kit/form_elements/option-buttons/checkbox/checkbox-list/checkbox-list.pug
 
+include /project/common.blocks/ui_kit/form_elements/buttons/button.pug
 
 
 include /pages/common/head/head.pug
@@ -80,12 +80,38 @@ html(lang='ru')
 									.like-row__item
 										+checkbox('id_like_2','like','', '')
 							.form-elements__item.form-elements__item_stars
-								include /project/common.blocks/ui_kit/form_elements/stars/stars-example.pug
+								.label
+									.label__title rate button
+								.checkbox-list.star-list
+									.star-list__item
+										+stars(1)
+									.star-list__item
+										+stars(2)
 						.form-elements__column.form-elements__column_c
 							.form-elements__item.form-elements__item_RangeSlider
 								+rangeSlider("Range Slider", '')
 							.form-elements__item.form-elements__item_buttons
-								include /project/common.blocks/ui_kit/form_elements/buttons/button-example.pug
+								.label
+									.label__title buttons
+								.button-list
+									.button-list__row
+										.button-list__column
+											+button('CLICK ME','#','','button')
+										.button-list__column
+											+button('CLICK ME','#','','button')
+									.button-list__row
+										.button-list__column
+											+button('CLICK ME','#','','button_border')
+										.button-list__column
+											+button('CLICK ME','#','','button_border')
+									.button-list__row.button-list__row_s
+										.button-list__column.button-list__column_s
+											+button('CLICK ME','#','','button_simple')
+										.button-list__column.button-list__column_s
+											+button('CLICK ME','#','','button_simple')
+									.button-list__row.button-list__row_b
+										.button-list__column.button-list__column_b
+											+button('перейти к оплате','#','submit','button_wide')
 							.form-elements__item
 								- var x = 178;
 								- for (var i=0; i<x; i++) {     

@@ -130,3 +130,41 @@
 		margin: 0 9px 0 0;
 	}
 }
+
+.star-list {
+	display: flex;
+	justify-content: space-between;
+	&__item {
+	}
+}
+
+.button-list {
+	padding: 10px 0;
+	&__row {
+		max-width: 240px;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px 30px -10px;
+		&:last-child {
+			margin: 0;
+		}
+		&_s {
+			max-width: 165px;
+		}
+		&_b {
+			max-width: 100%;
+		}
+	}
+	&__column {
+		padding: 0 10px;
+		flex: 0 1 50%;
+		height: 44px;
+		&_b {
+			padding: 0;
+			flex: 0 1 100%;
+		}
+		&_s {
+			height: auto;
+		}
+	}
+}

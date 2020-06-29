@@ -1,13 +1,6 @@
 //=========================STARS====================================
 @import "~/project/common.blocks/_common/vars.scss";
 
-/*sprite with stars*/
-.star-list {
-	display: flex;
-	justify-content: space-between;
-	&__item {
-	}
-}
 .stars {
 	display: flex;
 	flex-direction: row-reverse;

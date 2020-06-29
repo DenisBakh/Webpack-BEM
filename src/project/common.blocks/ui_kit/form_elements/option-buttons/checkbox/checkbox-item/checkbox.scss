@@ -1,7 +1,60 @@
 //=========================CHECKBOX-like ====================================
-@import "~/project/common.blocks/_common/vars.scss";
 
 $border: 1px;
+
+@keyframes like {
+	0% {
+		transform: scale(2);
+	}
+	60% {
+		transform: scale(1);
+	}
+	80% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes slide-to-right {
+	0% {
+		width: 12px;
+	}
+	50% {
+		width: 34px;
+	}
+	100% {
+		width: 12px;
+	}
+}
+
+@keyframes slide-to-left {
+	0% {
+		width: 12px;
+	}
+	50% {
+		width: 34px;
+	}
+	100% {
+		width: 12px;
+	}
+}
+
+@keyframes bounce_1 {
+	0% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(0.9);
+	}
+	66% {
+		transform: scale(1.1);
+	}
+	100% {
+		tranform: scale(1);
+	}
+}
 
 .button-checkbox {
 	width: 40px;
@@ -257,58 +310,4 @@ $border: 1px;
 	animation-duration: 250ms;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-}
-
-@keyframes like {
-	0% {
-		transform: scale(2);
-	}
-	60% {
-		transform: scale(1);
-	}
-	80% {
-		transform: scale(1.2);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes slide-to-right {
-	0% {
-		width: 12px;
-	}
-	50% {
-		width: 34px;
-	}
-	100% {
-		width: 12px;
-	}
-}
-
-@keyframes slide-to-left {
-	0% {
-		width: 12px;
-	}
-	50% {
-		width: 34px;
-	}
-	100% {
-		width: 12px;
-	}
-}
-
-@keyframes bounce_1 {
-	0% {
-		transform: scale(1);
-	}
-	33% {
-		transform: scale(0.9);
-	}
-	66% {
-		transform: scale(1.1);
-	}
-	100% {
-		tranform: scale(1);
-	}
 }
