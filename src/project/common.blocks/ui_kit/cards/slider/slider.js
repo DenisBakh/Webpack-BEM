@@ -1,8 +1,9 @@
 //=====================SLIDER===========================================================//
 import '../slider/slick.min.js'
 
-$(document).ready(function () {
-	//$(window).load(function () {
+
+
+$(window).on('load', function () {
 	$('.slider').slick({
 		//autoplay: true,
 		//infinite:false,

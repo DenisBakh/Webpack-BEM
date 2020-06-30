@@ -1,0 +1,36 @@
+include /project/common.blocks/ui_kit/logotype/logotype.pug
+
+include /pages/common/head/head.pug
+
+<!DOCTYPE html>
+html(lang='ru')
+	+head('UI_Оглавление')
+	body
+		.wrapper
+			.container_ui.container_ui__index
+				+logotype('ui')
+				main.main
+					.ui-pages
+						h1.ui-pages__title Оглавление Ui-Kit
+						nav.ui-pages__menu
+							ul.ui-pages__list
+								li.ui-pages__item
+									a.ui-pages__link(href='ui_color&type.html' target='_blank')
+										.ui-pages__page='Переход на UI_Color-&-Types'
+										.ui-pages__icon
+											.dropdawn-icon.dropdawn-icon_slider
+								li.ui-pages__item
+									a.ui-pages__link(href='ui_form_elements.html' target='_blank')
+										.ui-pages__page='Переход на UI_Form-Elements'
+										.ui-pages__icon
+											.dropdawn-icon.dropdawn-icon_slider
+								li.ui-pages__item
+									a.ui-pages__link(href='ui_cards.html' target='_blank')
+										.ui-pages__page='Переход на UI_Cards'
+										.ui-pages__icon
+											.dropdawn-icon.dropdawn-icon_slider
+								li.ui-pages__item
+									a.ui-pages__link(href='ui_headersfooters.html' target='_blank')
+										.ui-pages__page='Переход на UI_Headers-&-Footers'
+										.ui-pages__icon
+											.dropdawn-icon.dropdawn-icon_slider

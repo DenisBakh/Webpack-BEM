@@ -160,6 +160,16 @@ const plugins = () => {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: './ui_index.html',
+				template: `${PAGES_DIR}/ui/_ui_index/ui_index.pug`,
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["ui_index"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: './ui_cards.html',
 				template: `${PAGES_DIR}/ui/ui_cards/cards.pug`,
 				minify: {
@@ -235,7 +245,8 @@ module.exports = {
 		ui_colortype: ['@babel/polyfill', './pages/ui/ui_colortype/color&type.js'],
 		ui_formelements: ['@babel/polyfill', './pages/ui/ui_form_elements/form_elements.js'],
 		ui_cards: ['@babel/polyfill', './pages/ui/ui_cards/cards.js'],
-		ui_headersfooters: ['@babel/polyfill', './pages/ui/ui_headersfooters/ui_headersfooters.js']
+		ui_headersfooters: ['@babel/polyfill', './pages/ui/ui_headersfooters/ui_headersfooters.js'],
+		ui_index: ['@babel/polyfill', './pages/ui/_ui_index/ui_index.js']
 		//`${PATHS.src}/js/about`,
 	},
 	output: {

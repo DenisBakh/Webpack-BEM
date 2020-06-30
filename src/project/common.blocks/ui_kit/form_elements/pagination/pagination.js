@@ -1,19 +1,27 @@
 import '../pagination/jquery.simplePagination.js'
 
-$(document).ready(function () {
+//$(document).ready(function () {
+$(window).on('load', function () {
 
 	//Обновляем общее количество элементов на страницах
 	$(document).on('click', '.page-link', function (e) {
 		var $this = $('#pagination-main');
-		//определяем общее количество элементов и выводим в текст
+		//скролим наверх
 		pagination_parameters($this);
 		scroll_top();
 	});
 
 	function scroll_top() {
 		var scroll_point = $('#scroll-here');
-		if (scroll_point.length) {
-			var $top = scroll_point.offset().top; // получаем координаты блока
+		if (scroll_point.length > 0) {
+			var headerFixed = $('.header_fixed')
+			if (headerFixed.length > 0) {
+				var headerHeight = $('.header_fixed').innerHeight()
+				var $top = scroll_point.offset().top - headerHeight; // получаем координаты блока
+			}
+			else {
+				var $top = scroll_point.offset().top; // получаем координаты блока
+			}
 			$('body, html').animate({ scrollTop: $top }, 800); // плавно переходим к блоку
 		}
 	};

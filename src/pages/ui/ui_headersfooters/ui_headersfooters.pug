@@ -9,13 +9,12 @@ include /pages/common/head/head.pug
 html(lang='ru')
 	+head('UI_Header&Footer')
 	body
-		.wrapper
-			header.header
-				.container_ui
-					+logotype('ui')
-			main.ui-headersfooters
-				.container_ui.container_ui__headerfooter
-					.ui-headersfooters__item
+		.wrapper.wrapper_ui-headersfooters
+			.container_ui
+				+logotype('ui')
+			main.headers-footers
+				.container_ui__headerfooter
+					.headers-footers__item
 						-
 							var headerMenu = [
 								{text: 'Home', link:'#',submenu:''}, 
@@ -27,10 +26,10 @@ html(lang='ru')
 							]
 						- var headerLoginButton = [{text: 'Login', link:'#',type:'', mode:'button_border'}]
 						- var headerRegButton =[{text: 'REGISTER', link:'#',type:'',mode:'button'}]
-						+header('unlogged', headerMenu, headerLoginButton,headerRegButton)
-					.ui-headersfooters__item
-						+header('logged', headerMenu, headerLoginButton,headerRegButton)
-					.ui-headersfooters__item
+						+header('unlogged', headerMenu, headerLoginButton,headerRegButton,'false')
+					.headers-footers__item
+						+header('logged', headerMenu, headerLoginButton,headerRegButton,'false')
+					.headers-footers__item
 						-
 							var footerMenu = [
 								{label: 'Navigation', li:[{text:'About Us',link:'#'},{text:'News',link:'#'},{text:'Support',link:'#'},{text:'Products',link:'#'}]},
@@ -43,5 +42,5 @@ html(lang='ru')
 						-var footerSubscrBtn='Your email address'
 						-var footerCopyRight='Copyright © 2018 Toxin UI Kit. All rights reserved.'
 						+footer('norm',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)
-					.ui-headersfooters__item
+					.headers-footers__item
 						+footer('mini',footerMenu,footerText,footerSubscr,footerSubscrText,footerSubscrBtn,footerCopyRight)

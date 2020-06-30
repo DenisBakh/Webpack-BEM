@@ -11,10 +11,14 @@ html(lang='ru')
 					img(src="assets/img/regBG.jpg", alt="")
 					.container.container_registr
 						.login-block
-							.login-block__registration.login-block__form.active
+							.login-block__registration.login-block__form.tab(data-name="registration").active
 								include /project/common.blocks/ui_kit/cards/registry-form/registry-form.pug
-							.login-block__entrance.login-block__form
+							.login-block__entrance.login-block__form.tab(data-name="enter")
 								include /project/common.blocks/ui_kit/cards/entrance-form/entrance-form.pug
 			include /pages/common/footer/footer.pug
+
+
+
+
 
 

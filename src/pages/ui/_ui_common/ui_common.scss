@@ -8,16 +8,20 @@
 	margin: 0 auto;
 	padding: 30px;
 	width: 100%;
+	flex: 1 1 auto;
 	@media (max-width: 430px) {
 		padding: 30px 5px;
 	}
 	&__form-elements {
 		max-width: 1160px;
-		margin: 34px auto 0 auto;
+		margin: 64px auto 0 auto;
 	}
 	&__cards {
 		max-width: 1160px;
-		margin: 73px auto 0 auto;
+		margin: 71px auto 0 auto;
+		@media (max-width: 430px) {
+			margin: 40px auto 0 auto;
+		}
 	}
 	&__headerfooter {
 		margin: 40px auto 0 auto;
@@ -25,5 +29,12 @@
 	&__color-type {
 		max-width: 1140px;
 		margin: 67px auto 0 auto;
+		@media (max-width: 430px) {
+			margin: 40px auto 0 auto;
+		}
+	}
+	&__index {
+		display: flex;
+		flex-direction: column;
 	}
 }

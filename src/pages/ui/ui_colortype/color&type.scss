@@ -100,7 +100,7 @@
 		}
 	}
 	&__text {
-		font-family: "Quicksand";
+		font-family: $fontFamily_2;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 19px;
@@ -124,7 +124,7 @@
 		}
 	}
 	&__descr {
-		font-family: "Quicksand";
+		font-family: $fontFamily_1;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 1.714rem;
@@ -134,7 +134,7 @@
 	}
 	&__mark {
 		padding: 0 30px 0 0;
-		font-family: "Montserrat";
+		font-family: $fontFamily_1;
 		font-size: 1.714rem;
 		line-height: 1.25em;
 		margin: 0 30px 0 0;
@@ -143,6 +143,12 @@
 	}
 	&__row {
 		display: table-row;
+		&:nth-child(1),
+		&:nth-child(2) {
+			.item-text__descr {
+				font-family: $fontFamily_2;
+			}
+		}
 		&:nth-child(2) {
 			.item-text__descr {
 				font-size: 1.357rem;
@@ -155,7 +161,6 @@
 		}
 		&:nth-child(3) {
 			.item-text__descr {
-				font-family: "Montserrat";
 				font-weight: 700;
 				font-size: 0.857rem;
 				line-height: 1.25em;
@@ -168,7 +173,6 @@
 		}
 		&:nth-child(4) {
 			.item-text__descr {
-				font-family: "Montserrat";
 				font-weight: 400;
 				font-size: 1rem;
 				line-height: 1.714em;

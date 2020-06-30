@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 	//Т.к. header position:fixed, он выпадает из потока, поэтому рассчитываем отступ верхний у контента в величине высоты header
-	var headerHeight = $('.header').innerHeight()
+	var headerHeight = $('.header_fixed').innerHeight()
 	$('.main').css({
 		'margin-top': headerHeight
 	})
@@ -21,6 +21,7 @@ $(document).ready(function () {
 		$parent = $this.closest('.header')
 		$menu = $parent.find('.header-menu__nav')
 
+		//$parent.toggleClass('active')
 		$this.toggleClass('active')
 		$menu.toggleClass('active')
 	})

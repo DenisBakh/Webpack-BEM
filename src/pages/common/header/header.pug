@@ -9,6 +9,6 @@ include /project/common.blocks/ui_kit/headers-footers/header/header.pug
 		{text: 'Новости', link:'#',submenu:''},
 		{text: 'Соглашения', link:'#',submenu:['Правила','Спонсорство и инвестиции','Лицензии']}
 	]
-- var headerLoginButton = [{text: 'войти', link:'#',type:'', mode:'button_border'}]
-- var headerRegButton =[{text: 'зарегистрироваться', link:'#',type:'',mode:'button'}]
+- var headerLoginButton = [{text: 'войти', link:'registration.html#enter',type:'', mode:'button_border'}]
+- var headerRegButton =[{text: 'зарегистрироваться', link:'registration.html#registration',type:'',mode:'button'}]
 +header('unlogged', headerMenu, headerLoginButton,headerRegButton)

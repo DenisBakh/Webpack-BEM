@@ -2,10 +2,13 @@
 
 @import "~/pages/ui/_ui_common/ui_common.scss";
 
-.ui-headersfooters {
+.wrapper_ui-headersfooters {
 	flex: 1 1 auto;
 	background: #f4f4f6;
 	padding: 0 0 100px 0;
+}
+
+.headers-footers {
 	&__item {
 		margin: 0 0 38px 0;
 	}
