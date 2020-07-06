@@ -258,7 +258,7 @@ $(document).ready(function ($) {
 			var $wrapper = $(this);
 			var div = $wrapper.find('.dropdawn-field');
 			if (!div.is(e.target) && (div.has(e.target).length === 0)) {  // если клик был не по нашему блоку
-				e.preventDefault();
+				//e.preventDefault();
 				//var $this = $(this);
 				//var $dd = $this.closest('.text-field__wrapper');
 				$wrapper.toggleClass("active");

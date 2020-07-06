@@ -1,59 +1,59 @@
-mixin inputs(id, type="text", label, value="", placeholder="Email", descr="")
+mixin inputs(id, type="text", label, value="", placeholder="Email", descr="",isRequired=false)
 	div.text-field
 		if !(label==='' ) &&  !(descr='')
 			.label
 				label.label__title(for= id)= label
 				label.label__descr= descr
-		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value)
+		input.text-field__input(type=type, name=type, placeholder=placeholder, id= id, value= value, required=isRequired)
 
 mixin subscribe(id="email_sub", placeholder="Email", label="subscription text field",value="", descr="")
-	div.text-field.text-field_less
-		.label
-			label.label__title(for= id)= label
-			label.label__descr= descr
-		.text-field__wrapper.text-field__input-icon
-			.text-field__icon-subscribe
-				<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/></svg>
-			input.text-field__input(type="email", name=type, placeholder=placeholder, id= id, value= value)
+	form(action='#' method='post').subscribe-form
+		div.text-field
+			.label
+				label.label__title(for= id)= label
+				label.label__descr= descr
+			.text-field__wrapper.text-field__input-icon
+				input.text-field__icon-subscribe(type='submit' value='')
+				input.text-field__input(type="email", name=type, placeholder=placeholder, id= id, value= value, required)
 
-mixin inputDate(id="date1", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="")
+mixin inputDate(id="date1", label="date Dropdown", value="", placeholder="ДД.ММ.ГГГГ", descr="",isRequired=false)
 	div.text-field
 		.label
 			label.label__title(for= id)= label
 			label.label__descr= descr
-		input.text-field__input.text-field__input_date( type="text", name="date", placeholder=placeholder, id= id, value= value)
+		input.text-field__input.text-field__input_date( type="text", name="date", placeholder=placeholder, id= id, value= value, required=isRequired)
 
 
 
 
+//
+	mixin inputTextfield(id, label, placeholder)
+		div.text-field
+			label(for= id)= label
+			textarea(rows="5", name= id, id= id, placeholder= val,autocomplete="false")
 
-mixin inputTextfield(id, label, placeholder)
-	div.text-field
-		label(for= id)= label
-		textarea(rows="5", name= id, id= id, placeholder= val,autocomplete="false")
+	mixin inputToggle(id, label, checked)
+		div.text-field
+			label(for= id)
+				input(type="checkbox", name= id, id= id, checked= checked, autocomplete="off")
+				span= label
 
-mixin inputToggle(id, label, checked)
-	div.text-field
-		label(for= id)
-			input(type="checkbox", name= id, id= id, checked= checked, autocomplete="off")
-			span= label
+	mixin inputSelect(id, label, selected, vals)
+		div.text-field
+			label(for= label)= label
+			select(id= id, name= id)
+				each val in vals
+					- var isSelected = (selected==val[1]) ? true : false
+					option(value= val[0], selected= isSelected)= val[1]
 
-mixin inputSelect(id, label, selected, vals)
-	div.text-field
-		label(for= label)= label
-		select(id= id, name= id)
+	mixin inputToggleCollection(id, label, vals, checked)
+		- var active = []
+		- if (checked!=undefined) {
+			- active = checked.split(",")
+		- }
+		fieldset
+			legend= label
 			each val in vals
-				- var isSelected = (selected==val[1]) ? true : false
-				option(value= val[0], selected= isSelected)= val[1]
-
-mixin inputToggleCollection(id, label, vals, checked)
-	- var active = []
-	- if (checked!=undefined) {
-		- active = checked.split(",")
-	- }
-	fieldset
-		legend= label
-		each val in vals
-			- var isSelected = (active.indexOf(val)>-1) ? true : false
-			+inputToggle(val.replace(/\s/g,''), val, isSelected)
+				- var isSelected = (active.indexOf(val)>-1) ? true : false
+				+inputToggle(val.replace(/\s/g,''), val, isSelected)
 

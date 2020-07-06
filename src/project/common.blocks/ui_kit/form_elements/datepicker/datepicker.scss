@@ -9,7 +9,41 @@ $DT-picker__inRangeColor: linear-gradient(180deg, #eee6ff 0%, #e2e8fe 100%);
 $DT-picker__currentColor: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 $DT-picker__fontColor_main: #8f90a0;
 
-@import "~/project/common.blocks/_common/vars.scss";
+@keyframes calendar-arrow-next {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(30%);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(-30%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes calendar-arrow-prev {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-30%);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(30%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
 
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
@@ -83,6 +117,9 @@ $DT-picker__fontColor_main: #8f90a0;
 	opacity: 0;
 	visibility: hidden;
 	z-index: -5;
+}
+.datepicker {
+	user-select: none;
 }
 /* -------------------------------------------------
 	  Datepicker cells
@@ -192,16 +229,21 @@ $DT-picker__fontColor_main: #8f90a0;
 }
 .datepicker--cell.-disabled- {
 	cursor: default;
-	color: #aeaeae;
+	//color: #aeaeae;
+	color: $fontColor_1-1;
+	&:hover {
+		background: none;
+	}
 }
 .datepicker--cell.-disabled-.-focus- {
-	color: #aeaeae;
+	//color: #aeaeae;
 }
 .datepicker--cell.-disabled-.-in-range- {
-	color: #a1a1a1;
+	//color: #a1a1a1;
+	background: none;
 }
 .datepicker--cell.-disabled-.-current-.-focus- {
-	color: #aeaeae;
+	//color: #aeaeae;
 }
 
 .datepicker--cell.-range-from- {
@@ -677,7 +719,23 @@ $DT-picker__fontColor_main: #8f90a0;
 	user-select: none;
 }
 .datepicker--nav-action:hover {
-	background: #f0f0f0;
+	//background: #f0f0f0;
+}
+.datepicker--nav-action[data-action="next"]:hover {
+	//background: #f0f0f0;
+	//background: red;
+	animation-name: calendar-arrow-next;
+	animation-duration: 1500ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.datepicker--nav-action[data-action="prev"]:hover {
+	//background: #f0f0f0;
+	//background: red;
+	animation-name: calendar-arrow-prev;
+	animation-duration: 1500ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 .datepicker--nav-action.-disabled- {
 	visibility: hidden;
@@ -703,15 +761,17 @@ $DT-picker__fontColor_main: #8f90a0;
 .datepicker--nav-title {
 	border-radius: 4px;
 	padding: 0 8px;
+	@include transition;
 }
 .datepicker--nav-title i {
-	font-family: "Quicksand";
+	font-family: $fontFamily_2;
 	font-style: normal;
 	//color: #9c9c9c;
 	margin-left: 5px;
 }
 .datepicker--nav-title:hover {
-	background: #f0f0f0;
+	//background: #f0f0f0;
+	transform: scale(1.2);
 }
 .datepicker--nav-title.-disabled- {
 	cursor: default;
