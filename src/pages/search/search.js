@@ -27,5 +27,23 @@ $(document).ready(function () {
 		$roomColumn.toggleClass('disactive')
 	});
 
+	$(document).mouseup(function (e) { // событие клика по веб-документу
+		let $parent = $('.content__column_filter.active')
+		if ($parent.length > 0) {
+
+			if (!$parent.is(e.target) // если клик был не по нашему блоку
+				&& $parent.has(e.target).length === 0) { // и не по его дочерним элементам
+				let $icon = $parent.find('.dropdawn-icon');
+				let $content = $parent.closest('.content')
+				let $roomColumn = $content.find('.content__column_roomcards')
+				let $filterButton = $parent.find('.filter-button')
+				$filterButton.removeClass('active')
+				$parent.removeClass('active')
+				$icon.removeClass('active')
+				$roomColumn.removeClass('disactive')
+			}
+		}
+	});
+
 })
 
