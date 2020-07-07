@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "webpack-dev-server --open --config webpack.dev.conf.js",
-		"build": "webpack --config webpack.build.conf.js",
+		"build": "webpack --output-public-path='./' --config webpack.build.conf.js",
 		"start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --mode development --open",
 		"watch": "cross-env NODE_ENV=development ./node_modules/.bin/webpack --mode development --watch",
 		"stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
