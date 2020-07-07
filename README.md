@@ -9,7 +9,7 @@
 
 ## Project Links:
 
-* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/registration.html" target="_blank">`Страница регистрации`</a>
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/registration.html" target="_blank">`Страница регистрации`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/registration.html
 * `src/pages` - страницы сайта
 * `src/project` - блоки, переменные, миксины, для дальнейших импортов на страницы
 * `src/project/static` - дополнительные статичные файлы для сайта, такие как favicon
