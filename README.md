@@ -9,16 +9,18 @@
 
 ## Project Links:
 
-* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/registration.html" target="_blank">`Страница регистрации`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/registration.html
-* `src/pages` - страницы сайта
-* `src/project` - блоки, переменные, миксины, для дальнейших импортов на страницы
-* `src/project/static` - дополнительные статичные файлы для сайта, такие как favicon
-* `src/project/common.blocks` - общие блоки, переменные, миксины
-* `src/project/common.blocks/_common` - обнулятор CSS, переменные, общие миксины, иконки соц сетей
-* `src/project/common.blocks/ui_kit` - элементы проекта, разбитые на блоки в соответствии с методологией БЭМ
-* `webpack.base.conf.js` - базовые настройки `Webpack`
-* `webpack.build.conf.js` - настройки `Webpack` для `build` или `релиза проекта`
-* `webpack.dev.conf.js` - настройки `Webpack` для `dev` или `разработки проекта`
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/index.html" target="_blank">`Главная страница`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/index.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/search.html" target="_blank">`Cтраница подбора номера по параметрам`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/search.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/detail.html" target="_blank">`Cтраница с описанием номера`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/detail.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/registration.html" target="_blank">`Страница регистрации и входа в лк`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/registration.html
+
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_index.html" target="_blank">`Главная страница UI-Kit`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_index.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html" target="_blank">`UI-Kit главная страница`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_form_elements.html" target="_blank">`UI-Kit основные компоненты`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_form_elements.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_cards.html" target="_blank">`UI-Kit компоненты Cards`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_cards.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_headersfooters.html" target="_blank">`UI-Kit компоненты Header&Footer`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_headersfooters.html
+
+
 
 ## Project install:
 
