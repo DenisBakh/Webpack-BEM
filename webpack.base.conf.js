@@ -4,28 +4,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserWebpackPlugin = require('terser-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
 const webpack = require('webpack')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
-const optimization = () => {
-	const config = {
-		splitChunks: {
-			chunks: 'all'
-		}
-	}
-
-	if (isProd) {
-		config.minimizer = [
-			new OptimizeCssAssetWebpackPlugin(),
-			new TerserWebpackPlugin()
-		]
-	}
-	return config
-}
 
 //Main const
 const PATHS = {
@@ -33,17 +16,14 @@ const PATHS = {
 	dist: path.resolve(__dirname, 'dist'),
 	assets: 'assets/'
 }
+
 //Pages const for HTMLWebpackPlugin
-//const PAGES_DIR=PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
-//const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
-//const filenameCss = ext => isDev ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`
-//const filenameJs = ext => isDev ? `${PATHS.assets}js/[name].js` : `${PATHS.assets}js/[name].[hash].js`
 
-const filenameCss = ext => isDev ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].css`
-const filenameJs = ext => isDev ? `${PATHS.assets}js/[name].js` : `${PATHS.assets}js/[name].js`
+const filenameCss = ext => `${PATHS.assets}css/[name].[hash].css`
+const filenameJs = ext => `${PATHS.assets}js/[name].[hash].js`
 
 const cssLoaders = extra => {
 	const loaders = [
@@ -94,31 +74,22 @@ const jsLoaders = () => {
 		options: babelOptions()
 	}]
 
-	/*	if (isDev) {
-			loaders.push('eslint-loader')
-		}
-	*/
+	if (isDev) {
+		loaders.push('eslint-loader')
+	}
+
 	return loaders
 }
 
 const plugins = () => {
 	const base = [
-		/*	new HTMLWebpackPlugin({
-				//title: 'Webpack Dens',
-				template: './index.html',
-				minify: {
-					collapseWhitespace: isProd
-				}
-			}),*/
 		new CleanWebpackPlugin(),
-		new CopyWebpackPlugin([ /*
-			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-			{ from: `${PATHS.src}/static`, to: '' },*/
-		]),
 		new MiniCssExtractPlugin({
-			filename: filenameCss() //filename('css') //'[name].[contenthash].css'
+			filename: filenameCss()
 		}),
+		new CopyWebpackPlugin([
+			{ from: `${PATHS.src}/project/common.blocks/_common/fonts`, to: `${PATHS.assets}fonts` }
+		]),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
@@ -226,41 +197,38 @@ const plugins = () => {
 		*/
 	]
 
-	if (isProd) {
-		base.push(new BundleAnalyzerPlugin())
-	}
-
 	return base
 }
 
 module.exports = {
-	context: path.resolve(__dirname, 'src'),
-	mode: 'development',
-	/*externals: {
-		path: PATHS
-	},*/
+	externals: {
+		PATHS: PATHS,
+	},
+
 	entry: {
-		main: ['@babel/polyfill', './main/main.js'],
-		//common: ['@babel/polyfill', './pages/common/common.js'],
-		index: ['@babel/polyfill', './pages/index/index.js'],
-		search: ['@babel/polyfill', './pages/search/search.js'],
-		detail: ['@babel/polyfill', './pages/detail/detail.js'],
-		registration: ['@babel/polyfill', './pages/registration/registration.js'],
-		//ui_common: ['@babel/polyfill', './pages/ui/ui_common/ui_common.js'],
-		ui_colortype: ['@babel/polyfill', './pages/ui/ui_colortype/color&type.js'],
-		ui_formelements: ['@babel/polyfill', './pages/ui/ui_form_elements/form_elements.js'],
-		ui_cards: ['@babel/polyfill', './pages/ui/ui_cards/cards.js'],
-		ui_headersfooters: ['@babel/polyfill', './pages/ui/ui_headersfooters/ui_headersfooters.js'],
-		ui_index: ['@babel/polyfill', './pages/ui/_ui_index/ui_index.js']
+		main: ['./main/main.js'],
+		//common: [ './pages/common/common.js'],
+		index: ['./pages/index/index.js'],
+		search: ['./pages/search/search.js'],
+		detail: ['./pages/detail/detail.js'],
+		registration: ['./pages/registration/registration.js'],
+		//ui_common: [ './pages/ui/ui_common/ui_common.js'],
+		ui_colortype: ['./pages/ui/ui_colortype/color&type.js'],
+		ui_formelements: ['./pages/ui/ui_form_elements/form_elements.js'],
+		ui_cards: ['./pages/ui/ui_cards/cards.js'],
+		ui_headersfooters: ['./pages/ui/ui_headersfooters/ui_headersfooters.js'],
+		ui_index: ['./pages/ui/_ui_index/ui_index.js']
 		//`${PATHS.src}/js/about`,
 	},
 	output: {
-		//filename: filename('js'),
-		//path: path.resolve(__dirname, 'dist')
-		filename: filenameJs(), //filename('js'),
+		filename: filenameJs(),
 		path: PATHS.dist,
 		publicPath: '/'
 	},
+
+	context: path.resolve(__dirname, 'src'),
+
+
 	resolve: {
 		//extensions: [],
 		alias: {
@@ -269,30 +237,15 @@ module.exports = {
 			'vue$': 'vue/dist/vue.js',
 		}
 	},
-	optimization: optimization(),
-	devServer: {
-		port: 4200,
-		//hot: isDev,
-		contentBase: path.resolve(__dirname, 'dist')
+	optimization: {
+		splitChunks: {
+			chunks: 'all'//разбивает js файлы на чанки
+		}
 	},
-	devtool: isDev ? 'source-map' : '',
+
 	plugins: plugins(),
 	module: {
 		rules: [
-			/*{
-				test: /\.pug$/,
-				oneOf: [
-					// this applies to <template lang="pug"> in Vue components
-					{
-						resourceQuery: /^\?vue/,
-						use: ['pug-plain-loader']
-					},
-					// this applies to pug imports inside JavaScript
-					{
-						use: ['pug-loader']
-					}
-				]
-			},*/
 			{
 				test: /\.pug$/,
 				loader: 'pug-loader',
@@ -303,7 +256,6 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				//use: ['style-loader', 'css-loader']
 				use: cssLoaders()
 			},
 			{
@@ -327,6 +279,7 @@ module.exports = {
 					}
 				]
 			},
+			/*
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				use: [
@@ -340,6 +293,7 @@ module.exports = {
 					}
 				]
 			},
+			*/
 			{
 				test: /\.xml$/,
 				use: ['xml-loader']
