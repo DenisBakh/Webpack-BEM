@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="100" height="100" src="https://github.com/DenisBakh/Hotel-Toxin/blob/master/src/project/common.blocks/ui_kit/logotype/logo_UI/Logo.png">
+  <img width="159" height="60" src="https://github.com/DenisBakh/Hotel-Toxin/blob/master/src/project/common.blocks/ui_kit/logotype/logo_UI/Logo.png">
   <h1>Webpack Template</h1>
   <p>
     Hotel-Toxin - сайт, написанный по методологии БЭМ с компонентной архитектурой исходных файлов. Сборщиком проекта выступает Webpack, который отлично подходит под модульную верстку и разработку приложений.
