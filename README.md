@@ -15,7 +15,7 @@
 * <a href="https://denisbakh.github.io/Hotel-Toxin/dist/registration.html" target="_blank">`Страница регистрации и входа в лк`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/registration.html
 
 * <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_index.html" target="_blank">`UI-Kit Главная страница`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_index.html
-* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html" target="_blank">`UI-Kit главная страница`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html
+* <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html" target="_blank">`UI-Kit страница цветов`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_color&type.html
 * <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_form_elements.html" target="_blank">`UI-Kit основные компоненты`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_form_elements.html
 * <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_cards.html" target="_blank">`UI-Kit компоненты Cards`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_cards.html
 * <a href="https://denisbakh.github.io/Hotel-Toxin/dist/ui_headersfooters.html" target="_blank">`UI-Kit компоненты Header&Footer`</a> - https://denisbakh.github.io/Hotel-Toxin/dist/ui_headersfooters.html
