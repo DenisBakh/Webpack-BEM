@@ -35,6 +35,7 @@ const cssLoaders = extra => {
 			},
 		},
 		'css-loader',
+		'resolve-url-loader',
 		{
 			loader: 'postcss-loader',
 			options: {
@@ -284,16 +285,15 @@ module.exports = {
 				test: /\.(ttf|woff|woff2|eot)$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: 'url-loader',
 						options: {
-							//outputPath: `${PATHS.assets}fonts`,
+							outputPath: `${PATHS.assets}fonts`,
 							name: '[name].[ext]',
 							esModule: false
 						}
 					}
 				]
 			},
-
 			{
 				test: /\.xml$/,
 				use: ['xml-loader']

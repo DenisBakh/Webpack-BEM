@@ -9,9 +9,9 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
 	mode: 'production',
 
 	plugins: [
-		new BundleAnalyzerPlugin(),//Анализатор проекта в браузере
-		new OptimizeCssAssetWebpackPlugin(),//optimize \ minimize the CSS (by default it uses cssnano but a custom CSS processor can be specified).
-		new TerserWebpackPlugin()//minify your JavaScript.
+		//new BundleAnalyzerPlugin(),//Анализатор проекта в браузере
+		//new OptimizeCssAssetWebpackPlugin(),//optimize \ minimize the CSS (by default it uses cssnano but a custom CSS processor can be specified).
+		//new TerserWebpackPlugin()//minify your JavaScript.
 	]
 })
 
