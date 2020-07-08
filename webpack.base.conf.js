@@ -22,8 +22,10 @@ const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 
-const filenameCss = ext => `${PATHS.assets}css/[name].[hash].css`
-const filenameJs = ext => `${PATHS.assets}js/[name].[hash].js`
+//const filenameCss = ext => `${PATHS.assets}css/[name].[hash].css`
+//const filenameJs = ext => `${PATHS.assets}js/[name].[hash].js`
+const filenameCss = ext => `${PATHS.assets}css/[name].css`
+const filenameJs = ext => `${PATHS.assets}js/[name].js`
 
 const cssLoaders = extra => {
 	const loaders = [
